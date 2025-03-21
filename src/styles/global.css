@@ -1,1 +1,22 @@
 @import "tailwindcss";
+
+@keyframes colorChange {
+  0% {
+    background-color: #7391c8;
+  }
+  25% {
+    background-color: #89a06b;
+  }
+  50% {
+    background-color: #d19c97;
+  }
+  75% {
+    background-color: #a893bd;
+  }
+  100% {
+    background-color: #7391c8;
+  }
+}
+.bg-animate {
+  animation: colorChange 10s infinite;
+}
