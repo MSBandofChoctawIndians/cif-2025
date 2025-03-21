@@ -1,31 +1,26 @@
 ---
 import "../styles/global.css";
-import BaseHead from "../components/BaseHead.astro";
-import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.jsx";
 const { title } = Astro.props;
 ---
 
-<html lang="en">
+<!doctype html>
+<html>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <BaseHead title={title} />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/styles.css" rel="stylesheet" />
+    <title>{title}</title>
+    <meta
+      name="description"
+      content="We invite you to join us for the Choctaw Indian Fair.
+        The fair takes place on our centuries-old homeland in beautiful Choctaw, Mississippi."
+    />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/global.css" />
   </head>
   <body>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Posts</a>
-      <a href="#">Contact</a>
-    </nav>
-    <h1>{title}</h1>
-    <article>
-      <slot />
-      <!-- your content is injected here -->
-    </article>
-    <Footer />
-  </body><style>
-    h1 {
-      font-size: 2rem;
-    }
-  </style>
+    <Nav />
+    <slot />
+  </body>
 </html>
