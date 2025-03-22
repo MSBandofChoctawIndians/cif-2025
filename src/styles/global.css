@@ -1,22 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
+
+:root {
+  --fair-blue: #7391c8;
+  --fair-green: #89a06b;
+  --fair-pink: #d19c97;
+  --fair-purple: #a893bd;
+  --fair-brown: #a37762;
+  --fair-gray: #a69a8a;
+  --fair-red: #da2e36;
+  --fair-gold: #b3a369;
+}
 
 @keyframes colorChange {
   0% {
-    background-color: #7391c8;
+    background-color: var(--fair-blue);
   }
   25% {
-    background-color: #89a06b;
+    background-color: var(--fair-green);
   }
   50% {
-    background-color: #d19c97;
+    background-color: var(--fair-pink);
   }
   75% {
-    background-color: #a893bd;
+    background-color: var(--fair-purple);
   }
   100% {
-    background-color: #7391c8;
+    background-color: var(--fair-brown);
   }
 }
 .bg-animate {
   animation: colorChange 10s infinite;
+}
+
+.font-raleway {
+  font-family: "Raleway", sans-serif;
 }
