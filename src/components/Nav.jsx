@@ -25,7 +25,7 @@ export default function Example() {
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <img alt="" src="/cif-2025/navlogo.webp" className="h-12 w-auto" />
+            <img alt="" src="/cif-2025/navlogo.webp" width="192" height="48" className="h-12 w-auto" />
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -75,7 +75,7 @@ export default function Example() {
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img alt="" src="/cif-2025/navlogo.webp" className="h-8 w-auto" />
+              <img alt="" src="/cif-2025/navlogo.webp" width="128" height="32" className="h-8 w-auto" />
             </a>
             <button
               type="button"
