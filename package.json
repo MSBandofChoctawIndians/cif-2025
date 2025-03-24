@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.2.1",
+    "@fontsource/raleway": "^5.2.5",
     "@headlessui/react": "^2.2.0",
     "@tailwindcss/vite": "^4.0.15",
     "@types/react": "^19.0.12",
