@@ -17,23 +17,23 @@ Inside this project, you'll find the following folders and files:
 │   │   ├── astro.svg
 │   │   └── background.svg
 │   ├── components/
-│   │   ├── [Footer.astro](http://_vscodecontentref_/0)
-│   │   ├── [Nav.jsx](http://_vscodecontentref_/1)
-│   │   ├── [SaveTheDate.astro](http://_vscodecontentref_/2)
-│   │   └── [Welcome.astro](http://_vscodecontentref_/3)
+│   │   ├── Footer.astro
+│   │   ├── Nav.jsx
+│   │   ├── SaveTheDate.astro
+│   │   └── Welcome.astro
 │   ├── layouts/
-│   │   └── [Layout.astro](http://_vscodecontentref_/4)
+│   │   └── Layout.astro
 │   ├── pages/
-│   │   ├── [404.astro](http://_vscodecontentref_/5)
-│   │   └── [index.astro](http://_vscodecontentref_/6)
+│   │   ├── 404.astro
+│   │   └── index.astro
 │   └── styles/
-│       └── [global.css](http://_vscodecontentref_/7)
+│       └── global.css
 ├── .github/
 │   └── workflows/
-│       └── [deploy.yml](http://_vscodecontentref_/8)
+│       └── deploy.yml
 ├── .vscode/
-│   ├── [extensions.json](http://_vscodecontentref_/9)
-│   └── [launch.json](http://_vscodecontentref_/10)
+│   ├── extensions.json
+│   └── launch.json
 ├── .astro/
 │   ├── content-assets.mjs
 │   ├── content-modules.mjs
@@ -44,10 +44,10 @@ Inside this project, you'll find the following folders and files:
 │   └── collections/
 ├── .gitignore
 ├── .prettierrc
-├── [astro.config.mjs](http://_vscodecontentref_/11)
-├── [old_README.md](http://_vscodecontentref_/12)
-├── [package.json](http://_vscodecontentref_/13)
-└── [tsconfig.json](http://_vscodecontentref_/14)
+├── astro.config.mjs
+├── old_README.md
+├── package.json
+└── tsconfig.json
 ```
 
 ## 🧞 Commands
