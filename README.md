@@ -45,7 +45,6 @@ Inside this project, you'll find the following folders and files:
 ├── .gitignore
 ├── .prettierrc
 ├── astro.config.mjs
-├── old_README.md
 ├── package.json
 └── tsconfig.json
 ```
