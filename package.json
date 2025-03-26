@@ -20,7 +20,8 @@
     "lucide-react": "^0.483.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwindcss": "^4.0.15"
+    "tailwindcss": "^4.0.15",
+    "vite": "^6.2.3"
   },
   "devDependencies": {
     "prettier": "3.5.3",
