@@ -27,7 +27,7 @@ export default function Example() {
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Choctaw Indian Fair</span>
             <img
-              alt="Choctaw Indian Fair"
+              alt="Choctaw Indian Fair Logo"
               src="/navlogo.webp"
               width="192"
               height="48"
@@ -86,7 +86,7 @@ export default function Example() {
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Choctaw Indian Fair</span>
               <img
-                alt="Choctaw Indian Fair"
+                alt="Choctaw Indian Fair Logo"
                 src="/navlogo.webp"
                 width="192"
                 height="48"
