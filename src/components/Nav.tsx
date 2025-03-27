@@ -5,19 +5,19 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { MapPinned, Menu, Ticket, X } from "lucide-react";
 
 const navigation = [
-  { name: "Events", href: "#" },
-  { name: "Culture", href: "#" },
-  { name: "Family Fun", href: "#" },
-  { name: "Stickball", href: "#" },
-  { name: "Pageant", href: "#" },
-  { name: "Competitions", href: "#" },
+  { name: "Events", href: "/events" },
+  { name: "Culture", href: "/culture" },
+  { name: "Family Fun", href: "/family" },
+  { name: "Stickball", href: "/stickball" },
+  { name: "Pageant", href: "/pageant" },
+  { name: "Competitions", href: "/competitions" },
 ];
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-[rgb(33,37,41)] sticky top-0 z-1">
+    <header className="sticky top-0 z-1 bg-[rgb(33,37,41)]">
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
@@ -25,7 +25,13 @@ export default function Example() {
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <img alt="" src="/navlogo.webp" width="192" height="48" className="h-12 w-auto" />
+            <img
+              alt=""
+              src="/navlogo.webp"
+              width="192"
+              height="48"
+              className="h-12 w-auto"
+            />
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -43,23 +49,26 @@ export default function Example() {
             <a
               key={item.name}
               href={item.href}
-              className="disabled text-sm/6 font-semibold text-gray-400 font-raleway"
+              className="disabled font-roboto text-sm/6 font-semibold text-gray-400"
             >
               {item.name}
             </a>
-            ))}
-            <a href="#" className="text-gray-400">
-              <MapPinned aria-hidden="true" className="mr-2 h-7 w-7 inline-block" />
-            </a>
-          </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          ))}
+          <a href="/map" className="text-gray-400">
+            <MapPinned
+              aria-hidden="true"
+              className="mr-2 inline-block h-7 w-7"
+            />
+          </a>
+        </div>
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <button
             type="button"
-            className="rounded-md bg-[var(--fair-gold)] px-3.5 py-2.5 text-sm font-semibold font-raleway shadow-sm hover:bg-[var(--fair-gold)]/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--fair-gold)]"
+            className="font-roboto rounded-md bg-[var(--fair-gold)] px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-[var(--fair-gold)]/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--fair-gold)]"
           >
             <Ticket
               aria-hidden="true"
-              className="mr-2 h-5 w-5 inline-block mb-0.5"
+              className="mr-2 mb-0.5 inline-block h-5 w-5"
             />
             Tickets
           </button>
@@ -75,7 +84,13 @@ export default function Example() {
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img alt="" src="/navlogo.webp" width="128" height="32" className="h-8 w-auto" />
+              <img
+                alt=""
+                src="/navlogo.webp"
+                width="128"
+                height="32"
+                className="h-8 w-auto"
+              />
             </a>
             <button
               type="button"
@@ -93,20 +108,30 @@ export default function Example() {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-400 hover:bg-gray-200"
+                    className="font-roboto -mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-400 hover:bg-gray-200"
                   >
                     {item.name}
                   </a>
                 ))}
               </div>
-              <div className="py-6">
+              <div className="flex flex-col gap-y-4 py-6">
                 <button
                   type="button"
-                  className="rounded-md bg-[var(--fair-gold)] px-3.5 py-2.5 text-sm font-semibold font-raleway shadow-sm hover:bg-[var(--fair-gold)]/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--fair-gold)]"
+                  className="font-roboto rounded-md bg-[var(--fair-gold)] px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-[var(--fair-gold)]/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--fair-gold)]"
+                >
+                  <MapPinned
+                    aria-hidden="true"
+                    className="mr-2 inline-block h-5 w-5"
+                  />
+                  Map
+                </button>
+                <button
+                  type="button"
+                  className="font-roboto rounded-md bg-[var(--fair-gold)] px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-[var(--fair-gold)]/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--fair-gold)]"
                 >
                   <Ticket
                     aria-hidden="true"
-                    className="mr-2 h-5 w-5 inline-block mb-0.5"
+                    className="mr-2 mb-0.5 inline-block h-5 w-5"
                   />
                   Tickets
                 </button>

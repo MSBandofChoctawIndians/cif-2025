@@ -25,13 +25,12 @@
     background-color: var(--fair-purple);
   }
   100% {
-    background-color: var(--fair-brown);
+    background-color: var(--fair-blue);
   }
 }
 .bg-animate {
-  animation: colorChange 10s infinite;
+  animation: colorChange 5s infinite;
 }
-
-.font-raleway {
-  font-family: "Raleway", sans-serif;
+.font-roboto {
+  font-family: "Roboto Variable", sans-serif;
 }

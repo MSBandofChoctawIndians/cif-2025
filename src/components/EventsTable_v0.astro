@@ -1,0 +1,175 @@
+---
+import dayjs from "dayjs";
+import isSameOrAfter from "dayjs/plugin/isSameOrAfter";
+
+dayjs.extend(isSameOrAfter);
+import { eventsByDay } from "../data/events"; // Aggregated data import
+
+const today = dayjs();
+const eventDays = [
+  { label: "Day 1", date: "2025-07-01", data: eventsByDay["day01"] },
+  { label: "Day 2", date: "2025-07-02", data: eventsByDay["day02"] },
+  { label: "Day 3", date: "2025-07-03", data: eventsByDay["day03"] },
+  { label: "Day 4", date: "2025-07-04", data: eventsByDay["day04"] },
+  { label: "Day 5", date: "2025-07-05", data: eventsByDay["day05"] },
+  { label: "Day 6", date: "2025-07-08", data: eventsByDay["day06"] },
+  { label: "Day 7", date: "2025-07-09", data: eventsByDay["day07"] },
+  { label: "Day 8", date: "2025-07-10", data: eventsByDay["day08"] },
+  { label: "Day 9", date: "2025-07-11", data: eventsByDay["day09"] },
+  { label: "Day 10", date: "2025-07-12", data: eventsByDay["day10"] },
+];
+
+// Find the first available day (if today is an off day, move forward)
+let defaultIndex = eventDays.findIndex((day) =>
+  dayjs(day.date).isSameOrAfter(today),
+);
+if (defaultIndex === -1) defaultIndex = 0; // Default to Day 1 if no future days exist
+
+// Sort events by time
+/**
+ * @param {Array<{ title: string, time: string, location: string }>} events - Array of event objects
+ */
+const sortedEvents = (
+  events: { title: string; time: string; location: string }[],
+) =>
+  events.slice().sort((a, b) => {
+    const timeA = dayjs(a.time, "hh:mm A").isValid()
+      ? dayjs(a.time, "hh:mm A").unix()
+      : 0;
+    const timeB = dayjs(b.time, "hh:mm A").isValid()
+      ? dayjs(b.time, "hh:mm A").unix()
+      : 0;
+    return timeA - timeB;
+  });
+---
+
+<div class="mt-4 rounded-lg bg-[rgb(33,37,41)] p-4 text-white">
+  <!-- Tabs (Mobile) -->
+  <div class="grid grid-cols-1 sm:hidden">
+    <!-- Use an "onChange" listener to redirect the user to the selected tab URL. -->
+    <select
+      aria-label="Select a tab"
+      id="eventDaySelect"
+      class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-[rgb(33,37,41)] py-2 pr-8 pl-3 text-base text-white outline outline-1 -outline-offset-1 outline-[var(--fair-gold)] focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[var(--fair-gold)]"
+    >
+      {
+        eventDays.map((day, index) => (
+          <option value={index} selected={index === defaultIndex}>
+            {day.label} - {dayjs(day.date).format("MMMM D")}, 2025
+          </option>
+        ))
+      }
+    </select>
+    <svg
+      class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end fill-[var(--fair-gold)]"
+      viewBox="0 0 16 16"
+      fill="currentColor"
+      aria-hidden="true"
+      data-slot="icon"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
+        clip-rule="evenodd"></path>
+    </svg>
+  </div>
+
+  <!-- Tabs (Desktop) -->
+  <div class="hidden sm:block">
+    <div class="border-b border-gray-200">
+      <nav class="-mb-px flex" aria-label="Tabs">
+        {
+          eventDays.map((day, index) => (
+            <button
+              class={`tab font-roboto w-1/4 rounded-t-md border-b-2 border-transparent px-1 py-4 text-center text-sm font-medium ${index === defaultIndex ? "!border-white bg-[var(--fair-gold)] text-black" : "text-gray-400 hover:border-gray-300 hover:text-gray-100"}`}
+              data-index={index}
+            >
+              <p class="text-xl font-bold uppercase lg:text-2xl">
+                {dayjs(day.date).format("ddd")}
+              </p>
+              <p class="text-lg uppercase lg:text-xl">
+                {dayjs(day.date).format("MMMM")}
+              </p>
+              <p class="text-3xl font-bold lg:text-4xl">
+                {dayjs(day.date).format("DD")}
+              </p>
+            </button>
+          ))
+        }
+      </nav>
+    </div>
+  </div>
+
+  <!-- Events Table -->
+  <div class="mt-4">
+    {
+      eventDays.map((day, index) => (
+        <div
+          class={`event-list ${index === defaultIndex ? "block" : "hidden"}`}
+          data-tab-content
+        >
+          {sortedEvents(day.data).map((event) => (
+            <div class="grid grid-cols-3 gap-4 border-b border-gray-200 p-4 text-sm md:text-base">
+              <span class="font-medium">{event.title}</span>
+              <span class="text-gray-200">{event.time}</span>
+              <span class="text-gray-200">{event.location}</span>
+            </div>
+          ))}
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const tabs = document.querySelectorAll(".tab");
+    const eventLists = document.querySelectorAll("[data-tab-content]");
+    const selectBox = document.getElementById("eventDaySelect");
+
+    function showTab(index) {
+      eventLists.forEach((list) => list.classList.add("hidden"));
+      tabs.forEach((tab) => {
+        tab.classList.remove(
+          "text-black",
+          "!border-white",
+          "bg-[var(--fair-gold)]",
+        );
+        tab.classList.add(
+          "text-gray-400",
+          "hover:border-gray-300",
+          "hover:text-gray-100",
+        );
+      });
+
+      if (tabs[index]) {
+        tabs[index].classList.add(
+          "text-black",
+          "!border-white",
+          "bg-[var(--fair-gold)]",
+        );
+        tabs[index].classList.remove(
+          "text-gray-400",
+          "hover:border-gray-300",
+          "hover:text-gray-100",
+        );
+      }
+      eventLists[index].classList.remove("hidden");
+    }
+
+    // Handle dropdown change (mobile)
+    selectBox.addEventListener("change", (event) => {
+      showTab(parseInt(event.target.value));
+    });
+
+    // Handle tabe clicks (desktop)
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => {
+        showTab(index);
+      });
+    });
+
+    // Default active tab
+    showTab({ defaultIndex });
+  });
+</script>

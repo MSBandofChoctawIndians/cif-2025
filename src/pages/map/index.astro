@@ -1,23 +1,17 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import PageBanner from "../../components/PageBanner.tsx";
-import EventsTable from "../../components/EventsTable_v0.astro";
 ---
 
 <Layout title="Events | Choctaw Indian Fair">
   <div class="bg-animate h-full p-4">
     <div class="mx-auto max-w-7xl">
-      <PageBanner
-        desktop="events-banner01"
-        mobile="events-banner02"
-        client:load
-      />
+      <PageBanner desktop="banner01" mobile="banner02" client:load />
       <h2
         class="font-roboto py-8 text-center text-2xl/7 font-bold text-gray-900 sm:truncate sm:text-5xl sm:tracking-tight"
       >
-        2025 Fair Schedule Coming Soon!
+        2025 Map Coming Soon!
       </h2>
-      <EventsTable />
     </div>
   </div>
 </Layout>
