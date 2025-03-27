@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { MapPinned, Menu, Ticket, X } from "lucide-react";
 
@@ -15,6 +15,7 @@ const navigation = [
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const currentPath = useMemo(() => window.location.pathname, []);
 
   return (
     <header className="sticky top-0 z-1 bg-[rgb(33,37,41)]">
@@ -26,7 +27,7 @@ export default function Example() {
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <img
-              alt=""
+              alt="Choctaw Indian Fair"
               src="/navlogo.webp"
               width="192"
               height="48"
@@ -49,12 +50,12 @@ export default function Example() {
             <a
               key={item.name}
               href={item.href}
-              className="disabled font-roboto text-sm/6 font-semibold text-gray-400"
+              className={`font-roboto text-sm/6 font-semibold ${currentPath === item.href ? "text-white" : "text-gray-300"}`}
             >
               {item.name}
             </a>
           ))}
-          <a href="/map" className="text-gray-400">
+          <a href="/map" className="text-gray-300">
             <MapPinned
               aria-hidden="true"
               className="mr-2 inline-block h-7 w-7"

@@ -17,9 +17,11 @@ const { title } = Astro.props;
         The fair takes place on our centuries-old homeland in beautiful Choctaw, Mississippi."
     />
     <link rel="icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#333333" />
   </head>
   <body>
-    <Nav client:load />
+    <Nav client:only />
     <slot />
   </body>
 </html>
