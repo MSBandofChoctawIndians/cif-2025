@@ -5,14 +5,19 @@ import EventsTable from "../../components/EventsTable.astro";
 ---
 
 <Layout title="Events | Choctaw Indian Fair">
-  <div class="bg-animate p-4">
+  <div class="bg-animate p-4 h-screen">
     <div class="max-w-7xl mx-auto">
       <PageBanner
         desktop="events-banner01"
         mobile="events-banner02"
         client:load
       />
-      <EventsTable />
+      <!-- <EventsTable /> -->
+      <h2
+        class="text-2xl/7 font-bold text-gray-900 sm:truncate sm:text-5xl sm:tracking-tight text-center pt-8"
+      >
+        2025 Fair Schedule Coming Soon!
+        </h2>
     </div>
   </div>
 </Layout>

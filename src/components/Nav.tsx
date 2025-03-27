@@ -5,7 +5,7 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { MapPinned, Menu, Ticket, X } from "lucide-react";
 
 const navigation = [
-  { name: "Events", href: "/events" },
+  { name: "Events", href: "#" },
   { name: "Culture", href: "#" },
   { name: "Family Fun", href: "#" },
   { name: "Stickball", href: "#" },
