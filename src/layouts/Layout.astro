@@ -19,6 +19,42 @@ const { title } = Astro.props;
     <link rel="icon" href="/favicon.ico" />
     <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#333333" />
+    <meta property="og:title" content={title} />
+    <meta
+      property="og:description"
+      content="We invite you to join us for the Choctaw Indian Fair.
+        The fair takes place on our centuries-old homeland in beautiful Choctaw, Mississippi."
+    />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:url" content="https://choctawindianfair.com" />
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://choctawindianfair.com" />
+    <meta name="keywords" content="Choctaw, Indian, Fair, Mississippi, Events" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Choctaw Indian Fair",
+        "startDate": "2025-07-08",
+        "endDate": "2025-07-12",
+        "location": {
+          "@type": "Place",
+          "name": "Fairgrounds",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "101 Industrial Road",
+            "addressLocality": "Choctaw",
+            "addressRegion": "MS",
+            "postalCode": "39350",
+            "addressCountry": "US"
+          }
+        },
+        "description": "We invite you to join us for the Choctaw Indian Fair.
+          The fair takes place on our centuries-old homeland in beautiful Choctaw, Mississippi.",
+        "image": "https://choctawindianfair.com/og-image.png",
+        "url": "https://choctawindianfair.com",
+      }
+    </script>
   </head>
   <body>
     <Nav client:only />

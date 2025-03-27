@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useMemo } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { MapPinned, Menu, Ticket, X } from "lucide-react";
 
@@ -25,7 +25,7 @@ export default function Example() {
       >
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
+            <span className="sr-only">Choctaw Indian Fair</span>
             <img
               alt="Choctaw Indian Fair"
               src="/navlogo.webp"
@@ -84,19 +84,19 @@ export default function Example() {
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-[rgb(33,37,41)] px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
+              <span className="sr-only">Choctaw Indian Fair</span>
               <img
-                alt=""
+                alt="Choctaw Indian Fair"
                 src="/navlogo.webp"
-                width="128"
-                height="32"
-                className="h-8 w-auto"
+                width="192"
+                height="48"
+                className="h-12 w-auto"
               />
             </a>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
+              className="-m-2.5 mr-1 rounded-md p-2.5 text-gray-300"
             >
               <span className="sr-only">Close menu</span>
               <X aria-hidden="true" className="size-6" />
@@ -109,7 +109,7 @@ export default function Example() {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="font-roboto -mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-400 hover:bg-gray-200"
+                    className="font-roboto -mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-200 hover:bg-gray-200"
                   >
                     {item.name}
                   </a>
