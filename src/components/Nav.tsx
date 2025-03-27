@@ -5,7 +5,7 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { MapPinned, Menu, Ticket, X } from "lucide-react";
 
 const navigation = [
-  { name: "Events", href: "#" },
+  { name: "Events", href: "/events" },
   { name: "Culture", href: "#" },
   { name: "Family Fun", href: "#" },
   { name: "Stickball", href: "#" },
@@ -23,7 +23,7 @@ export default function Example() {
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <img alt="" src="/navlogo.webp" width="192" height="48" className="h-12 w-auto" />
           </a>
@@ -48,7 +48,7 @@ export default function Example() {
               {item.name}
             </a>
             ))}
-            <a href="#" class="text-gray-400">
+            <a href="#" className="text-gray-400">
               <MapPinned aria-hidden="true" className="mr-2 h-7 w-7 inline-block" />
             </a>
           </div>
