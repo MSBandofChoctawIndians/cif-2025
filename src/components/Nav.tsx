@@ -5,12 +5,12 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { MapPinned, Menu, Ticket, X } from "lucide-react";
 
 const navigation = [
-  { name: "Events", href: "/events" },
-  { name: "Culture", href: "/culture" },
-  { name: "Family Fun", href: "/family" },
-  { name: "Stickball", href: "/stickball" },
-  { name: "Pageant", href: "/pageant" },
-  { name: "Competitions", href: "/competitions" },
+  { name: "Events", href: "/events/" },
+  { name: "Culture", href: "/culture/" },
+  { name: "Family Fun", href: "/family/" },
+  { name: "Stickball", href: "/stickball/" },
+  { name: "Pageant", href: "/pageant/" },
+  { name: "Competitions", href: "/competitions/" },
 ];
 
 export default function Example() {
