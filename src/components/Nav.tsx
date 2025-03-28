@@ -29,8 +29,8 @@ export default function Example() {
             <img
               alt="Choctaw Indian Fair Logo"
               src="/navlogo.webp"
-              width="45"
-              height="48"
+              width="67"
+              height="72"
               className="h-12 w-auto"
             />
           </a>
@@ -88,8 +88,8 @@ export default function Example() {
               <img
                 alt="Choctaw Indian Fair Logo"
                 src="/navlogo.webp"
-                width="45"
-                height="48"
+                width="67"
+                height="72"
                 className="h-12 w-auto"
               />
             </a>
