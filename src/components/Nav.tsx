@@ -50,7 +50,7 @@ export default function Example() {
             <a
               key={item.name}
               href={item.href}
-              className={`font-roboto text-sm/6 font-semibold ${currentPath === item.href ? "text-white" : "text-gray-300"}`}
+              className={`text-sm/6 font-semibold ${currentPath === item.href ? "text-white" : "text-gray-300"}`}
             >
               {item.name}
             </a>
@@ -65,7 +65,7 @@ export default function Example() {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <button
             type="button"
-            className="font-roboto rounded-md bg-[var(--fair-gold)] px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-[var(--fair-gold)]/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--fair-gold)]"
+            className="rounded-md bg-[var(--fair-gold)] px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-[var(--fair-gold)]/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--fair-gold)]"
           >
             <Ticket
               aria-hidden="true"
@@ -109,7 +109,7 @@ export default function Example() {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="font-roboto -mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-200 hover:bg-[var(--fair-gold)]/30"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-200 hover:bg-[var(--fair-gold)]/30"
                   >
                     {item.name}
                   </a>
@@ -118,7 +118,7 @@ export default function Example() {
               <div className="flex flex-col gap-y-4 py-6">
                 <button
                   type="button"
-                  className="font-roboto rounded-md bg-[var(--fair-gold)] px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-[var(--fair-gold)]/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--fair-gold)]"
+                  className="rounded-md bg-[var(--fair-gold)] px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-[var(--fair-gold)]/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--fair-gold)]"
                 >
                   <MapPinned
                     aria-hidden="true"
@@ -128,7 +128,7 @@ export default function Example() {
                 </button>
                 <button
                   type="button"
-                  className="font-roboto rounded-md bg-[var(--fair-gold)] px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-[var(--fair-gold)]/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--fair-gold)]"
+                  className="rounded-md bg-[var(--fair-gold)] px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-[var(--fair-gold)]/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--fair-gold)]"
                 >
                   <Ticket
                     aria-hidden="true"

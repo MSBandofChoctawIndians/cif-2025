@@ -1,7 +1,7 @@
 ---
-import "@fontsource-variable/roboto";
 import "../styles/global.css";
 import Nav from "../components/Nav.tsx";
+import Banner from "../components/Banner.tsx";
 const { title } = Astro.props;
 ---
 
@@ -56,7 +56,8 @@ const { title } = Astro.props;
       }
     </script>
   </head>
-  <body>
+  <body class="overflow-x-hidden antialiased">
+    <Banner client:load />
     <Nav client:only />
     <slot />
   </body>
