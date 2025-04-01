@@ -14,7 +14,7 @@ export default function PageBanner({ desktop, mobile, alt }: PageBannerProps) {
       transition={{ duration: 1 }}
     >
       <img
-        src={`/${desktop}.webp`}
+        src={`/banners/${desktop}.webp`}
         width={1920}
         height={1080}
         alt={alt}
