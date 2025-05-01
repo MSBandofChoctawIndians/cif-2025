@@ -18,12 +18,12 @@ import {
 } from "@/components/ui/navigation-menu";
 
 const navItems = [
-  { title: "Events", href: "/astro-app/events" },
-  { title: "Culture", href: "/astro-app/culture" },
-  { title: "Family Fun", href: "/astro-app/family" },
-  { title: "Stickball", href: "/astro-app/stickball" },
-  { title: "Pageant", href: "/astro-app/pageant" },
-  { title: "Competitions", href: "/astro-app/competitions" },
+  { title: "Events", href: "/events" },
+  { title: "Culture", href: "/culture" },
+  { title: "Family Fun", href: "/family" },
+  { title: "Stickball", href: "/stickball" },
+  { title: "Pageant", href: "/pageant" },
+  { title: "Competitions", href: "/competitions" },
 ];
 
 export function Navbar() {
@@ -33,15 +33,8 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-black bg-gradient-to-r from-stone-900 via-stone-700 to-stone-950 text-white">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-2">
-          <a
-            href="/astro-app/"
-            className="flex items-center gap-4 text-xl font-bold"
-          >
-            <img
-              src="/astro-app/navlogo.webp"
-              alt="Logo"
-              className="h-12 w-12"
-            />
+          <a href="/" className="flex items-center gap-4 text-xl font-bold">
+            <img src="/navlogo.webp" alt="Logo" className="h-12 w-12" />
             <span className="hidden lg:flex">Choctaw Indian Fair</span>
           </a>
         </div>
@@ -59,7 +52,7 @@ export function Navbar() {
               <SheetHeader>
                 <SheetTitle>
                   <img
-                    src="/astro-app/navlogo.webp"
+                    src="/navlogo.webp"
                     alt="Logo"
                     className="mb-2 h-12 w-12"
                   />

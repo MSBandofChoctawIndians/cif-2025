@@ -3,28 +3,28 @@ import { Calendar } from "lucide-react";
 ---
 
 <footer
-  class="w-full border-t py-6 border-black bg-gradient-to-r from-stone-900 via-stone-700 to-stone-950 text-white"
+  class="w-full border-t border-black bg-gradient-to-r from-stone-900 via-stone-700 to-stone-950 py-6 text-white"
 >
   <div
-    class="container grid grid-cols-1 md:grid-cols-3 items-center gap-4 mx-auto px-4 md:px-6"
+    class="container mx-auto grid grid-cols-1 items-center gap-4 px-4 md:grid-cols-3 md:px-6"
   >
     <p
-      class="text-center text-sm leading-loose text-gray-300 md:text-left md:col-start-1"
+      class="text-center text-sm leading-loose text-gray-300 md:col-start-1 md:text-left"
     >
       © {new Date().getFullYear()} Choctaw Indian Fair. All rights reserved.
     </p>
     <img
-      src="/astro-app/navlogo.webp"
+      src="/navlogo.webp"
       alt="Logo"
-      class="h-24 w-24 md:col-start-2 mx-auto"
+      class="mx-auto h-24 w-24 md:col-start-2"
     />
     <p
-      class="text-center text-sm leading-loose text-gray-300 md:text-right md:col-start-3"
+      class="text-center text-sm leading-loose text-gray-300 md:col-start-3 md:text-right"
     >
       This event is hosted by the {" "}
       <a
         href="#"
-        class="text-amber-300 hover:underline underline-offset-4 text-nowrap"
+        class="text-nowrap text-amber-300 underline-offset-4 hover:underline"
       >
         Mississippi Band of Choctaw Indians
       </a>
