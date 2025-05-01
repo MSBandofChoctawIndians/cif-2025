@@ -1,0 +1,26 @@
+---
+import "../styles/global.css";
+import { GoogleAnalytics } from "astro-google-analytics";
+import { Navbar } from "@/components/Navbar";
+import Footer from "@/components/Footer.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/astro-app/navlogo.webp" />
+    <title>Choctaw Indian Fair</title>
+    <GoogleAnalytics id="G-GHD6P2KR7E" />
+    <script
+      async
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://tag.simpli.fi/sifitag/fec11bc9-9b2e-45c6-8452-ca99d2b4eae2"
+    ></script>
+  </head>
+  <body class="bg-gradient-to-r from-stone-900 via-stone-700 to-stone-950">
+    <Navbar client:load />
+    <slot />
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,18 @@
+---
+import Layout from "@/layouts/main.astro";
+import Hero from "@/components/Hero.astro";
+import About from "@/components/About.astro";
+import NightlyEntertainment from "@/components/NightlyEntertainment.astro";
+import TicketPrices from "@/components/TicketPrices.astro";
+import Greeting from "@/components/Greeting.astro";
+---
+
+<Layout title="Home">
+  <main class="flex-1">
+    <Hero />
+    <Greeting />
+    <About />
+    <NightlyEntertainment />
+    <TicketPrices />
+  </main>
+</Layout>

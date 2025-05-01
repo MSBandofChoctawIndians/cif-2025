@@ -1,0 +1,201 @@
+---
+import Layout from "@/layouts/main.astro";
+import { Card } from "@/components/ui/card";
+---
+
+<Layout title="Culture">
+  <main class="flex-1 bg-gradient-to-r from-blue-800 via-blue-600 to-blue-950">
+    <!-- Arts & Crafts Section -->
+    <section id="arts-crafts" class="py-12 md:py-24">
+      <div class="container mx-auto px-4">
+        <h2 class="mb-6 text-center text-3xl font-bold text-white md:text-5xl">
+          Arts & Crafts
+        </h2>
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <Card
+            className="overflow-hidden border-none bg-black/70 p-0 text-white"
+          >
+            <img
+              src="/astro-app/culture/basket.webp"
+              alt="Basket Weaving"
+              class="aspect-square w-full object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
+                Basketry
+              </h3>
+              <p class="text-muted">
+                When a present day basket maker seeks out, cuts and prepares her
+                cane, she uses the same methods as generations of Choctaw women
+                before her. For centuries, Choctaw basket makers have created
+                works of art from the swamp cane that flourishes along
+                Mississippi creek banks.
+              </p>
+            </div>
+          </Card>
+          <Card
+            className="overflow-hidden border-none bg-black/70 p-0 text-white"
+          >
+            <img
+              src="/astro-app/culture/beadwork.webp"
+              alt="Beadwork"
+              class="aspect-square w-full object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
+                Beadwork
+              </h3>
+              <p class="text-muted">
+                Men and women alike often wear decorative beadwork with
+                traditional clothing. Designs and colors are the artist's
+                preferences. A beadwork set for women often consists of a belt,
+                medallion, collar necklaces, earrings, ribbon lapel pins, a
+                handkerchief lapel pin, and a round comb.
+              </p>
+            </div>
+          </Card>
+          <Card
+            className="overflow-hidden border-none bg-black/70 p-0 text-white"
+          >
+            <img
+              src="/astro-app/culture/clothing.webp"
+              alt="Clothing"
+              class="aspect-square w-full object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
+                Clothing
+              </h3>
+              <p class="text-muted">
+                Most Choctaws today wear Choctaw dresses and shirts mainly for
+                special occassions. They are made from cotton fabric, in solid
+                colors with a contrasting trim. Occasionally, women choose silk
+                or velvet fabric for traditional dresses, usually for events
+                such as the Choctaw Indian Princess Pageant.
+              </p>
+            </div>
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    <!-- Danceground Schedule Section -->
+    <section id="dancegrounds" class="py-12 md:py-24">
+      <div class="container mx-auto px-4">
+        <h2 class="mb-6 text-center text-3xl font-bold text-white md:text-5xl">
+          Dancegrounds
+        </h2>
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <Card
+            className="overflow-hidden border-none bg-black/70 p-0 text-white"
+          >
+            <img
+              src="/astro-app/culture/war.webp"
+              alt="War Dance"
+              class="aspect-square w-full object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
+                War Dances
+              </h3>
+              <p class="text-muted">
+                War dances were used by early Choctaws to prepare for battle.
+                Choctaw war dances are unusual in that the women join the men in
+                dancing. In most other tribes, only men take part in the war
+                dance.
+              </p>
+            </div>
+          </Card>
+          <Card
+            className="overflow-hidden border-none bg-black/70 p-0 text-white"
+          >
+            <img
+              src="/astro-app/culture/social.webp"
+              alt="Beadwork"
+              class="aspect-square w-full object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
+                Social Dances
+              </h3>
+              <p class="text-muted">
+                Social dances mark important aspects of life such as friendship,
+                courtship and marriage. They include stealing partners, the
+                friendship dance, and the wedding dance, among others.
+              </p>
+            </div>
+          </Card>
+          <Card
+            className="overflow-hidden border-none bg-black/70 p-0 text-white"
+          >
+            <img
+              src="/astro-app/culture/animal.webp"
+              alt="Clothing"
+              class="aspect-square w-full object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
+                Animal
+              </h3>
+              <p class="text-muted">
+                Animal dances often mimic the behavior of their namesakes, with
+                dancers darting in and out of the dance circle like playful
+                raccoons in the raccoon dance or forming a line that coils and
+                uncoils in the snake dance.
+              </p>
+            </div>
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    <!-- Traditional Food Section -->
+    <section id="food" class="py-12 md:py-24">
+      <div class="container mx-auto px-4">
+        <h2 class="mb-6 text-center text-3xl font-bold text-white md:text-5xl">
+          Traditional Food
+        </h2>
+        <div class="grid gap-8 md:grid-cols-2">
+          <Card
+            className="overflow-hidden border-none bg-black/70 p-0 text-white"
+          >
+            <img
+              src="/astro-app/culture/hominy.webp"
+              alt="War Dance"
+              class="aspect-square w-full object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
+                Hominy
+              </h3>
+              <p class="text-muted">
+                Hominy is made from corn that is dried in the husk. The
+                traditional cooking process takes several hours, with the hominy
+                simmering in a large iron pot over an open fire.
+              </p>
+            </div>
+          </Card>
+          <Card
+            className="overflow-hidden border-none bg-black/70 p-0 text-white"
+          >
+            <img
+              src="/astro-app/culture/frybread.webp"
+              alt="Beadwork"
+              class="aspect-square w-full object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
+                Fry Bread
+              </h3>
+              <p class="text-muted">
+                Fry bread is a flat dough pan fried or deep fried in oil,
+                shortening, or lard. Traditional fry bread can be eaten alone or
+                eaten as an Indian Taco with beef and other toppings.
+              </p>
+            </div>
+          </Card>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

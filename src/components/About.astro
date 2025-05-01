@@ -1,0 +1,67 @@
+---
+import { MapPin, Calendar, Hotel } from "lucide-react";
+---
+
+<section
+  id="about"
+  class="w-full bg-gradient-to-b from-blue-700 to-blue-950 py-12 text-white md:py-24"
+>
+  <div class="container mx-auto px-4 md:px-6">
+    <div
+      class="flex flex-col items-center justify-center space-y-4 text-center"
+    >
+      <div class="space-y-2">
+        <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+          About The Fair
+        </h2>
+        <p
+          class="text-muted max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+        >
+          Here's some information about the fair, including location, dates, and
+          midway details.
+        </p>
+      </div>
+    </div>
+    <div class="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3">
+      <div
+        class="flex h-full flex-col items-center space-y-2 rounded-lg bg-black/40 p-6 text-center"
+      >
+        <MapPin className="h-12 w-12" />
+        <h3 class="text-xl font-bold">Location</h3>
+        <p class="text-muted text-sm">
+          101 Industrial Rd
+          <br />
+          Choctaw, MS 39350
+        </p>
+      </div>
+      <div
+        class="flex h-full flex-col items-center space-y-2 rounded-lg bg-black/40 p-6 text-center"
+      >
+        <Calendar className="h-12 w-12" />
+        <h3 class="text-xl font-bold">Dates</h3>
+        <p class="text-muted text-sm">
+          Pre-Fair Events: Schedule Pending
+          <br />
+          Fair Events: June 8-12, 2025
+        </p>
+      </div>
+      <div
+        class="flex h-full flex-col items-center space-y-2 rounded-lg bg-black/40 p-6 text-center"
+      >
+        <Hotel className="h-12 w-12" />
+        <h3 class="text-xl font-bold">Lodging</h3>
+        <p class="text-muted text-sm">
+          Book your stay and take our free shuttle to the fairgrounds from
+          <a
+            href="https://www.pearlriverresort.com/our-properties"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="underline hover:text-white"
+          >
+            Pearl River Resort
+          </a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

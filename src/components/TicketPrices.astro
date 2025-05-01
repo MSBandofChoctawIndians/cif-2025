@@ -1,0 +1,136 @@
+---
+import { Button } from "./ui/button";
+import { Card } from "./ui/card";
+import { Users } from "lucide-react";
+
+// Ticket pricing data
+const ticketTiers = [
+  {
+    name: "Child",
+    ageRange: "Ages 5 and Under",
+  },
+  {
+    name: "Student",
+    ageRange: "Ages 6-17",
+    dayPass: 10.0,
+    seasonPass: 20.0,
+    featured: true,
+  },
+  {
+    name: "Adult",
+    ageRange: "Ages 18 and Up",
+    dayPass: 15.0,
+    seasonPass: 30.0,
+  },
+];
+---
+
+<section
+  id="tickets"
+  class="bg-radial w-full from-amber-400 to-amber-700 py-12 md:py-24"
+>
+  <div class="container mx-auto px-4 md:px-6">
+    <div
+      class="animate-on-scroll flex flex-col items-center justify-center space-y-4 text-center"
+    >
+      <div class="space-y-2">
+        <h2
+          class="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl"
+        >
+          Ticket Pricing
+        </h2>
+        <p
+          class="text-muted max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+        >
+          Choose the perfect ticket option for you and your family
+        </p>
+      </div>
+    </div>
+
+    <div class="staggered-list mt-12 grid grid-cols-1 gap-6 lg:grid-cols-3">
+      {
+        ticketTiers.map((tier) => (
+          <div
+            class={`relative ${tier.featured ? "z-10 md:-mb-4 md:-mt-4" : ""} stagger-item`}
+          >
+            <Card
+              className={`flex h-full flex-col overflow-hidden rounded-lg border-none bg-black/70`}
+            >
+              <div class={`border-b border-stone-300 p-6 text-center`}>
+                <h3 class={`text-2xl font-bold text-white lg:text-3xl`}>
+                  {tier.name}
+                </h3>
+                <p class="mt-1 text-sm text-stone-400 lg:text-lg">
+                  {tier.ageRange}
+                </p>
+              </div>
+
+              {tier.dayPass != null ? (
+                <div class="flex-grow p-6">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <p class="text-sm font-medium text-stone-300">Day Pass</p>
+                      <p class="text-3xl font-bold text-white">
+                        ${tier.dayPass.toFixed(2)}
+                      </p>
+                    </div>
+                    <div>
+                      <p class="text-sm font-medium text-stone-300">
+                        Season Pass
+                      </p>
+                      <p class="text-3xl font-bold text-white">
+                        ${tier.seasonPass.toFixed(2)}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div class="flex-grow p-6">
+                  <div class="flex items-center justify-center border-stone-500">
+                    <Users className="h-12 w-12 text-stone-500" />
+                    <p class="ml-2 text-sm font-medium text-stone-300">
+                      Free for ages 5 and under
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              <div class="mt-auto p-6 pt-0">
+                <div class="grid gap-3">
+                  <Button variant="disabled" className="w-full">
+                    Ticket Presale Starts June 2025
+                  </Button>
+                </div>
+                <p class="mt-4 text-center text-xs text-stone-400">
+                  Prices shown are in USD. Additional fees may apply.
+                </p>
+              </div>
+            </Card>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  const confettiWrapper = document.querySelector(".confetti-wrapper");
+  // Generate confetti only if the wrapper exists
+  if (confettiWrapper) {
+    for (let i = 0; i < 50; i++) {
+      const confetti = document.createElement("div");
+      confetti.classList.add("confetti-piece");
+      confetti.style.left = `${Math.random() * 100}%`;
+      confetti.style.setProperty(
+        "--fall-duration",
+        `${Math.random() * 3 + 3}s`
+      );
+      confetti.style.setProperty("--confetti-color", getRandomColor());
+      confettiWrapper.appendChild(confetti);
+    }
+  }
+  function getRandomColor() {
+    const colors = ["#ff6347", "#ffa500", "#32cd32", "#1e90ff", "#ff69b4"];
+    return colors[Math.floor(Math.random() * colors.length)];
+  }
+</script>

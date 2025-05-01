@@ -1,0 +1,82 @@
+---
+import { Button } from "./ui/button";
+import { ChevronRight } from "lucide-react";
+---
+
+<!-- <section
+  id="tribal-leadership"
+  class="w-full py-12 md:py-24 bg-gradient-to-r from-purple-800 via-purple-500 to-indigo-950"
+> -->
+<section id="tribal-leadership" class="bg-weave-pattern w-full py-12 md:py-24">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="grid items-center gap-8 lg:grid-cols-2">
+      <!-- Square image of Tribal Chief and Princess together -->
+      <div class="animate-on-scroll flex justify-center">
+        <div class="relative">
+          <div
+            class="aspect-square w-full max-w-[600px] overflow-hidden rounded-lg border-4 border-white shadow-lg"
+          >
+            <img
+              src="/astro-app/chiefprincess.webp"
+              alt="Tribal Chief and Princess"
+              class="h-full w-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Welcome message and invitation -->
+      <div
+        class="animate-on-scroll space-y-6 rounded-lg bg-black/50 p-6 shadow-lg backdrop-blur-lg"
+      >
+        <h2
+          class="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl"
+        >
+          Halito!
+        </h2>
+
+        <p class="text-muted">
+          Greetings from the Choctaw Indian Reservation. We invite you to join
+          us for our annual Choctaw Indian Fair. The fair takes place on our
+          centuries-old homeland in beautiful Choctaw, Mississippi. We gather
+          each July to celebrate our heritage and share our beautiful and
+          vibrant culture with our friends and neighbors. This year’s fair theme
+          is:
+        </p>
+
+        <p class="mt-2 text-xl font-bold text-white sm:text-3xl">
+          The Choctaw Spirit Lives On
+        </p>
+
+        <p class="text-muted">
+          Fairgoers will experience the magnificent journey of our people
+          through historical and cultural displays, social dancing, tribal arts
+          & crafts, Choctaw stickball – the granddaddy of all field sports – as
+          well as the Choctaw Indian Princess Pageant and traditional Choctaw
+          food. The fair also offers carnival rides and games for the young and
+          old alike, Shawi’s Discovery Zone and chart-topping musical acts each
+          night. There’s something for everyone at the Choctaw Indian Fair –
+          we’ll see you soon!
+        </p>
+
+        <h2
+          class="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl"
+        >
+          Yakoki!
+        </h2>
+
+        <!-- <div class="hidden flex-wrap items-center gap-2 lg:flex">
+          <Button className="btn-hover mt-4">
+            Princess Pageant <ChevronRight className="ml-2 h-4 w-4" />
+          </Button>
+          <Button className="btn-hover mt-4">
+            Cultural Events <ChevronRight className="ml-2 h-4 w-4" />
+          </Button>
+          <Button className="btn-hover mt-4">
+            Stickball Schedule <ChevronRight className="ml-2 h-4 w-4" />
+          </Button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</section>

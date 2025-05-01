@@ -1,0 +1,43 @@
+---
+import { Button } from "./ui/button";
+---
+
+<section
+  class="via-fair-red w-full bg-gradient-to-br from-red-700 to-red-800 py-12 text-white md:py-24 lg:py-32"
+>
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="grid items-center gap-6 lg:grid-cols-2 lg:gap-12">
+      <div class="space-y-4">
+        <div
+          class="bg-primary text-primary-foreground inline-block rounded-lg px-3 py-1 text-sm"
+        >
+          July 8-12, 2025
+        </div>
+        <h1 class="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
+          The 75th Choctaw Indian Fair
+        </h1>
+        <p class="max-w-[600px] text-gray-200 md:text-xl">
+          We gather each July to celebrate our heritage and share our beautiful
+          and vibrant culture with our friends and neighbors.
+        </p>
+        <div class="flex flex-col gap-2 min-[400px]:flex-row">
+          <Button size="lg" variant="disabled">
+            <!-- <a href="#register">Buy Tickets</a> -->
+            Buy Tickets
+          </Button>
+          <Button size="lg" variant="disabled">
+            <!-- <a href="#schedule">View Schedule</a> -->
+            View Schedule
+          </Button>
+        </div>
+      </div>
+      <div class="mx-auto aspect-video w-full overflow-hidden rounded-xl">
+        <video
+          src="/astro-app/fair_vid.mp4"
+          poster="/astro-app/fair_vid.webp"
+          class="h-full w-full object-cover"
+          controls></video>
+      </div>
+    </div>
+  </div>
+</section>
