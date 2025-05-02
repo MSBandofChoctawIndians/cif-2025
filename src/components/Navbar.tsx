@@ -20,10 +20,10 @@ import {
 const navItems = [
   { title: "Events", href: "/events" },
   { title: "Culture", href: "/culture" },
-  { title: "Family Fun", href: "/family" },
-  { title: "Stickball", href: "/stickball" },
-  { title: "Pageant", href: "/pageant" },
-  { title: "Competitions", href: "/competitions" },
+  { title: "Family Fun", href: "/family", disabled: true },
+  { title: "Stickball", href: "/stickball", disabled: true },
+  { title: "Pageant", href: "/pageant", disabled: true },
+  { title: "Competitions", href: "/competitions", disabled: true },
 ];
 
 export function Navbar() {
@@ -92,7 +92,13 @@ export function Navbar() {
                   {/* <a href={item.href}>
                     <Button variant={"ghost"}>{item.title}</Button>
                   </a> */}
-                  <Button variant="disabled">{item.title}</Button>
+                  {item.disabled ? (
+                    <Button variant="disabled">{item.title}</Button>
+                  ) : (
+                    <a href={item.href}>
+                      <Button variant="ghost">{item.title}</Button>
+                    </a>
+                  )}
                 </NavigationMenuItem>
               ))}
               <NavigationMenuItem>
