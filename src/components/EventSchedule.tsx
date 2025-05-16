@@ -29,25 +29,33 @@ import { day08 } from "@/data/schedule/day08";
 import { day09 } from "@/data/schedule/day09";
 import { day10 } from "@/data/schedule/day10";
 
+// Define event shape with optional category
+interface Event {
+  name: string;
+  time: string;
+  location: string;
+  category?: string;
+}
+
 // Sample event data - replace with your actual data
 const eventDates = [
-  { id: "day01", label: "Day 1", date: "2025-04-28" },
-  { id: "day02", label: "Day 2", date: "2025-04-29" },
-  { id: "day03", label: "Day 3", date: "2025-04-30" },
-  { id: "day04", label: "Day 4", date: "2025-05-01" },
-  { id: "day05", label: "Day 5", date: "2025-05-02" },
-  { id: "day06", label: "Day 6", date: "2025-05-05" }, // Skip weekend
-  { id: "day07", label: "Day 7", date: "2025-05-06" },
-  { id: "day08", label: "Day 8", date: "2025-05-07" },
-  { id: "day09", label: "Day 9", date: "2025-05-08" },
-  { id: "day10", label: "Day 10", date: "2025-05-09" },
+  { id: "day01", label: "Day 1", date: "2025-07-01" },
+  { id: "day02", label: "Day 2", date: "2025-07-02" },
+  { id: "day03", label: "Day 3", date: "2025-07-03" },
+  { id: "day04", label: "Day 4", date: "2025-07-05" },
+  { id: "day05", label: "Day 5", date: "2025-07-07" },
+  { id: "day06", label: "Day 6", date: "2025-07-08" },
+  { id: "day07", label: "Day 7", date: "2025-07-09" },
+  { id: "day08", label: "Day 8", date: "2025-07-10" },
+  { id: "day09", label: "Day 9", date: "2025-07-11" },
+  { id: "day10", label: "Day 10", date: "2025-07-12" },
 ];
 
 // Define the fair end date
 const fairEndDate = "2025-05-10";
 
 // Add a mapping from day IDs to imported event arrays
-const eventsByDay = {
+const eventsByDay: Record<string, Event[]> = {
   day01,
   day02,
   day03,
@@ -131,7 +139,7 @@ export default function EventSchedulePage() {
   const allCategories = [
     ...new Set(
       Object.values(eventsByDay).flatMap((events) =>
-        events.map((event) => event.category),
+        events.flatMap((event) => (event.category ? [event.category] : [])),
       ),
     ),
   ];
@@ -141,7 +149,8 @@ export default function EventSchedulePage() {
     ? (eventsByDay[selectedDay as keyof typeof eventsByDay] || []).filter(
         (event) =>
           selectedCategories.length === 0 ||
-          selectedCategories.includes(event.category),
+          (event.category !== undefined &&
+            selectedCategories.includes(event.category)),
       )
     : [];
 
@@ -183,22 +192,18 @@ export default function EventSchedulePage() {
         </div>
       ) : (
         // Desktop view - tab selector
-        <Tabs
-          value={selectedDay}
-          onValueChange={handleDayChange}
-          className="mb-18"
-        >
-          <TabsList className="grid w-full grid-cols-10">
+        <Tabs value={selectedDay} onValueChange={handleDayChange}>
+          <TabsList className="grid h-full w-full grid-cols-10 bg-black/70">
             {eventDates.map((day) => (
               <TabsTrigger key={day.id} value={day.id} className="text-center">
                 <div className="flex flex-col items-center">
-                  <span className="text-2xl font-medium">
+                  <span className="text-xl font-medium text-white">
                     {format(parse(day.date, "yyyy-MM-dd", new Date()), "EEE")}
                   </span>
-                  <span className="text-muted-foreground text-xs">
+                  <span className="text-muted text-lg">
                     {format(parse(day.date, "yyyy-MM-dd", new Date()), "MMM")}
                   </span>
-                  <span className="text-muted-foreground text-xs">
+                  <span className="text-muted text-3xl">
                     {format(parse(day.date, "yyyy-MM-dd", new Date()), "d")}
                   </span>
                 </div>
@@ -283,7 +288,7 @@ export default function EventSchedulePage() {
             <div className="grid gap-4">
               {currentEvents.map((event) => (
                 <div
-                  key={event.id}
+                  key={event.name + event.time}
                   className="hover:bg-muted/50 flex flex-col justify-between rounded-lg border p-4 transition-colors sm:flex-row"
                 >
                   <div className="mb-2 flex flex-col sm:mb-0">
@@ -293,28 +298,31 @@ export default function EventSchedulePage() {
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <Badge
-                      variant="outline"
-                      className={cn(
-                        "capitalize",
-                        event.category === "networking" &&
-                          "border-blue-200 bg-blue-50 text-blue-700",
-                        event.category === "workshop" &&
-                          "border-green-200 bg-green-50 text-green-700",
-                        event.category === "talk" &&
-                          "border-purple-200 bg-purple-50 text-purple-700",
-                        event.category === "panel" &&
-                          "border-amber-200 bg-amber-50 text-amber-700",
-                        event.category === "ceremony" &&
-                          "border-red-200 bg-red-50 text-red-700",
-                        event.category === "competition" &&
-                          "border-orange-200 bg-orange-50 text-orange-700",
-                        event.category === "showcase" &&
-                          "border-indigo-200 bg-indigo-50 text-indigo-700",
-                      )}
-                    >
-                      {event.category}
-                    </Badge>
+                    {event.category && (
+                      <Badge
+                        variant="outline"
+                        className={cn(
+                          "capitalize",
+                          event.category === "networking" &&
+                            "border-blue-200 bg-blue-50 text-blue-700",
+                          event.category === "workshop" &&
+                            "border-green-200 bg-green-50 text-green-700",
+                          event.category === "talk" &&
+                            "border-purple-200 bg-purple-50 text-purple-700",
+                          event.category === "panel" &&
+                            "border-amber-200 bg-amber-50 text-amber-700",
+                          event.category === "ceremony" &&
+                            "border-red-200 bg-red-50 text-red-700",
+                          event.category === "competition" &&
+                            "border-orange-200 bg-orange-50 text-orange-700",
+                          event.category === "showcase" &&
+                            "border-indigo-200 bg-indigo-50 text-indigo-700",
+                        )}
+                      >
+                        {event.category}
+                      </Badge>
+                    )}
+
                     <div className="flex items-center text-sm">
                       <Clock className="text-muted-foreground mr-1 h-4 w-4" />
                       {event.time}

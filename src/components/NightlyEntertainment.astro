@@ -29,7 +29,7 @@ import { entertainment } from "../data/NightlyEntertainment.js";
       >
         {
           entertainment.map((i) => (
-            <div class="flex flex-col items-center space-y-4 rounded-lg bg-black/50 p-4 backdrop-blur-lg">
+            <div class="flex flex-col items-center space-y-4 rounded-lg border-2 border-white/50 bg-black/50 p-4">
               <div class="relative h-48 w-48 overflow-hidden rounded-full">
                 <img
                   src={`/entertainment/${i.image}.webp`}

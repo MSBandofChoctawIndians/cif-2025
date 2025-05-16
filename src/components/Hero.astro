@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
   class="via-fair-red w-full bg-gradient-to-br from-red-700 to-red-800 py-12 text-white md:py-24 lg:py-32"
 >
   <div class="container mx-auto px-4 md:px-6">
-    <div class="grid items-center gap-6 lg:grid-cols-2 lg:gap-12">
+    <div class="fade-up grid items-center gap-6 lg:grid-cols-2 lg:gap-12">
       <div class="space-y-4">
         <div
           class="bg-primary text-primary-foreground inline-block rounded-lg px-3 py-1 text-sm"
@@ -25,9 +25,8 @@ import { Button } from "./ui/button";
             <!-- <a href="#register">Buy Tickets</a> -->
             Buy Tickets
           </Button>
-          <Button size="lg" variant="disabled">
-            <!-- <a href="#schedule">View Schedule</a> -->
-            View Schedule
+          <Button size="lg">
+            <a href="/events">View Schedule</a>
           </Button>
         </div>
       </div>

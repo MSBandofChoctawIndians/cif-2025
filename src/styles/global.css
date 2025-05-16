@@ -151,26 +151,18 @@
 }
 
 @layer utilities {
-  .bg-circle-pulse {
-    background-color: transparent;
-    background-image: radial-gradient(
-      circle at center,
-      transparent 43%,
-      rgba(255, 255, 255, 0.5) 44%,
-      rgba(255, 255, 255, 0.5) 45%,
-      transparent 46%
-    );
-    background-repeat: no-repeat;
-    background-position: center;
-    animation: circle-pulse 2s ease-in-out infinite;
+  .fade-up {
+    animation: animate-fade-up 1s ease-in-out;
   }
 }
 
-@keyframes circle-pulse {
+@keyframes animate-fade-up {
   0% {
-    background-size: 0 0;
+    opacity: 0;
+    transform: translateY(20px);
   }
   100% {
-    background-size: 300% 300%;
+    opacity: 1;
+    transform: translateY(0);
   }
 }
