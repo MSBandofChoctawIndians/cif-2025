@@ -5,7 +5,13 @@ import { format, parse, isAfter } from "date-fns";
 import { CalendarDays, Clock } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import {
   Select,
   SelectContent,
@@ -52,7 +58,7 @@ const eventDates = [
 ];
 
 // Define the fair end date
-const fairEndDate = "2025-05-10";
+const fairEndDate = "2025-07-12";
 
 // Add a mapping from day IDs to imported event arrays
 const eventsByDay: Record<string, Event[]> = {
@@ -72,6 +78,24 @@ export default function EventSchedulePage() {
   const isMobile = useMobile();
   const [selectedDay, setSelectedDay] = useState<string>("");
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+
+  // Add this useEffect to close the filter dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent): void => {
+      if (isFilterOpen) {
+        setIsFilterOpen(false);
+      }
+    };
+
+    // Add event listener for clicks outside the dropdown
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Cleanup
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isFilterOpen]);
 
   // Function to determine the default selected day
   const determineDefaultDay = () => {
@@ -160,12 +184,12 @@ export default function EventSchedulePage() {
     : null;
 
   // Format the date for display
-  const formattedDate = selectedDateObj
-    ? format(
-        parse(selectedDateObj.date, "yyyy-MM-dd", new Date()),
-        "EEEE, MMMM d, yyyy",
-      )
-    : "";
+  // const formattedDate = selectedDateObj
+  //   ? format(
+  //       parse(selectedDateObj.date, "yyyy-MM-dd", new Date()),
+  //       "EEEE - MMMM d, yyyy",
+  //     )
+  //   : "";
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -177,14 +201,20 @@ export default function EventSchedulePage() {
         // Mobile view - dropdown selector
         <div className="mb-6">
           <Select value={selectedDay} onValueChange={handleDayChange}>
-            <SelectTrigger className="w-full">
+            <SelectTrigger className="w-full border-red-800 bg-black/70 text-white">
               <SelectValue placeholder="Select a day" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="border-red-800 bg-black/80 text-white backdrop-blur-md">
               {eventDates.map((day) => (
-                <SelectItem key={day.id} value={day.id}>
-                  {day.label} -{" "}
-                  {format(parse(day.date, "yyyy-MM-dd", new Date()), "MMM d")}
+                <SelectItem
+                  key={day.id}
+                  value={day.id}
+                  className="focus:bg-red-700/50 focus:text-white"
+                >
+                  {format(
+                    parse(day.date, "yyyy-MM-dd", new Date()),
+                    "EEEE - MMM dd, yyyy",
+                  )}
                 </SelectItem>
               ))}
             </SelectContent>
@@ -192,8 +222,12 @@ export default function EventSchedulePage() {
         </div>
       ) : (
         // Desktop view - tab selector
-        <Tabs value={selectedDay} onValueChange={handleDayChange}>
-          <TabsList className="grid h-full w-full grid-cols-10 bg-black/70">
+        <Tabs
+          value={selectedDay}
+          onValueChange={handleDayChange}
+          className="mb-6"
+        >
+          <TabsList className="grid h-full w-full grid-cols-5 bg-black/70 p-1 lg:grid-cols-10">
             {eventDates.map((day) => (
               <TabsTrigger key={day.id} value={day.id} className="text-center">
                 <div className="flex flex-col items-center">
@@ -214,74 +248,160 @@ export default function EventSchedulePage() {
       )}
 
       {/* Display the selected date */}
-      {formattedDate && (
-        <div className="my-8 flex items-center justify-center">
-          <CalendarDays className="text-muted mr-2 h-5 w-5" />
+      {/* {formattedDate && (
+        <div className="mb-6 flex items-center justify-center">
+          <CalendarDays className="mr-2 h-5 w-5 text-red-300" />
           <h2 className="text-xl font-semibold text-white">{formattedDate}</h2>
         </div>
-      )}
+      )} */}
+
+      {/* Category filters */}
+      <div className="mb-6 rounded-lg bg-black/70 p-4 backdrop-blur-sm">
+        <h3 className="mb-3 text-sm font-medium text-gray-300">
+          Filter by category:
+        </h3>
+
+        {isMobile ? (
+          // Mobile view - multi-select dropdown
+          <div className="relative">
+            <button
+              type="button"
+              onClick={() => setIsFilterOpen(!isFilterOpen)}
+              className="flex w-full items-center justify-between rounded-md border border-red-800 bg-black/60 p-3 text-left text-white"
+            >
+              <span>
+                {selectedCategories.length === 0
+                  ? "All Categories"
+                  : `${selectedCategories.length} selected`}
+              </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className={`h-5 w-5 transition-transform ${isFilterOpen ? "rotate-180 transform" : ""}`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+
+            {isFilterOpen && (
+              <div className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md border border-red-800 bg-black/80 shadow-lg">
+                <div className="p-2">
+                  {allCategories.map((category) => (
+                    <div
+                      key={category}
+                      className="flex items-center rounded p-2 hover:bg-red-900/30"
+                    >
+                      <Checkbox
+                        id={`mobile-category-${category}`}
+                        checked={selectedCategories.includes(category)}
+                        onCheckedChange={() => handleCategoryChange(category)}
+                        className={cn(
+                          "border-opacity-60",
+                          category === "culture" &&
+                            "border-blue-300 data-[state=checked]:border-blue-600 data-[state=checked]:bg-blue-600",
+                          category === "family fun" &&
+                            "border-green-300 data-[state=checked]:border-green-600 data-[state=checked]:bg-green-600",
+                          category === "pageant" &&
+                            "border-purple-300 data-[state=checked]:border-purple-600 data-[state=checked]:bg-purple-600",
+                          category === "competition" &&
+                            "border-red-300 data-[state=checked]:border-red-600 data-[state=checked]:bg-red-600",
+                          category === "stickball" &&
+                            "border-gray-300 data-[state=checked]:border-gray-600 data-[state=checked]:bg-gray-600",
+                        )}
+                      />
+                      <Label
+                        htmlFor={`mobile-category-${category}`}
+                        className={cn(
+                          "ml-2 text-sm capitalize",
+                          category === "culture" && "text-blue-300",
+                          category === "family fun" && "text-green-300",
+                          category === "pageant" && "text-purple-300",
+                          category === "competition" && "text-red-300",
+                          category === "stickball" && "text-gray-300",
+                        )}
+                      >
+                        {category}
+                      </Label>
+                    </div>
+                  ))}
+                </div>
+                <div className="border-t border-red-800/50 p-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSelectedCategories([]);
+                      setIsFilterOpen(false);
+                    }}
+                    className="w-full rounded p-2 text-center text-sm text-red-300 hover:bg-red-900/30"
+                  >
+                    Clear All
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+        ) : (
+          // Desktop view - checkbox row
+          <div className="flex flex-wrap gap-3">
+            {allCategories.map((category) => (
+              <div key={category} className="flex items-center">
+                <Checkbox
+                  id={`category-${category}`}
+                  checked={selectedCategories.includes(category)}
+                  onCheckedChange={() => handleCategoryChange(category)}
+                  className={cn(
+                    "border-opacity-60",
+                    category === "culture" &&
+                      "border-blue-300 data-[state=checked]:border-blue-600 data-[state=checked]:bg-blue-600",
+                    category === "family fun" &&
+                      "border-green-300 data-[state=checked]:border-green-600 data-[state=checked]:bg-green-600",
+                    category === "pageant" &&
+                      "border-purple-300 data-[state=checked]:border-purple-600 data-[state=checked]:bg-purple-600",
+                    category === "competition" &&
+                      "border-red-300 data-[state=checked]:border-red-600 data-[state=checked]:bg-red-600",
+                    category === "stickball" &&
+                      "border-gray-300 data-[state=checked]:border-gray-600 data-[state=checked]:bg-gray-600",
+                  )}
+                />
+                <Label
+                  htmlFor={`category-${category}`}
+                  className={cn(
+                    "ml-2 text-sm capitalize",
+                    category === "culture" && "text-blue-300",
+                    category === "family fun" && "text-green-300",
+                    category === "pageant" && "text-purple-300",
+                    category === "competition" && "text-red-300",
+                    category === "stickball" && "text-gray-300",
+                  )}
+                >
+                  {category}
+                </Label>
+              </div>
+            ))}
+            {selectedCategories.length > 0 && (
+              <button
+                type="button"
+                onClick={() => setSelectedCategories([])}
+                className="ml-2 text-xs text-red-300 underline hover:text-red-200"
+              >
+                Clear All
+              </button>
+            )}
+          </div>
+        )}
+      </div>
 
       {/* Events table */}
-      <Card>
-        <CardHeader className="flex items-center justify-between">
-          {/* Category filters */}
-          <div className="mb-6">
-            <h3 className="mb-3 text-sm font-medium">Filter by category:</h3>
-            <div className="flex flex-wrap gap-3">
-              {allCategories.map((category) => (
-                <div key={category} className="flex items-center">
-                  <Checkbox
-                    id={`category-${category}`}
-                    checked={selectedCategories.includes(category)}
-                    onCheckedChange={() => handleCategoryChange(category)}
-                    className={cn(
-                      category === "networking" &&
-                        "border-blue-300 data-[state=checked]:border-blue-600 data-[state=checked]:bg-blue-600",
-                      category === "workshop" &&
-                        "border-green-300 data-[state=checked]:border-green-600 data-[state=checked]:bg-green-600",
-                      category === "talk" &&
-                        "border-purple-300 data-[state=checked]:border-purple-600 data-[state=checked]:bg-purple-600",
-                      category === "panel" &&
-                        "border-amber-300 data-[state=checked]:border-amber-600 data-[state=checked]:bg-amber-600",
-                      category === "ceremony" &&
-                        "border-red-300 data-[state=checked]:border-red-600 data-[state=checked]:bg-red-600",
-                      category === "competition" &&
-                        "border-orange-300 data-[state=checked]:border-orange-600 data-[state=checked]:bg-orange-600",
-                      category === "showcase" &&
-                        "border-indigo-300 data-[state=checked]:border-indigo-600 data-[state=checked]:bg-indigo-600",
-                      category === "demo" &&
-                        "border-pink-300 data-[state=checked]:border-pink-600 data-[state=checked]:bg-pink-600",
-                      category === "social" &&
-                        "border-teal-300 data-[state=checked]:border-teal-600 data-[state=checked]:bg-teal-600",
-                      category === "wellness" &&
-                        "border-emerald-300 data-[state=checked]:border-emerald-600 data-[state=checked]:bg-emerald-600",
-                      category === "break" &&
-                        "border-gray-300 data-[state=checked]:border-gray-600 data-[state=checked]:bg-gray-600",
-                    )}
-                  />
-                  <Label
-                    htmlFor={`category-${category}`}
-                    className={cn(
-                      "ml-2 text-sm capitalize",
-                      category === "networking" && "text-blue-700",
-                      category === "workshop" && "text-green-700",
-                      category === "talk" && "text-purple-700",
-                      category === "panel" && "text-amber-700",
-                      category === "ceremony" && "text-red-700",
-                      category === "competition" && "text-orange-700",
-                      category === "showcase" && "text-indigo-700",
-                      category === "demo" && "text-pink-700",
-                      category === "social" && "text-teal-700",
-                      category === "wellness" && "text-emerald-700",
-                      category === "break" && "text-gray-700",
-                    )}
-                  >
-                    {category}
-                  </Label>
-                </div>
-              ))}
-            </div>
-          </div>
+      <Card className="border-red-800 bg-black/70 text-white">
+        <CardHeader>
+          <CardTitle className="text-gray-200">Events</CardTitle>
         </CardHeader>
         <CardContent>
           {currentEvents.length > 0 ? (
@@ -289,11 +409,11 @@ export default function EventSchedulePage() {
               {currentEvents.map((event) => (
                 <div
                   key={event.name + event.time}
-                  className="hover:bg-muted/50 flex flex-col justify-between rounded-lg border p-4 transition-colors sm:flex-row"
+                  className="flex flex-col justify-between rounded-lg border border-amber-200 bg-black/40 p-4 transition-colors sm:flex-row"
                 >
                   <div className="mb-2 flex flex-col sm:mb-0">
                     <div className="font-medium">{event.name}</div>
-                    <div className="text-muted-foreground text-sm">
+                    <div className="text-sm text-gray-300">
                       {event.location}
                     </div>
                   </div>
@@ -303,20 +423,16 @@ export default function EventSchedulePage() {
                         variant="outline"
                         className={cn(
                           "capitalize",
-                          event.category === "networking" &&
+                          event.category === "culture" &&
                             "border-blue-200 bg-blue-50 text-blue-700",
-                          event.category === "workshop" &&
+                          event.category === "family fun" &&
                             "border-green-200 bg-green-50 text-green-700",
-                          event.category === "talk" &&
+                          event.category === "pageant" &&
                             "border-purple-200 bg-purple-50 text-purple-700",
-                          event.category === "panel" &&
-                            "border-amber-200 bg-amber-50 text-amber-700",
-                          event.category === "ceremony" &&
-                            "border-red-200 bg-red-50 text-red-700",
                           event.category === "competition" &&
-                            "border-orange-200 bg-orange-50 text-orange-700",
-                          event.category === "showcase" &&
-                            "border-indigo-200 bg-indigo-50 text-indigo-700",
+                            "border-red-200 bg-red-50 text-red-700",
+                          event.category === "stickball" &&
+                            "border-gray-200 bg-gray-50 text-gray-700",
                         )}
                       >
                         {event.category}
@@ -324,7 +440,7 @@ export default function EventSchedulePage() {
                     )}
 
                     <div className="flex items-center text-sm">
-                      <Clock className="text-muted-foreground mr-1 h-4 w-4" />
+                      <Clock className="mr-1 h-4 w-4 text-gray-300" />
                       {event.time}
                     </div>
                   </div>
@@ -332,8 +448,8 @@ export default function EventSchedulePage() {
               ))}
             </div>
           ) : (
-            <div className="text-muted-foreground py-8 text-center">
-              No events scheduled for this day.
+            <div className="py-8 text-center text-white">
+              Event schedule coming soon!
             </div>
           )}
         </CardContent>
