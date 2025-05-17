@@ -1,33 +1,37 @@
 ---
 import { Calendar } from "lucide-react";
+import Sponsors from "./Sponsors";
 ---
 
-<footer
-  class="w-full border-t border-black bg-gradient-to-r from-stone-900 via-stone-700 to-stone-950 py-6 text-white"
->
-  <div
-    class="container mx-auto grid grid-cols-1 items-center gap-4 px-4 md:grid-cols-3 md:px-6"
+<>
+  <Sponsors client:load />
+  <footer
+    class="w-full border-t border-black bg-gradient-to-r from-stone-900 via-stone-700 to-stone-950 py-6 text-white"
   >
-    <p
-      class="text-center text-sm leading-loose text-gray-300 md:col-start-1 md:text-left"
+    <div
+      class="container mx-auto grid grid-cols-1 items-center gap-4 px-4 md:grid-cols-3 md:px-6"
     >
-      © {new Date().getFullYear()} Choctaw Indian Fair. All rights reserved.
-    </p>
-    <img
-      src="/navlogo.webp"
-      alt="Logo"
-      class="mx-auto h-24 w-24 md:col-start-2"
-    />
-    <p
-      class="text-center text-sm leading-loose text-gray-300 md:col-start-3 md:text-right"
-    >
-      This event is hosted by the {" "}
-      <a
-        href="#"
-        class="text-nowrap text-amber-300 underline-offset-4 hover:underline"
+      <p
+        class="text-center text-sm leading-loose text-gray-300 md:col-start-1 md:text-left"
       >
-        Mississippi Band of Choctaw Indians
-      </a>
-    </p>
-  </div>
-</footer>
+        © {new Date().getFullYear()} Choctaw Indian Fair. All rights reserved.
+      </p>
+      <img
+        src="/navlogo.webp"
+        alt="Logo"
+        class="mx-auto h-24 w-24 md:col-start-2"
+      />
+      <p
+        class="text-center text-sm leading-loose text-gray-300 md:col-start-3 md:text-right"
+      >
+        This event is hosted by the {" "}
+        <a
+          href="#"
+          class="text-nowrap text-amber-300 underline-offset-4 hover:underline"
+        >
+          Mississippi Band of Choctaw Indians
+        </a>
+      </p>
+    </div>
+  </footer>
+</>

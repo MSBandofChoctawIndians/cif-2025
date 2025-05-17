@@ -40,13 +40,14 @@ export default function SponsorFooter() {
   return (
     <footer className="via-fair-red w-full bg-gradient-to-br from-red-700 to-red-800 py-12">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="mb-8 text-center">
+        {/* <div className="mb-8 text-center"> */}
+        <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tight text-white">
             Thank You to Our 2025 Sponsors
           </h2>
         </div>
 
-        <Carousel
+        {/* <Carousel
           plugins={[Autoplay({ delay: 4000 })]}
           opts={{
             align: "start",
@@ -85,7 +86,7 @@ export default function SponsorFooter() {
             <CarouselPrevious className="relative mr-2" />
             <CarouselNext className="relative ml-2" />
           </div>
-        </Carousel>
+        </Carousel> */}
       </div>
     </footer>
   );
