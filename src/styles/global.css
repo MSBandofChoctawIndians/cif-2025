@@ -127,9 +127,14 @@
   }
 }
 
+/* smooth scroll for in-page anchors */
+html {
+  scroll-behavior: smooth;
+}
+
 .bg-weave-pattern {
   background-image:
-    url("/src/assets/weave-01.svg"),
+    url("/src/assets/new-weave.svg"),
     linear-gradient(
       to right,
       theme("colors.purple.800"),
@@ -167,6 +172,7 @@
   }
 }
 
-.bg-size-zigzag {
-  background-size: 400px 200px;
+/* offset anchor targets under fixed navbar or top sections */
+section[id] {
+  scroll-margin-top: 4rem;
 }

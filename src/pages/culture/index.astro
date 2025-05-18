@@ -5,14 +5,17 @@ import { entertainment } from "@/data/NightlyEntertainment";
 
 const featuredEvents = [
   {
+    id: "arts",
     title: "Arts & Crafts",
     image: "arts",
   },
   {
+    id: "dancegrounds",
     title: "Dancegrounds",
     image: "dance",
   },
   {
+    id: "food",
     title: "Traditional Food",
     image: "food",
   },
@@ -47,20 +50,22 @@ const featuredEvents = [
         >
           {
             featuredEvents.map((event) => (
-              <div class="fade-up flex flex-col items-center space-y-4 rounded-lg border-2 border-amber-200 bg-black/50 p-4">
-                <div class="relative h-48 w-48 overflow-hidden rounded-full">
-                  <img
-                    src={`/culture/${event.image}.webp`}
-                    width={800}
-                    height={800}
-                    alt={event.title}
-                    class="h-full w-full object-cover"
-                  />
+              <a href={`#${event.id}`} class="fade-up block hover:opacity-70">
+                <div class="flex flex-col items-center space-y-4 rounded-lg border-2 border-amber-200 bg-black/50 p-4">
+                  <div class="relative h-48 w-48 overflow-hidden rounded-full">
+                    <img
+                      src={`/culture/${event.image}.webp`}
+                      width={800}
+                      height={800}
+                      alt={event.title}
+                      class="h-full w-full object-cover"
+                    />
+                  </div>
+                  <div class="text-center">
+                    <h3 class="text-xl font-bold text-white">{event.title}</h3>
+                  </div>
                 </div>
-                <div class="text-center">
-                  <h3 class="text-xl font-bold text-white">{event.title}</h3>
-                </div>
-              </div>
+              </a>
             ))
           }
         </div>
