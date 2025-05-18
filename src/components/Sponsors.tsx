@@ -39,6 +39,7 @@ export default function SponsorFooter() {
 
   return (
     <footer className="via-fair-red w-full bg-gradient-to-br from-red-700 to-red-800 py-12">
+      <div className="mb-12 mt-[-48px] h-48 bg-[url(/bead-pattern.svg)] bg-center bg-repeat-x opacity-30" />
       <div className="container mx-auto px-4 md:px-6">
         {/* <div className="mb-8 text-center"> */}
         <div className="text-center">

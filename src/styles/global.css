@@ -166,3 +166,7 @@
     transform: translateY(0);
   }
 }
+
+.bg-size-zigzag {
+  background-size: 400px 200px;
+}

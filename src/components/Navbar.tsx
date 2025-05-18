@@ -59,17 +59,27 @@ export function Navbar() {
                 </SheetTitle>
               </SheetHeader>
               <nav className="mx-4 mt-6 flex flex-col gap-4">
-                {navItems.map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    // className="hover:text-muted text-lg font-medium text-white transition-colors"
-                    className="pointer-events-none text-lg font-medium text-white/50 opacity-50 transition-colors"
-                    onClick={() => setOpen(false)}
-                  >
-                    {item.title}
-                  </a>
-                ))}
+                {navItems.map((item) =>
+                  item.disabled ? (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      className="pointer-events-none text-lg font-medium text-white/50 opacity-50 transition-colors"
+                      onClick={() => setOpen(false)}
+                    >
+                      {item.title}
+                    </a>
+                  ) : (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      className="hover:text-muted text-lg font-medium text-white transition-colors"
+                      onClick={() => setOpen(false)}
+                    >
+                      {item.title}
+                    </a>
+                  ),
+                )}
                 <div className="mt-4 flex flex-col gap-2">
                   <Button variant="disabled" onClick={() => setOpen(false)}>
                     Fair Map
