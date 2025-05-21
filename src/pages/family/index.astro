@@ -1,0 +1,435 @@
+---
+import Layout from "@/layouts/main.astro";
+import { Card } from "@/components/ui/card";
+
+const featuredEvents = [
+  {
+    id: "ayipa",
+    title: `Áy<u>i</u>pa Village`,
+    image: "ayipa",
+  },
+  {
+    id: "midway",
+    title: `Midway`,
+    image: "midway",
+  },
+  {
+    id: "ossi",
+    title: `Ossi Cove`,
+    image: "ossi",
+  },
+  {
+    id: "shawi",
+    title: `Shawi's Discovery Zone`,
+    image: "shawi",
+  },
+];
+---
+
+<Layout title="Family Fun">
+  <div
+    class="flex min-h-screen flex-col bg-gradient-to-r from-green-800 via-green-600 to-green-950"
+  >
+    {/* Hero Section */}
+    <section class="relative flex w-full items-center justify-center">
+      <div class="absolute inset-0 z-0">
+        <img
+          src="/backdrops/family-backdrop.svg"
+          alt="Family Fun background"
+          class="absolute inset-0 h-full w-full object-cover brightness-50"
+        />
+      </div>
+      <div
+        class="absolute inset-0 z-10 h-full w-full bg-blue-700/10 object-cover"
+      >
+      </div>
+      <div class="container relative z-20 mx-auto px-4">
+        <div
+          class="mx-auto grid max-w-3xl grid-cols-1 gap-8 rounded-lg py-12 md:grid-cols-2"
+        >
+          {
+            featuredEvents.map((event) => (
+              <a href={`#${event.id}`} class="fade-up block hover:opacity-70">
+                <div class="flex flex-col items-center space-y-4 rounded-lg border-2 border-amber-200 bg-black/50 p-4">
+                  <div class="relative h-48 w-48 overflow-hidden rounded-full">
+                    <img
+                      src={`/family/${event.image}.webp`}
+                      width={800}
+                      height={800}
+                      alt={event.title}
+                      class="h-full w-full object-cover"
+                    />
+                  </div>
+                  <div class="text-center">
+                    <h3
+                      class="text-xl font-bold text-white"
+                      set:html={event.title}
+                    />
+                  </div>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    {/* Ayipa Village Section */}
+    <section id="ayipa" class="py-12 md:py-24">
+      <div class="container mx-auto px-4 text-center">
+        <h2
+          class="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl"
+        >
+          Áy<u>i</u>pa Village
+        </h2>
+        <p
+          class="text-muted mx-auto mt-6 max-w-5xl md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+        >
+          Ayipa Village features food trucks, live performances, and cultural
+          showcases. It’s the perfect place to relax, enjoy local flavors, and
+          take in the sounds of the Fair.
+        </p>
+        <Card
+          className="mt-12 overflow-hidden border-none bg-black/70 p-4 text-white"
+        >
+          <h2
+            class="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl"
+          >
+            Schedule Coming Soon!
+          </h2>
+        </Card>
+        <!-- <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <Card
+            className="overflow-hidden border-none bg-black/70 p-0 text-white"
+          >
+            <img
+              src="/culture/basket.webp"
+              alt="Basket Weaving"
+              class="aspect-square w-full object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
+                Basketry
+              </h3>
+              <p class="text-muted">
+                When a present day basket maker seeks out, cuts and prepares her
+                cane, she uses the same methods as generations of Choctaw women
+                before her. For centuries, Choctaw basket makers have created
+                works of art from the swamp cane that flourishes along
+                Mississippi creek banks.
+              </p>
+            </div>
+          </Card>
+          <Card
+            className="overflow-hidden border-none bg-black/70 p-0 text-white"
+          >
+            <img
+              src="/culture/beadwork.webp"
+              alt="Beadwork"
+              class="aspect-square w-full object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
+                Beadwork
+              </h3>
+              <p class="text-muted">
+                Men and women alike often wear decorative beadwork with
+                traditional clothing. Designs and colors are the artist's
+                preferences. A beadwork set for women often consists of a belt,
+                medallion, collar necklaces, earrings, ribbon lapel pins, a
+                handkerchief lapel pin, and a round comb.
+              </p>
+            </div>
+          </Card>
+          <Card
+            className="overflow-hidden border-none bg-black/70 p-0 text-white"
+          >
+            <img
+              src="/culture/clothing.webp"
+              alt="Clothing"
+              class="aspect-square w-full object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
+                Clothing
+              </h3>
+              <p class="text-muted">
+                Most Choctaws today wear Choctaw dresses and shirts mainly for
+                special occassions. They are made from cotton fabric, in solid
+                colors with a contrasting trim. Occasionally, women choose silk
+                or velvet fabric for traditional dresses, usually for events
+                such as the Choctaw Indian Princess Pageant.
+              </p>
+            </div>
+          </Card>
+        </div> -->
+      </div>
+    </section>
+
+    {/* Midway Section */}
+    <section id="midway" class="pb-12 md:pb-24">
+      <div class="container mx-auto px-4 text-center">
+        <h2
+          class="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl"
+        >
+          Midway
+        </h2>
+        <p
+          class="text-muted mx-auto mt-6 max-w-5xl md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+        >
+          Fun for all ages, the Midway offers exciting rides, classic games, and
+          a variety of food vendors. From thrilling rides to nostalgic games and
+          tasty treats, there's something for everyone to enjoy.
+        </p>
+        <Card
+          className="mt-12 overflow-hidden border-none bg-black/70 p-4 text-white"
+        >
+          <h2
+            class="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl"
+          >
+            Schedule Coming Soon!
+          </h2>
+        </Card>
+        <!-- <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <Card
+            className="overflow-hidden border-none bg-black/70 p-0 text-white"
+          >
+            <img
+              src="/culture/war.webp"
+              alt="War Dance"
+              class="aspect-square w-full object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
+                War Dances
+              </h3>
+              <p class="text-muted">
+                War dances were used by early Choctaws to prepare for battle.
+                Choctaw war dances are unusual in that the women join the men in
+                dancing. In most other tribes, only men take part in the war
+                dance.
+              </p>
+            </div>
+          </Card>
+          <Card
+            className="overflow-hidden border-none bg-black/70 p-0 text-white"
+          >
+            <img
+              src="/culture/social.webp"
+              alt="Beadwork"
+              class="aspect-square w-full object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
+                Social Dances
+              </h3>
+              <p class="text-muted">
+                Social dances mark important aspects of life such as friendship,
+                courtship and marriage. They include stealing partners, the
+                friendship dance, and the wedding dance, among others.
+              </p>
+            </div>
+          </Card>
+          <Card
+            className="overflow-hidden border-none bg-black/70 p-0 text-white"
+          >
+            <img
+              src="/culture/animal.webp"
+              alt="Clothing"
+              class="aspect-square w-full object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
+                Animal Dances
+              </h3>
+              <p class="text-muted">
+                Animal dances often mimic the behavior of their namesakes, with
+                dancers darting in and out of the dance circle like playful
+                raccoons in the raccoon dance or forming a line that coils and
+                uncoils in the snake dance.
+              </p>
+            </div>
+          </Card>
+        </div> -->
+      </div>
+    </section>
+
+    {/* Ossi Cove Section */}
+    <section id="ossi" class="pb-12 md:pb-24">
+      <div class="container mx-auto px-4 text-center">
+        <h2
+          class="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl"
+        >
+          Ossi Cove
+        </h2>
+        <p
+          class="text-muted mx-auto mt-6 max-w-5xl md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+        >
+          Named after the Choctaw word for "eagle," Ossi Cove is the place for
+          family-friendly shows like the Critters Keeper Show, Dinosaur
+          Experience, and Scales, Tails & Teeth. It’s a place for wild fun and
+          learning.
+        </p>
+        <Card
+          className="mt-12 overflow-hidden border-none bg-black/70 p-4 text-white"
+        >
+          <h2
+            class="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl"
+          >
+            Schedule Coming Soon!
+          </h2>
+        </Card>
+        <!-- <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <Card
+            className="overflow-hidden border-none bg-black/70 p-0 text-white"
+          >
+            <img
+              src="/culture/war.webp"
+              alt="War Dance"
+              class="aspect-square w-full object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
+                War Dances
+              </h3>
+              <p class="text-muted">
+                War dances were used by early Choctaws to prepare for battle.
+                Choctaw war dances are unusual in that the women join the men in
+                dancing. In most other tribes, only men take part in the war
+                dance.
+              </p>
+            </div>
+          </Card>
+          <Card
+            className="overflow-hidden border-none bg-black/70 p-0 text-white"
+          >
+            <img
+              src="/culture/social.webp"
+              alt="Beadwork"
+              class="aspect-square w-full object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
+                Social Dances
+              </h3>
+              <p class="text-muted">
+                Social dances mark important aspects of life such as friendship,
+                courtship and marriage. They include stealing partners, the
+                friendship dance, and the wedding dance, among others.
+              </p>
+            </div>
+          </Card>
+          <Card
+            className="overflow-hidden border-none bg-black/70 p-0 text-white"
+          >
+            <img
+              src="/culture/animal.webp"
+              alt="Clothing"
+              class="aspect-square w-full object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
+                Animal Dances
+              </h3>
+              <p class="text-muted">
+                Animal dances often mimic the behavior of their namesakes, with
+                dancers darting in and out of the dance circle like playful
+                raccoons in the raccoon dance or forming a line that coils and
+                uncoils in the snake dance.
+              </p>
+            </div>
+          </Card>
+        </div> -->
+      </div>
+    </section>
+
+    {/* Shawi Section */}
+    <section id="shawi" class="pb-12 md:pb-24">
+      <div class="container mx-auto px-4 text-center">
+        <h2
+          class="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl"
+        >
+          Shawi's Discovery Zone
+        </h2>
+        <p
+          class="text-muted mx-auto mt-6 max-w-5xl md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+        >
+          Created just for kids, Shawi’s Discovery Zone inspires learning
+          through Choctaw language activities, traditional storytelling, crafts,
+          and games. A fun and interactive space to connect with Choctaw
+          heritage.
+        </p>
+        <Card
+          className="mt-12 overflow-hidden border-none bg-black/70 p-4 text-white"
+        >
+          <h2
+            class="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl"
+          >
+            Schedule Coming Soon!
+          </h2>
+        </Card>
+        <!-- <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <Card
+            className="overflow-hidden border-none bg-black/70 p-0 text-white"
+          >
+            <img
+              src="/culture/war.webp"
+              alt="War Dance"
+              class="aspect-square w-full object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
+                War Dances
+              </h3>
+              <p class="text-muted">
+                War dances were used by early Choctaws to prepare for battle.
+                Choctaw war dances are unusual in that the women join the men in
+                dancing. In most other tribes, only men take part in the war
+                dance.
+              </p>
+            </div>
+          </Card>
+          <Card
+            className="overflow-hidden border-none bg-black/70 p-0 text-white"
+          >
+            <img
+              src="/culture/social.webp"
+              alt="Beadwork"
+              class="aspect-square w-full object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
+                Social Dances
+              </h3>
+              <p class="text-muted">
+                Social dances mark important aspects of life such as friendship,
+                courtship and marriage. They include stealing partners, the
+                friendship dance, and the wedding dance, among others.
+              </p>
+            </div>
+          </Card>
+          <Card
+            className="overflow-hidden border-none bg-black/70 p-0 text-white"
+          >
+            <img
+              src="/culture/animal.webp"
+              alt="Clothing"
+              class="aspect-square w-full object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
+                Animal Dances
+              </h3>
+              <p class="text-muted">
+                Animal dances often mimic the behavior of their namesakes, with
+                dancers darting in and out of the dance circle like playful
+                raccoons in the raccoon dance or forming a line that coils and
+                uncoils in the snake dance.
+              </p>
+            </div>
+          </Card>
+        </div> -->
+      </div>
+    </section>
+  </div>
+</Layout>

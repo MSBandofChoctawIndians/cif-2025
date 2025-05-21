@@ -20,7 +20,7 @@ import {
 const navItems = [
   { title: "Events", href: "/events" },
   { title: "Culture", href: "/culture" },
-  { title: "Family Fun", href: "/family", disabled: true },
+  { title: "Family Fun", href: "/family" },
   { title: "Stickball", href: "/stickball", disabled: true },
   { title: "Pageant", href: "/pageant", disabled: true },
   { title: "Competitions", href: "/competitions", disabled: true },
