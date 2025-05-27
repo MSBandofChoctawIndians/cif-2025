@@ -78,7 +78,7 @@ export default function AnnouncementDialog({
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="bg-radial aspect-[9/16] w-full max-w-sm gap-0 overflow-hidden rounded-lg border-0 from-stone-700 to-stone-950 p-0">
+      <DialogContent className="bg-radial w-full max-w-sm gap-0 overflow-hidden rounded-lg border-0 from-stone-700 to-stone-950 p-0">
         <DialogHeader className="flex items-center justify-between px-6 py-2">
           <h2 className="text-lg font-semibold text-white">Announcements</h2>
         </DialogHeader>
