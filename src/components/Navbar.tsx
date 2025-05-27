@@ -21,7 +21,7 @@ const navItems = [
   { title: "Events", href: "/events" },
   { title: "Culture", href: "/culture" },
   { title: "Family Fun", href: "/family" },
-  { title: "Stickball", href: "/stickball", disabled: true },
+  { title: "Stickball", href: "/stickball" },
   { title: "Pageant", href: "/pageant", disabled: true },
   { title: "Competitions", href: "/competitions", disabled: true },
 ];
