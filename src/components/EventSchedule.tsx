@@ -193,9 +193,9 @@ export default function EventSchedulePage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="mb-6 text-center text-3xl font-bold text-white">
+      <h2 className="my-6 text-center text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl">
         Event Schedule
-      </h1>
+      </h2>
 
       {isMobile ? (
         // Mobile view - dropdown selector
