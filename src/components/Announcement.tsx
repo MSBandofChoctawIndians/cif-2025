@@ -91,7 +91,7 @@ export default function AnnouncementDialog({
             {slides.map((slide, idx) => (
               <CarouselItem
                 key={idx}
-                className="flex items-center justify-center"
+                className="flex items-center justify-center !pl-0"
               >
                 {slide.src ? (
                   <img
