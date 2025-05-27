@@ -114,7 +114,7 @@ export default function AnnouncementDialog({
                 <ul className="flex justify-center space-x-6 text-lg">
                   <li>
                     <a
-                      href="https://twitter.com/yourhandle"
+                      href="https://www.facebook.com/ChoctawIndianFair"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -129,7 +129,7 @@ export default function AnnouncementDialog({
                   </li>
                   <li>
                     <a
-                      href="https://instagram.com/yourhandle"
+                      href="https://www.instagram.com/choctawindianfair/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -144,7 +144,7 @@ export default function AnnouncementDialog({
                   </li>
                   <li>
                     <a
-                      href="https://facebook.com/yourpage"
+                      href="https://www.youtube.com/@ChoctawIndianFair"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -159,7 +159,7 @@ export default function AnnouncementDialog({
                   </li>
                   <li>
                     <a
-                      href="https://linkedin.com/company/yourcompany"
+                      href="https://open.spotify.com/playlist/7fG95SQpyTf729cMKOvW7x?si=8c5bd6ccb3b54d4f"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
