@@ -4,6 +4,18 @@ import { GoogleAnalytics } from "astro-google-analytics";
 import { Navbar } from "@/components/Navbar";
 import Footer from "@/components/Footer.astro";
 import AnnouncementDialog from "@/components/Announcement.tsx";
+// define an array of slides (images or text)
+const slides = [
+  {
+    src: "/announcement.webp",
+    url: "/announcement.webp",
+    alt: "Announcement",
+  },
+  // {
+  //   content: `Don’t miss the Grand Parade at 10 AM!`,
+  //   url: "/events",
+  // },
+];
 ---
 
 <html lang="en">
@@ -20,7 +32,7 @@ import AnnouncementDialog from "@/components/Announcement.tsx";
     ></script>
   </head>
   <body class="bg-gradient-to-r from-stone-900 via-stone-700 to-stone-950">
-    <AnnouncementDialog client:load />
+    <AnnouncementDialog client:load slides={slides} />
     <Navbar client:load />
     <slot />
     <Footer />
