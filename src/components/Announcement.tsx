@@ -78,13 +78,16 @@ export default function AnnouncementDialog({
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="bg-radial w-full gap-0 rounded-lg border-0 from-stone-700 to-stone-950 p-0">
+      <DialogContent className="bg-radial aspect-[9/16] w-full max-w-sm gap-0 overflow-hidden rounded-lg border-0 from-stone-700 to-stone-950 p-0">
         <DialogHeader className="flex items-center justify-between px-6 py-2">
           <h2 className="text-lg font-semibold text-white">Announcements</h2>
         </DialogHeader>
         {/* Carousel of slides */}
-        <Carousel setApi={setEmblaApi} className="relative h-full w-full">
-          <CarouselContent>
+        <Carousel
+          setApi={setEmblaApi}
+          className="relative h-full w-full overflow-hidden"
+        >
+          <CarouselContent className="!ml-0 !mt-0">
             {slides.map((slide, idx) => (
               <CarouselItem
                 key={idx}
@@ -94,7 +97,7 @@ export default function AnnouncementDialog({
                   <img
                     src={slide.src}
                     alt={slide.alt ?? ""}
-                    className="h-full w-full object-contain"
+                    className="mx-auto h-auto w-full"
                   />
                 ) : typeof slide.content === "string" ? (
                   <div
@@ -111,8 +114,8 @@ export default function AnnouncementDialog({
             <CarouselItem className="flex items-center justify-center">
               <div className="p-8 text-center text-white">
                 <h3 className="mb-4 text-2xl font-semibold">Stay Connected</h3>
-                <ul className="flex justify-center space-x-6 text-lg">
-                  <li>
+                <ul className="flex flex-col justify-center space-x-6 text-lg">
+                  <li className="mx-auto mb-4">
                     <a
                       href="https://www.facebook.com/ChoctawIndianFair"
                       target="_blank"
@@ -120,14 +123,14 @@ export default function AnnouncementDialog({
                     >
                       <Button
                         size="lg"
-                        className="bg-blue-600 text-white hover:bg-blue-700"
+                        className="min-w-48 bg-blue-600 text-white hover:bg-blue-700"
                       >
                         <Facebook />
                         Facebook
                       </Button>
                     </a>
                   </li>
-                  <li>
+                  <li className="mx-auto mb-4">
                     <a
                       href="https://www.instagram.com/choctawindianfair/"
                       target="_blank"
@@ -135,14 +138,14 @@ export default function AnnouncementDialog({
                     >
                       <Button
                         size="lg"
-                        className="bg-pink-500 text-white hover:bg-pink-600"
+                        className="min-w-48 bg-pink-500 text-white hover:bg-pink-600"
                       >
                         <Instagram />
                         Instagram
                       </Button>
                     </a>
                   </li>
-                  <li>
+                  <li className="mx-auto mb-4">
                     <a
                       href="https://www.youtube.com/@ChoctawIndianFair"
                       target="_blank"
@@ -150,14 +153,14 @@ export default function AnnouncementDialog({
                     >
                       <Button
                         size="lg"
-                        className="bg-red-500 text-white hover:bg-red-600"
+                        className="min-w-48 bg-red-500 text-white hover:bg-red-600"
                       >
                         <Youtube />
                         YouTube
                       </Button>
                     </a>
                   </li>
-                  <li>
+                  <li className="mx-auto mb-4">
                     <a
                       href="https://open.spotify.com/playlist/7fG95SQpyTf729cMKOvW7x?si=8c5bd6ccb3b54d4f"
                       target="_blank"
@@ -165,7 +168,7 @@ export default function AnnouncementDialog({
                     >
                       <Button
                         size="lg"
-                        className="bg-green-500 text-black hover:bg-green-600"
+                        className="min-w-48 bg-green-500 text-black hover:bg-green-600"
                       >
                         <AudioLines />
                         Spotify
