@@ -1,0 +1,246 @@
+---
+import Layout from "../../layouts/main.astro";
+import { Button } from "../../components/ui/button";
+import { Card, CardContent, CardFooter } from "../../components/ui/card";
+import {
+  Download,
+  FileText,
+  Globe,
+  Facebook,
+  Calendar,
+  ArrowRight,
+} from "lucide-react";
+
+interface Competition {
+  id: string;
+  title: string;
+  description: string;
+  date: string;
+  logo: string;
+  links?: {
+    flyer?: string;
+    form?: string;
+    webForm?: string;
+    social?: string;
+    compForm?: string;
+    socialForm?: string;
+  };
+}
+
+const competitions: Competition[] = [
+  {
+    id: "rezrun",
+    title: "Rez Run 2025",
+    description:
+      "The run is held in Choctaw, MS and trails through the reservation of the Mississippi Choctaw and the Choctaw Indian fairgrounds. The Mississippi Band of Choctaw Indians proudly welcomes all runners and visitors to the Choctaw Indian Fair.",
+    date: "July 12, 2025",
+    logo: "/competitions/rezrun/rezrun2025.webp",
+    links: {
+      form: "/competitions/rezrun/rezrun2025.pdf",
+      webForm: "https://runsignup.com/Race/MS/Philadelphia/RezRun2014",
+      social: "https://www.facebook.com/profile.php?id=100057294586733",
+    },
+  },
+  {
+    id: "ironwarrior",
+    title: "Iron Warrior",
+    description:
+      "Iron Warrior consists of obstacles such as the steel log, yoke carry, tire flip, and truck pull. In the end of the competition, the winner will have to endure eight total obstacles in order to be called the next IRON WARRIOR!",
+    date: "TBA",
+    logo: "/competitions/ironwarrior/ironwarrior.webp",
+  },
+  {
+    id: "volleyball",
+    title: "Volleyball Tournament",
+    description:
+      "Details coming soon! This tournament is open to all participants.",
+    date: "TBA",
+    logo: "/competitions/volleyball/volleyball.webp",
+  },
+  {
+    id: "tribalcornhole",
+    title: "Tribal Member Tournament",
+    description:
+      "Details coming soon! This tournament is open to all tribal members.",
+    date: "TBA",
+    logo: "/competitions/cornhole/tribalCornhole.webp",
+  },
+  {
+    id: "opencornhole",
+    title: "Open Cornhole Tournament",
+    description:
+      "Details coming soon! This tournament is open to all participants.",
+    date: "TBA",
+    logo: "/competitions/cornhole/openCornhole.webp",
+  },
+  {
+    id: "gospelnight",
+    title: "Gospel Night",
+    description:
+      "Details coming soon! Join us for a night of uplifting gospel music and performances.",
+    date: "TBA",
+    logo: "/competitions/gospelnight/gospelNight.webp",
+  },
+  {
+    id: "littlecif",
+    title: "Little Mr. & Miss Choctaw Indian Fair Pageant",
+    description:
+      "Details coming soon! At the Little Mr. & Miss Choctaw Indian Fair Pageant, participants will complete in their traditional attire.",
+    date: "TBA",
+    logo: "/competitions/littlecif/lil-pageant.webp",
+  },
+  {
+    id: "watermelon",
+    title: "Watermelon Eating Contest",
+    description:
+      "Details coming soon! Join us for a fun and juicy watermelon eating contest.",
+    date: "TBA",
+    logo: "/competitions/watermelon/watermelon.webp",
+  },
+];
+---
+
+<Layout title="Competitions">
+  <div
+    class="flex min-h-screen flex-col bg-gradient-to-r from-neutral-400 via-neutral-200 to-neutral-500"
+  >
+    {/* Hero Section */}
+    <section class="relative flex w-full items-center justify-center">
+      <div class="absolute inset-0 z-0">
+        <img
+          src="/backdrops/competition-backdrop.svg"
+          alt="Competitions background"
+          class="absolute inset-0 h-full w-full object-cover brightness-50"
+        />
+      </div>
+      <div class="container relative z-20 mx-auto px-4">
+        <div
+          class="mx-auto grid max-w-7xl gap-8 rounded-lg py-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+        >
+          {
+            competitions.map((event: Competition) => (
+              <a href={`#${event.id}`} class="fade-up block hover:opacity-70">
+                <div class="flex h-full items-center rounded-lg border-2 border-gray-400 bg-white/70 p-4">
+                  <img
+                    src={event.logo}
+                    width={800}
+                    height={800}
+                    alt={event.title}
+                    class="h-full w-full"
+                  />
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    {/* Competitions List */}
+    <section class="container mx-auto px-4 py-12">
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {
+          competitions.map((competition: Competition) => (
+            <Card
+              id={competition.id}
+              className="h-full flex flex-col overflow-hidden"
+            >
+              {/* Logo as full header */}
+              <div class="relative aspect-square bg-gray-100">
+                <div class="relative flex aspect-square items-center justify-center bg-gray-100">
+                  <img
+                    src={competition.logo || "https://placehold.co/280x280"}
+                    alt={`${competition.title} logo`}
+                    class="p-4"
+                  />
+                </div>
+              </div>
+
+              <CardContent className="pt-6">
+                <div class="mb-3 flex items-start justify-between">
+                  <h3 class="text-xl font-semibold">{competition.title}</h3>
+                </div>
+
+                <div class="text-muted-foreground mb-4 flex items-center text-sm">
+                  <Calendar className="h-4 w-4 mr-2" />
+                  {competition.date}
+                </div>
+
+                <p class="text-muted-foreground">{competition.description}</p>
+              </CardContent>
+
+              <CardFooter className="flex flex-col items-start space-y-3 pt-4 border-t mt-auto">
+                <div class="flex w-full flex-wrap gap-2">
+                  {competition.links?.flyer && (
+                    <a href={competition.links.flyer} target="_blank">
+                      <Button variant="outline">
+                        <Download />
+                        Flyer
+                      </Button>
+                    </a>
+                  )}
+                  {competition.links?.form && (
+                    <a href={competition.links.form} target="_blank">
+                      <Button variant="outline">
+                        <FileText />
+                        Form
+                      </Button>
+                    </a>
+                  )}
+                  {competition.links?.compForm && (
+                    <a
+                      href={competition.links.compForm}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button variant="outline">
+                        <FileText />
+                        Competitive Form
+                      </Button>
+                    </a>
+                  )}
+                  {competition.links?.socialForm && (
+                    <a
+                      href={competition.links.socialForm}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button variant="outline">
+                        <FileText />
+                        Social Form
+                      </Button>
+                    </a>
+                  )}
+                  {competition.links?.webForm && (
+                    <a
+                      href={competition.links.webForm}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button variant="outline">
+                        <Globe />
+                        Register
+                      </Button>
+                    </a>
+                  )}
+                  {competition.links?.social && (
+                    <a
+                      href={competition.links.social}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button variant="outline">
+                        <Facebook />
+                        Social
+                      </Button>
+                    </a>
+                  )}
+                </div>
+              </CardFooter>
+            </Card>
+          ))
+        }
+      </div>
+    </section>
+  </div>
+</Layout>
