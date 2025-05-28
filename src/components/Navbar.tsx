@@ -29,7 +29,7 @@ const navItems = [
   { title: "Family Fun", href: "/family" },
   { title: "Stickball", href: "/stickball" },
   { title: "Pageant", href: "/pageant" },
-  { title: "Competitions", href: "/competitions" },
+  { title: "Competitions", href: "/competitions", disabled: true },
 ];
 
 export function Navbar() {
