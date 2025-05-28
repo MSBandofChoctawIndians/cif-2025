@@ -185,6 +185,7 @@ export default function AnnouncementDialog({
           <div className="flex items-center gap-2">
             <Button
               variant="secondary"
+              className="cursor-pointer"
               disabled={!emblaApi?.canScrollPrev?.()}
               onClick={() => emblaApi?.scrollPrev()}
             >
@@ -192,6 +193,7 @@ export default function AnnouncementDialog({
             </Button>
             <Button
               variant="secondary"
+              className="cursor-pointer"
               disabled={!emblaApi?.canScrollNext?.()}
               onClick={() => emblaApi?.scrollNext()}
             >
@@ -205,6 +207,7 @@ export default function AnnouncementDialog({
             {slides[selectedIndex]?.url && (
               <Button
                 variant="secondary"
+                className="cursor-pointer"
                 onClick={() => {
                   const slide = slides[selectedIndex];
                   const target = slide.url ?? slide.src;
@@ -216,7 +219,7 @@ export default function AnnouncementDialog({
             )}
             <Button
               variant="outline"
-              className="bg-transparent"
+              className="cursor-pointer bg-transparent"
               onClick={handleClose}
             >
               Close

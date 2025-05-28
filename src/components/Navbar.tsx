@@ -17,13 +17,19 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 
+interface NavItem {
+  title: string;
+  href: string;
+  disabled?: boolean;
+}
+
 const navItems = [
   { title: "Events", href: "/events" },
   { title: "Culture", href: "/culture" },
   { title: "Family Fun", href: "/family" },
   { title: "Stickball", href: "/stickball" },
   { title: "Pageant", href: "/pageant" },
-  { title: "Competitions", href: "/competitions", disabled: true },
+  { title: "Competitions", href: "/competitions" },
 ];
 
 export function Navbar() {
@@ -59,7 +65,7 @@ export function Navbar() {
                 </SheetTitle>
               </SheetHeader>
               <nav className="mx-4 mt-6 flex flex-col gap-4">
-                {navItems.map((item) =>
+                {navItems.map((item: NavItem) =>
                   item.disabled ? (
                     <a
                       key={item.href}
@@ -81,12 +87,18 @@ export function Navbar() {
                   ),
                 )}
                 <div className="mt-4 flex flex-col gap-2">
-                  <Button variant="disabled" onClick={() => setOpen(false)}>
+                  {/* <Button variant="disabled" onClick={() => setOpen(false)}>
                     Fair Map
-                  </Button>
-                  <Button variant="disabled" onClick={() => setOpen(false)}>
-                    Buy Tickets
-                  </Button>
+                  </Button> */}
+                  <a
+                    href="https://www.etix.com/ticket/p/65113985/75th-choctaw-indian-fair-pearl-river-choctaw-indian-fair"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button variant="secondary" onClick={() => setOpen(false)}>
+                      Buy Tickets
+                    </Button>
+                  </a>
                 </div>
               </nav>
             </SheetContent>
@@ -97,7 +109,7 @@ export function Navbar() {
         <div className="hidden lg:flex lg:items-center lg:gap-6">
           <NavigationMenu>
             <NavigationMenuList>
-              {navItems.map((item) => (
+              {navItems.map((item: NavItem) => (
                 <NavigationMenuItem key={item.href}>
                   {/* <a href={item.href}>
                     <Button variant={"ghost"}>{item.title}</Button>
@@ -106,7 +118,9 @@ export function Navbar() {
                     <Button variant="disabled">{item.title}</Button>
                   ) : (
                     <a href={item.href}>
-                      <Button variant="ghost">{item.title}</Button>
+                      <Button variant="ghost" className="cursor-pointer">
+                        {item.title}
+                      </Button>
                     </a>
                   )}
                 </NavigationMenuItem>
@@ -124,7 +138,15 @@ export function Navbar() {
             </NavigationMenuList>
           </NavigationMenu>
           <div className="flex items-center gap-2">
-            <Button variant="disabled">Buy Tickets</Button>
+            <a
+              href="https://www.etix.com/ticket/p/65113985/75th-choctaw-indian-fair-pearl-river-choctaw-indian-fair"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="secondary" className="cursor-pointer">
+                Buy Tickets
+              </Button>
+            </a>
           </div>
         </div>
       </div>
