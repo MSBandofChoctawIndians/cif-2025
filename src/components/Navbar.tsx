@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MapPinned, Menu } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -34,6 +34,10 @@ const navItems = [
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const [pathname, setPathname] = useState("");
+  useEffect(() => {
+    setPathname(window.location.pathname);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-black bg-gradient-to-r from-stone-900 via-stone-700 to-stone-950 text-white">
@@ -65,27 +69,31 @@ export function Navbar() {
                 </SheetTitle>
               </SheetHeader>
               <nav className="mx-4 mt-6 flex flex-col gap-4">
-                {navItems.map((item: NavItem) =>
-                  item.disabled ? (
-                    <a
+                {navItems.map((item: NavItem) => {
+                  const isActive = pathname === item.href;
+                  return item.disabled ? (
+                    <span
                       key={item.href}
-                      href={item.href}
-                      className="pointer-events-none text-lg font-medium text-white/50 opacity-50 transition-colors"
-                      onClick={() => setOpen(false)}
+                      className="pointer-events-none text-lg font-medium text-white/50 opacity-50"
                     >
                       {item.title}
-                    </a>
+                    </span>
                   ) : (
                     <a
                       key={item.href}
                       href={item.href}
-                      className="hover:text-muted text-lg font-medium text-white transition-colors"
+                      aria-current={isActive ? "page" : undefined}
+                      className={`text-lg font-medium transition-colors ${
+                        isActive
+                          ? "text-yellow-300"
+                          : "hover:text-muted text-white"
+                      }`}
                       onClick={() => setOpen(false)}
                     >
                       {item.title}
                     </a>
-                  ),
-                )}
+                  );
+                })}
                 <div className="mt-4 flex flex-col gap-2">
                   {/* <Button variant="disabled" onClick={() => setOpen(false)}>
                     Fair Map
@@ -109,22 +117,28 @@ export function Navbar() {
         <div className="hidden lg:flex lg:items-center lg:gap-6">
           <NavigationMenu>
             <NavigationMenuList>
-              {navItems.map((item: NavItem) => (
-                <NavigationMenuItem key={item.href}>
-                  {/* <a href={item.href}>
-                    <Button variant={"ghost"}>{item.title}</Button>
-                  </a> */}
-                  {item.disabled ? (
-                    <Button variant="disabled">{item.title}</Button>
-                  ) : (
-                    <a href={item.href}>
-                      <Button variant="ghost" className="cursor-pointer">
-                        {item.title}
-                      </Button>
-                    </a>
-                  )}
-                </NavigationMenuItem>
-              ))}
+              {navItems.map((item: NavItem) => {
+                const isActive = pathname === item.href;
+                return (
+                  <NavigationMenuItem key={item.href}>
+                    {item.disabled ? (
+                      <Button variant="disabled">{item.title}</Button>
+                    ) : (
+                      <a
+                        href={item.href}
+                        aria-current={isActive ? "page" : undefined}
+                      >
+                        <Button
+                          variant={isActive ? "gray" : "ghost"}
+                          className="cursor-pointer"
+                        >
+                          {item.title}
+                        </Button>
+                      </a>
+                    )}
+                  </NavigationMenuItem>
+                );
+              })}
               <NavigationMenuItem>
                 {/* <a href="/fair-map">
                   <Button variant="ghost">

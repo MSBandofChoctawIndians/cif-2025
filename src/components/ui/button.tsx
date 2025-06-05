@@ -21,6 +21,8 @@ const buttonVariants = cva(
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
         disabled: "opacity-50 pointer-events-none text-white/50",
+        // I want a button that has a gray background and white text, but no hover effect
+        gray: "bg-neutral-600 text-white shadow-xs hover:bg-neutral-500/90",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
