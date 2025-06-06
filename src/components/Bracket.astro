@@ -1,0 +1,536 @@
+---
+import { Card } from "./ui/card";
+import { Calendar, Clock } from "lucide-react";
+---
+
+<div
+  class="flex h-full overflow-x-scroll lg:justify-center lg:overflow-x-hidden"
+>
+  <div class="item">
+    <div class="item-parent">
+      <Card className="w-full p-4" id="game-12">
+        <div class="flex flex-col gap-2">
+          {/* Game info */}
+          <div
+            class="text-muted-foreground mb-2 flex items-center justify-between gap-3 text-sm"
+          >
+            <div class="flex items-center gap-1">
+              <Calendar className="h-3 w-3" />
+              <span>July 12, 2025</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <Clock className="h-3 w-3" />
+              <span>10:00 PM</span>
+            </div>
+            <span>Game 12</span>
+          </div>
+
+          {/* Team 1 */}
+          <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
+            <div class="flex items-center justify-between">
+              <span class="font-medium">Game 10 Winner</span>
+              <span class="font-bold">-</span>
+            </div>
+          </div>
+
+          <div class="my-1 h-px bg-slate-200 dark:bg-slate-700"></div>
+
+          {/* Team 2 */}
+          <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
+            <div class="flex items-center justify-between">
+              <span class="font-medium">Game 11 Winner</span>
+              <span class="font-bold">-</span>
+            </div>
+          </div>
+        </div>
+      </Card>
+    </div>
+    <div class="item-childrens">
+      <div class="item-child">
+        <div class="item">
+          <div class="item-parent">
+            <Card className="w-full p-4" id="game-10">
+              <div class="flex flex-col gap-2">
+                {/* Game info */}
+                <div
+                  class="text-muted-foreground mb-2 flex items-center justify-between gap-3 text-sm"
+                >
+                  <div class="flex items-center gap-1">
+                    <Calendar className="h-3 w-3" />
+                    <span>July 01, 2025</span>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <Clock className="h-3 w-3" />
+                    <span>10:00 PM</span>
+                  </div>
+                  <span>Game 10</span>
+                </div>
+
+                {/* Team 1 */}
+                <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
+                  <div class="flex items-center justify-between">
+                    <span class="font-medium">Game 6 Winner</span>
+                    <span class="font-bold">-</span>
+                  </div>
+                </div>
+
+                <div class="my-1 h-px bg-slate-200 dark:bg-slate-700"></div>
+
+                {/* Team 2 */}
+                <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
+                  <div class="flex items-center justify-between">
+                    <span class="font-medium">Game 7 Winner</span>
+                    <span class="font-bold">-</span>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+          <div class="item-childrens">
+            <div class="item-child">
+              <div class="item">
+                <div class="item-parent">
+                  <Card className="w-full p-4" id="game-9">
+                    <div class="flex flex-col gap-2">
+                      {/* Game info */}
+                      <div
+                        class="text-muted-foreground mb-2 flex items-center justify-between gap-2 text-sm"
+                      >
+                        <div class="flex items-center gap-1">
+                          <Calendar className="h-3 w-3" />
+                          <span class="text-nowrap">July 01, 2025</span>
+                        </div>
+                        <div class="flex items-center gap-1">
+                          <Clock className="h-3 w-3" />
+                          <span class="text-nowrap">10:00 PM</span>
+                        </div>
+                        <span class="text-nowrap">Game 9</span>
+                      </div>
+
+                      {/* Team 1 */}
+                      <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
+                        <div class="flex items-center justify-between">
+                          <span class="font-medium">Unified</span>
+                          <span class="font-bold">0</span>
+                        </div>
+                      </div>
+
+                      <div class="my-1 h-px bg-slate-200 dark:bg-slate-700">
+                      </div>
+
+                      {/* Team 2 */}
+                      <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
+                        <div class="flex items-center justify-between">
+                          <span class="font-medium">Unified</span>
+                          <span class="font-bold">0</span>
+                        </div>
+                      </div>
+                    </div>
+                  </Card>
+                </div>
+                <div class="item-childrens">
+                  <div class="item-child">
+                    <Card className="w-full p-4" id="game-1">
+                      <div class="flex flex-col gap-2">
+                        {/* Game info */}
+                        <div
+                          class="text-muted-foreground mb-2 flex items-center justify-between gap-2 text-sm"
+                        >
+                          <div class="flex items-center gap-1">
+                            <Calendar className="h-3 w-3" />
+                            <span class="text-nowrap">July 01, 2025</span>
+                          </div>
+                          <div class="flex items-center gap-1">
+                            <Clock className="h-3 w-3" />
+                            <span class="text-nowrap">10:00 PM</span>
+                          </div>
+                          <span class="text-nowrap">Game 1</span>
+                        </div>
+
+                        {/* Team 1 */}
+                        <div
+                          class="rounded-md bg-slate-50 p-2 dark:bg-slate-800"
+                        >
+                          <div class="flex items-center justify-between">
+                            <span class="font-medium">Unified</span>
+                            <span class="font-bold">0</span>
+                          </div>
+                        </div>
+
+                        <div class="my-1 h-px bg-slate-200 dark:bg-slate-700">
+                        </div>
+
+                        {/* Team 2 */}
+                        <div
+                          class="rounded-md bg-slate-50 p-2 dark:bg-slate-800"
+                        >
+                          <div class="flex items-center justify-between">
+                            <span class="font-medium">Unified</span>
+                            <span class="font-bold">0</span>
+                          </div>
+                        </div>
+                      </div>
+                    </Card>
+                  </div>
+                  <div class="item-child">
+                    <Card className="w-full p-4" id="game-2">
+                      <div class="flex flex-col gap-2">
+                        {/* Game info */}
+                        <div
+                          class="text-muted-foreground mb-2 flex items-center justify-between gap-3 text-sm"
+                        >
+                          <div class="flex items-center gap-1">
+                            <Calendar className="h-3 w-3" />
+                            <span class="text-nowrap">July 01, 2025</span>
+                          </div>
+                          <div class="flex items-center gap-1">
+                            <Clock className="h-3 w-3" />
+                            <span class="text-nowrap">10:00 PM</span>
+                          </div>
+                          <span class="text-nowrap">Game 2</span>
+                        </div>
+
+                        {/* Team 1 */}
+                        <div
+                          class="rounded-md bg-slate-50 p-2 dark:bg-slate-800"
+                        >
+                          <div class="flex items-center justify-between">
+                            <span class="font-medium">Unified</span>
+                            <span class="font-bold">0</span>
+                          </div>
+                        </div>
+
+                        <div class="my-1 h-px bg-slate-200 dark:bg-slate-700">
+                        </div>
+
+                        {/* Team 2 */}
+                        <div
+                          class="rounded-md bg-slate-50 p-2 dark:bg-slate-800"
+                        >
+                          <div class="flex items-center justify-between">
+                            <span class="font-medium">Unified</span>
+                            <span class="font-bold">0</span>
+                          </div>
+                        </div>
+                      </div>
+                    </Card>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item-child">
+              <div class="item">
+                <div class="item-parent">
+                  <Card className="w-full p-4" id="game-10">
+                    <div class="flex flex-col gap-2">
+                      {/* Game info */}
+                      <div
+                        class="text-muted-foreground mb-2 flex items-center justify-between gap-2 text-sm"
+                      >
+                        <div class="flex items-center gap-1">
+                          <Calendar className="h-3 w-3" />
+                          <span class="text-nowrap">July 01, 2025</span>
+                        </div>
+                        <div class="flex items-center gap-1">
+                          <Clock className="h-3 w-3" />
+                          <span class="text-nowrap">10:00 PM</span>
+                        </div>
+                        <span class="text-nowrap">Game 10</span>
+                      </div>
+
+                      {/* Team 1 */}
+                      <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
+                        <div class="flex items-center justify-between">
+                          <span class="font-medium">Unified</span>
+                          <span class="font-bold">0</span>
+                        </div>
+                      </div>
+
+                      <div class="my-1 h-px bg-slate-200 dark:bg-slate-700">
+                      </div>
+
+                      {/* Team 2 */}
+                      <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
+                        <div class="flex items-center justify-between">
+                          <span class="font-medium">Unified</span>
+                          <span class="font-bold">0</span>
+                        </div>
+                      </div>
+                    </div>
+                  </Card>
+                </div>
+                <div class="item-childrens">
+                  <div class="item-child after:!h-[calc(50%+11px)]">
+                    <Card className="w-full p-4" id="game-3">
+                      <div class="flex flex-col gap-2">
+                        {/* Game info */}
+                        <div
+                          class="text-muted-foreground mb-2 flex items-center justify-between gap-2 text-sm"
+                        >
+                          <div class="flex items-center gap-1">
+                            <Calendar className="h-3 w-3" />
+                            <span class="text-nowrap">July 01, 2025</span>
+                          </div>
+                          <div class="flex items-center gap-1">
+                            <Clock className="h-3 w-3" />
+                            <span class="text-nowrap">10:00 PM</span>
+                          </div>
+                          <span class="text-nowrap">Game 3</span>
+                        </div>
+
+                        {/* Team 1 */}
+                        <div
+                          class="rounded-md bg-slate-50 p-2 dark:bg-slate-800"
+                        >
+                          <div class="flex items-center justify-between">
+                            <span class="font-medium">Unified</span>
+                            <span class="font-bold">0</span>
+                          </div>
+                        </div>
+
+                        <div class="my-1 h-px bg-slate-200 dark:bg-slate-700">
+                        </div>
+
+                        {/* Team 2 */}
+                        <div
+                          class="rounded-md bg-slate-50 p-2 dark:bg-slate-800"
+                        >
+                          <div class="flex items-center justify-between">
+                            <span class="font-medium">Unified</span>
+                            <span class="font-bold">0</span>
+                          </div>
+                        </div>
+                      </div>
+                    </Card>
+                  </div>
+                  <div class="item-child bye-week after:invisible">
+                    <Card className="invisible w-full p-4" id="game-4">
+                      <div class="flex flex-col gap-2">
+                        {/* Game info */}
+                        <div
+                          class="text-muted-foreground mb-2 flex items-center justify-between gap-3 text-sm"
+                        >
+                          <div class="flex items-center gap-1">
+                            <Calendar className="h-3 w-3" />
+                            <span class="text-nowrap">July 01, 2025</span>
+                          </div>
+                          <div class="flex items-center gap-1">
+                            <Clock className="h-3 w-3" />
+                            <span class="text-nowrap">10:00 PM</span>
+                          </div>
+                          <span class="text-nowrap">Game 4</span>
+                        </div>
+
+                        {/* Team 1 */}
+                        <div
+                          class="rounded-md bg-slate-50 p-2 dark:bg-slate-800"
+                        >
+                          <div class="flex items-center justify-between">
+                            <span class="font-medium">Unified</span>
+                            <span class="font-bold">0</span>
+                          </div>
+                        </div>
+
+                        <div class="my-1 h-px bg-slate-200 dark:bg-slate-700">
+                        </div>
+
+                        {/* Team 2 */}
+                        <div
+                          class="rounded-md bg-slate-50 p-2 dark:bg-slate-800"
+                        >
+                          <div class="flex items-center justify-between">
+                            <span class="font-medium">Unified</span>
+                            <span class="font-bold">0</span>
+                          </div>
+                        </div>
+                      </div>
+                    </Card>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item-child">
+        <div class="item">
+          <div class="item-parent">
+            <Card className="w-full p-4" id="game 11">
+              <div class="flex flex-col gap-2">
+                {/* Game info */}
+                <div
+                  class="text-muted-foreground mb-2 flex items-center justify-between gap-3 text-sm"
+                >
+                  <div class="flex items-center gap-1">
+                    <Calendar className="h-3 w-3" />
+                    <span class="text-nowrap">July 10, 2025</span>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <Clock className="h-3 w-3" />
+                    <span class="text-nowrap">10:00 PM</span>
+                  </div>
+                  <span class="text-nowrap">Game 11</span>
+                </div>
+
+                {/* Team 1 */}
+                <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
+                  <div class="flex items-center justify-between">
+                    <span class="font-medium">Game 8 Winner</span>
+                    <span class="font-bold">-</span>
+                  </div>
+                </div>
+
+                <div class="my-1 h-px bg-slate-200 dark:bg-slate-700"></div>
+
+                {/* Team 2 */}
+                <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
+                  <div class="flex items-center justify-between">
+                    <span class="font-medium">Game 9 Winner</span>
+                    <span class="font-bold">-</span>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+          <div class="item-childrens">
+            <div class="item-child">
+              <div class="item">
+                <div class="item-parent">
+                  <p>Parent</p>
+                </div>
+                <div class="item-childrens">
+                  <div class="item-child">
+                    <p>child 1</p>
+                  </div>
+                  <div class="item-child">
+                    <p>child 2A</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item-child">
+              <Card className="w-full p-4" id="game-12">
+                <div class="flex flex-col gap-2">
+                  {/* Game info */}
+                  <div
+                    class="text-muted-foreground mb-2 flex items-center justify-between text-sm"
+                  >
+                    <div class="flex items-center gap-1">
+                      <Calendar className="h-3 w-3" />
+                      <span>July 01, 2025</span>
+                    </div>
+                    <div class="flex items-center gap-1">
+                      <Clock className="h-3 w-3" />
+                      <span>10:00 PM</span>
+                    </div>
+                    <span>Game 12</span>
+                  </div>
+
+                  {/* Team 1 */}
+                  <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
+                    <div class="flex items-center justify-between">
+                      <span class="font-medium">Unified</span>
+                      <span class="font-bold">0</span>
+                    </div>
+                  </div>
+
+                  <div class="my-1 h-px bg-slate-200 dark:bg-slate-700"></div>
+
+                  {/* Team 2 */}
+                  <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
+                    <div class="flex items-center justify-between">
+                      <span class="font-medium">Unified</span>
+                      <span class="font-bold">0</span>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .item {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .item p {
+    padding: 20px;
+    margin: 0;
+    background-color: red;
+  }
+
+  .item-parent {
+    position: relative;
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+  }
+
+  .item-parent:after {
+    position: absolute;
+    content: "";
+    width: 25px;
+    height: 2px;
+    left: 0;
+    top: 50%;
+    background-color: #00f;
+    transform: translateX(-100%);
+  }
+
+  .item-childrens {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .item-child {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .item-child:before {
+    content: "";
+    position: absolute;
+    background-color: #0f0;
+    right: 0;
+    top: 50%;
+    transform: translateX(100%);
+    width: 25px;
+    height: 2px;
+  }
+
+  .item-child:after {
+    content: "";
+    position: absolute;
+    background-color: #f00;
+    right: -25px;
+    height: calc(50% + 22px);
+    width: 2px;
+    top: 50%;
+  }
+
+  .item-child:last-child:after {
+    transform: translateY(-100%);
+  }
+
+  .item-child:only-child:after {
+    display: none;
+  }
+
+  .bye-week:before {
+    @apply invisible;
+  }
+  .bye-week:after {
+    height: calc(50% + 11px) !important;
+  }
+</style>
