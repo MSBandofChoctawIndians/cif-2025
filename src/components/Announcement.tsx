@@ -78,26 +78,23 @@ export default function AnnouncementDialog({
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="bg-radial w-full max-w-sm gap-0 overflow-hidden rounded-lg border-0 from-stone-700 to-stone-950 p-0">
+      <DialogContent className="bg-radial w-auto max-w-[90vh] gap-0 rounded-lg border-0 from-stone-700 to-stone-950 p-0">
         <DialogHeader className="flex items-center justify-between px-6 py-2">
           <h2 className="text-lg font-semibold text-white">Announcements</h2>
         </DialogHeader>
         {/* Carousel of slides */}
-        <Carousel
-          setApi={setEmblaApi}
-          className="relative h-full w-full overflow-hidden"
-        >
-          <CarouselContent className="!ml-0 !mt-0">
+        <Carousel setApi={setEmblaApi} className="relative h-full w-auto">
+          <CarouselContent>
             {slides.map((slide, idx) => (
               <CarouselItem
                 key={idx}
-                className="flex items-center justify-center !pl-0"
+                className="flex w-full items-center justify-center"
               >
                 {slide.src ? (
                   <img
                     src={slide.src}
                     alt={slide.alt ?? ""}
-                    className="mx-auto h-auto w-full"
+                    className="mx-auto max-h-[90vh] w-auto"
                   />
                 ) : typeof slide.content === "string" ? (
                   <div
