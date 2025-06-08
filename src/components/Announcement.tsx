@@ -78,7 +78,7 @@ export default function AnnouncementDialog({
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="bg-radial w-auto max-w-[90vh] gap-0 rounded-lg border-0 from-stone-700 to-stone-950 p-0">
+      <DialogContent className="bg-radial max-h-[100vh] w-auto gap-0 rounded-lg border-0 from-stone-700 to-stone-950 p-0">
         <DialogHeader className="flex items-center justify-between px-6 py-2">
           <h2 className="text-lg font-semibold text-white">Announcements</h2>
         </DialogHeader>
@@ -94,7 +94,7 @@ export default function AnnouncementDialog({
                   <img
                     src={slide.src}
                     alt={slide.alt ?? ""}
-                    className="mx-auto max-h-[90vh] w-auto"
+                    className="mx-auto max-h-[80vh] w-auto"
                   />
                 ) : typeof slide.content === "string" ? (
                   <div
