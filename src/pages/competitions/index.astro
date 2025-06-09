@@ -24,6 +24,7 @@ interface Competition {
     social?: string;
     compForm?: string;
     socialForm?: string;
+    formButton?: boolean; // Optional, used for disabling the button
   };
 }
 
@@ -99,6 +100,7 @@ const competitions: Competition[] = [
     logo: "/competitions/littlecif/lil-pageant.webp",
     links: {
       form: "/competitions/littlecif/lil_pageant_form.jpg",
+      formButton: false, // Disable the form button
     },
   },
   {
@@ -191,14 +193,24 @@ const competitions: Competition[] = [
                       </Button>
                     </a>
                   )}
-                  {competition.links?.form && (
-                    <a href={competition.links.form} target="_blank">
-                      <Button variant="outline">
+                  {competition.links?.form &&
+                    (competition.links.formButton === false ? (
+                      <Button variant="outline" disabled>
                         <FileText />
-                        Form
+                        Registration Closed
                       </Button>
-                    </a>
-                  )}
+                    ) : (
+                      <a
+                        href={competition.links.form}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button variant="outline">
+                          <FileText />
+                          Form
+                        </Button>
+                      </a>
+                    ))}
                   {competition.links?.compForm && (
                     <a
                       href={competition.links.compForm}

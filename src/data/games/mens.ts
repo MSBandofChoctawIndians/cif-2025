@@ -120,3 +120,5 @@ const mensGames = [
     // team2Score: ,
   },
 ];
+
+export default mensGames;
