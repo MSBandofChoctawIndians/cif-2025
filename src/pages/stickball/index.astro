@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/main.astro";
-import MensBracket from "@/components/MensBracket.astro";
+import MensBracket from "@/components/brackets/MensBracket.astro";
+import WomensBracket from "@/components/brackets/WomensBracket.astro";
 
 interface EventProps {
   id?: string;
@@ -127,6 +128,7 @@ const featuredEvents = [
         >
           Women's Division
         </h2>
+        <!-- <WomensBracket /> -->
         {/* Placeholder text for Bracket Coming Soon */}
         <p class="mt-4 text-lg text-white">Bracket Coming Soon</p>
       </div>

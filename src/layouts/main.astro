@@ -29,6 +29,29 @@ const slides = [
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Join us at the annual Choctaw Indian Fair celebrating Native American culture with arts, crafts, food, dance, and music."
+    />
+    <meta
+      name="keywords"
+      content="Choctaw, Native American fair, arts and crafts, cultural festival, dance, music, food"
+    />
+    <meta
+      name="author"
+      content="Native Consulting Services – https://nativeconsult.io"
+    />
+    <meta property="og:title" content="Choctaw Indian Fair" />
+    <meta
+      property="og:description"
+      content="Join us at the annual Choctaw Indian Fair celebrating Native American culture with arts, crafts, food, dance, and music."
+    />
+    <meta
+      property="og:image"
+      content="https://choctawindianfair.com/meta.webp"
+    />
+    <meta property="og:url" content="https://choctawindianfair.com" />
+    <meta property="og:type" content="website" />
     <link rel="icon" type="image/png" href="/navlogo.webp" />
     <title>Choctaw Indian Fair</title>
     <GoogleAnalytics id="G-GHD6P2KR7E" />
@@ -39,7 +62,7 @@ const slides = [
     ></script>
   </head>
   <body class="bg-gradient-to-r from-stone-900 via-stone-700 to-stone-950">
-    <AnnouncementDialog client:load slides={slides} />
+    <!-- <AnnouncementDialog client:load slides={slides} /> -->
     <Navbar client:load />
     <slot />
     <Footer />
