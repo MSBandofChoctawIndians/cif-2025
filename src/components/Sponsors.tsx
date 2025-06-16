@@ -158,7 +158,7 @@ export default function SponsorFooter() {
                 </div>
               </CarouselItem>
             ))}
-            {/* {Array.from(
+            {Array.from(
               { length: Math.ceil(bronzeSponsors.length / 2) },
               (_, i) => {
                 const first = bronzeSponsors[i * 2];
@@ -171,15 +171,33 @@ export default function SponsorFooter() {
                     <div className="grid grid-rows-2 gap-4 p-1">
                       {[first, second].map((sponsor, idx) =>
                         sponsor ? (
-                          <a
-                            key={sponsor.name}
-                            href={sponsor.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <Card className="border-2 border-neutral-400 bg-gradient-to-br from-amber-600 via-amber-300 to-amber-700 shadow-sm">
+                          sponsor.link ? (
+                            <a
+                              key={sponsor.name}
+                              href={sponsor.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <Card className="border-2 border-neutral-400 bg-gradient-to-br from-amber-600 via-amber-300 to-amber-700 shadow-sm">
+                                <CardContent className="flex h-[72px] items-center justify-center p-6">
+                                  <h1 className="text-center text-2xl font-bold">
+                                    {sponsor.name}
+                                  </h1>
+                                </CardContent>
+                                <CardFooter>
+                                  <h3 className="w-full pt-4 text-center text-sm font-medium md:text-base lg:text-lg">
+                                    Bronze Sponsor
+                                  </h3>
+                                </CardFooter>
+                              </Card>
+                            </a>
+                          ) : (
+                            <Card
+                              key={sponsor.name}
+                              className="border-2 border-neutral-400 bg-gradient-to-br from-amber-600 via-amber-300 to-amber-700 shadow-sm"
+                            >
                               <CardContent className="flex h-[72px] items-center justify-center p-6">
-                                <h1 className="text-2xl font-bold">
+                                <h1 className="text-center text-2xl font-bold">
                                   {sponsor.name}
                                 </h1>
                               </CardContent>
@@ -189,7 +207,7 @@ export default function SponsorFooter() {
                                 </h3>
                               </CardFooter>
                             </Card>
-                          </a>
+                          )
                         ) : (
                           <div key={`empty-${idx}`} className="invisible">
                             <Card className="border-2 border-neutral-400 bg-gradient-to-br from-amber-600 via-amber-300 to-amber-700 shadow-sm">
@@ -209,7 +227,7 @@ export default function SponsorFooter() {
                   </CarouselItem>
                 );
               },
-            )} */}
+            )}
           </CarouselContent>
           <div className="mt-8 flex justify-center">
             <CarouselPrevious className="relative mr-2" />

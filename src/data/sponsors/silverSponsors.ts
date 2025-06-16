@@ -39,14 +39,14 @@ const silverSponsors = [
     link: "https://www.imperialdade.com/",
   },
   {
-    name: "Jackson Newell Paper",
-    logo: "newell",
-    link: "https://meridian.newellpaper.com",
-  },
-  {
     name: "Interpest",
     logo: "interpest",
     link: "https://www.interpestinc.com/",
+  },
+  {
+    name: "Jackson Newell Paper",
+    logo: "newell",
+    link: "https://meridian.newellpaper.com",
   },
   {
     name: "Joe McGee Construction",
@@ -75,6 +75,11 @@ const silverSponsors = [
     name: "Mississippi Public Health Institute",
     logo: "msphi",
     link: "https://www.msphi.org/",
+  },
+  {
+    name: "Next Era Energy Resources",
+    logo: "neer",
+    link: "https://www.nexteraenergyresources.com/",
   },
   {
     name: "OneDigital",
