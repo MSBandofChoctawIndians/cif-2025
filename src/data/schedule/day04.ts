@@ -1,6 +1,12 @@
 // Saturday, July 05, 2025
 export const day04 = [
   {
+    name: "Volleyball Tournament",
+    time: "9:00 AM",
+    location: "CCHS Gymnasium",
+    category: "competition",
+  },
+  {
     name: "Tulli Okchi Ishko Division: Game 2: Beaver Dam vs Koni Hata Himitta",
     time: "6:00 PM",
     location: "Warrior Stadium",

@@ -170,12 +170,31 @@ export default function EventSchedulePage() {
 
   // Get the events for the selected day and filter by selected categories
   const currentEvents = selectedDay
-    ? (eventsByDay[selectedDay as keyof typeof eventsByDay] || []).filter(
-        (event) =>
-          selectedCategories.length === 0 ||
-          (event.category !== undefined &&
-            selectedCategories.includes(event.category)),
-      )
+    ? (eventsByDay[selectedDay as keyof typeof eventsByDay] || [])
+        .filter(
+          (event) =>
+            selectedCategories.length === 0 ||
+            (event.category !== undefined &&
+              selectedCategories.includes(event.category)),
+        )
+        .sort((a, b) => {
+          // assign custom ranks: regular=0, Gates Close=1, Midway Closes=2, Fair Officially Closes=3
+          const rank = (evt: typeof a) =>
+            evt.name === "Choctaw Indian Fair Officially Closes"
+              ? 3
+              : evt.name === "Midway Closes"
+                ? 2
+                : evt.name === "Gates Close"
+                  ? 1
+                  : 0;
+          const rankA = rank(a);
+          const rankB = rank(b);
+          if (rankA !== rankB) return rankA - rankB;
+          // same rank → sort by parsed time
+          const timeA = parse(a.time, "hh:mm a", new Date()).getTime();
+          const timeB = parse(b.time, "hh:mm a", new Date()).getTime();
+          return timeA - timeB;
+        })
     : [];
 
   // Get the date object for the selected day

@@ -6,6 +6,11 @@ export const day08 = [
     location: "Fairgrounds",
   },
   {
+    name: "Midway Opens",
+    time: "3:00 PM",
+    location: "Fairgrounds",
+  },
+  {
     name: "Pushmataha Division: Game 4: Winner Game 2 vs Beaver Dam",
     time: "5:00 PM",
     location: "Warrior Stadium",
@@ -25,7 +30,18 @@ export const day08 = [
   },
   {
     name: "Gates Close",
+    time: "12:00 AM",
+    location: "Fairgrounds",
+  },
+  {
+    name: "Midway Closes",
     time: "1:00 AM",
     location: "Fairgrounds",
+  },
+  {
+    name: "Iron Warrior",
+    time: "1:00 PM",
+    location: "In Front of Exhibit Hall",
+    category: "competition",
   },
 ];

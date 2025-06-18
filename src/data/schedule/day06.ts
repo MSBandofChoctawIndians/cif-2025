@@ -6,6 +6,11 @@ export const day06 = [
     location: "Fairgrounds",
   },
   {
+    name: "Midway Opens",
+    time: "3:00 PM",
+    location: "Fairgrounds",
+  },
+  {
     name: "Pushmataha Division: Game 2: Koni-Hata Osi vs Tiak Hikíya Osi",
     time: "5:00 PM",
     location: "Warrior Stadium",
@@ -40,5 +45,15 @@ export const day06 = [
     time: "10:30 PM",
     location: "Warrior Stadium",
     category: "stickball",
+  },
+  {
+    name: "Gates Close",
+    time: "12:00 AM",
+    location: "Fairgrounds",
+  },
+  {
+    name: "Midway Closes",
+    time: "1:00 AM",
+    location: "Fairgrounds",
   },
 ];

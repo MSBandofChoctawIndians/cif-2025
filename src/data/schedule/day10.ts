@@ -8,6 +8,11 @@ export const day10 = [
     location: "Fairgrounds",
   },
   {
+    name: "Midway Opens",
+    time: "12:00 PM",
+    location: "Fairgrounds",
+  },
+  {
     name: "Women’s Division: Championship Game",
     time: "8:30 PM",
     location: "Warrior Stadium",
@@ -23,5 +28,23 @@ export const day10 = [
     name: "Choctaw Indian Fair Officially Closes",
     time: "2:00 AM",
     location: "Fairgrounds",
+  },
+  {
+    name: "Iron Warrior",
+    time: "1:00 PM",
+    location: "In Front of Exhibit Hall",
+    category: "competition",
+  },
+  {
+    name: "Cornhole Tournament",
+    time: "9:00 AM",
+    location: "CCHS Gymnasium",
+    category: "competition",
+  },
+  {
+    name: "Rez Run 2025",
+    time: "7:00 AM",
+    location: "Warrior Stadium",
+    category: "competition",
   },
 ];

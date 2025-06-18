@@ -6,6 +6,11 @@ export const day07 = [
     location: "Fairgrounds",
   },
   {
+    name: "Midway Opens",
+    time: "3:00 PM",
+    location: "Fairgrounds",
+  },
+  {
     name: "Pushmataha Division: Game 3: Ittibá Tóli vs Winner Game 1",
     time: "4:00 PM",
     location: "Warrior Stadium",
@@ -26,6 +31,11 @@ export const day07 = [
   {
     name: "Gates Close",
     time: "12:00 AM",
+    location: "Fairgrounds",
+  },
+  {
+    name: "Midway Closes",
+    time: "1:00 AM",
     location: "Fairgrounds",
   },
 ];
