@@ -56,4 +56,40 @@ export const day06 = [
     time: "1:00 AM",
     location: "Fairgrounds",
   },
+  {
+    name: "Bogue Chitto Social Dancers",
+    time: "3:00 PM",
+    location: "Main Dance Ground",
+    category: "culture",
+  },
+  {
+    name: "2024-2025 Choctaw Indian Princess Visit",
+    time: "3:45 PM",
+    location: "Main Dance Ground",
+    category: "pageant",
+  },
+  {
+    name: "B&GC – Chahta Himitta Hilha AlhÍha",
+    time: "4:00 PM",
+    location: "Main Dance Ground",
+    category: "culture",
+  },
+  {
+    name: "Eagles Cry Social Dancers",
+    time: "5:00 PM",
+    location: "CICC Outreach Dance Ground",
+    category: "culture",
+  },
+  {
+    name: "Hilháchi AlhÍha",
+    time: "6:00 PM",
+    location: "CICC Outreach Dance Ground",
+    category: "culture",
+  },
+  {
+    name: "Bogue Homa Social Dancers",
+    time: "7:00 PM",
+    location: "CICC Outreach Dance Ground",
+    category: "culture",
+  },
 ];

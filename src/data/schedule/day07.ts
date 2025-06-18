@@ -38,4 +38,58 @@ export const day07 = [
     time: "1:00 AM",
     location: "Fairgrounds",
   },
+  {
+    name: "Ki Hilha “Let’s Dance”",
+    time: "11:00 AM",
+    location: "Main Dance Ground",
+    category: "culture",
+  },
+  {
+    name: "Farewell Visit From 23-25 Choctaw Indian Princess",
+    time: "11:45 AM",
+    location: "Main Dance Ground",
+    category: "pageant",
+  },
+  {
+    name: "Kabotcha Bóli Dancers",
+    time: "12:00 PM",
+    location: "Main Dance Ground",
+    category: "culture",
+  },
+  {
+    name: "Introduction of Visiting Princesses",
+    time: "12:45 PM",
+    location: "Main Dance Ground",
+    category: "pageant",
+  },
+  {
+    name: "Pearl River Social Dancers",
+    time: "1:00 PM",
+    location: "Main Dance Ground",
+    category: "culture",
+  },
+  {
+    name: "Ittibá Achaffa Hapiya",
+    time: "2:00 PM",
+    location: "Main Dance Ground",
+    category: "culture",
+  },
+  {
+    name: "Chahta Hilha Ik Hapi Kaniyo Kiya",
+    time: "3:00 PM",
+    location: "Main Dance Ground",
+    category: "culture",
+  },
+  {
+    name: "Natives Dance Group",
+    time: "4:00 PM",
+    location: "Main Dance Ground",
+    category: "culture",
+  },
+  {
+    name: "Chahta Alla Youth Council",
+    time: "5:00 PM",
+    location: "Main Dance Ground",
+    category: "culture",
+  },
 ];
