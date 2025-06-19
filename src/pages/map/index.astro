@@ -1,0 +1,202 @@
+---
+import Layout from "@/layouts/main.astro";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import {
+  MapPin,
+  Car,
+  Bus,
+  Info,
+  Download,
+  Hotel,
+  ParkingCircle,
+  Bed,
+  Ticket,
+  TicketIcon,
+  Star,
+} from "lucide-react";
+---
+
+<Layout title="Map">
+  <div
+    class="flex min-h-screen flex-col bg-gradient-to-r from-orange-700 via-orange-500 to-orange-800"
+  >
+    {/* Header Section */}
+    <section class="bg-black/30 py-12 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="mb-4 text-4xl font-bold md:text-5xl">Fair Maps</h1>
+        <p class="mx-auto max-w-2xl text-xl">
+          Find your way around the fairgrounds and locate parking and shuttle
+          services
+        </p>
+      </div>
+    </section>
+
+    {/* Maps Section */}
+    <section class="container mx-auto px-4 py-12">
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+        {/* Fairgrounds Map */}
+        <Card className="h-full border-none bg-black/70 text-white">
+          <CardHeader>
+            <CardTitle className="flex items-center text-2xl">
+              <MapPin className="mr-2 h-6 w-6 text-blue-500" />
+              Fairgrounds Map
+            </CardTitle>
+            <CardDescription className="text-neutral-300">
+              Downloadable map showing all attractions, food stalls, and
+              facilities at the fairgrounds
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div class="relative h-auto w-full overflow-hidden rounded-lg">
+              <img
+                src="/fair_map.webp"
+                alt="Fairgrounds Map"
+                class="bg-gray-50 object-contain"
+              />
+            </div>
+          </CardContent>
+          <CardFooter>
+            <Button variant="secondary" className="w-full">
+              <a
+                href="/2025 Fairgrounds Map.pdf"
+                target="_blank"
+                class="flex items-center"
+              >
+                <Download className="mr-2 mt-0.5 h-5 w-5 text-blue-600" />
+                Download Full Map
+              </a>
+            </Button>
+          </CardFooter>
+        </Card>
+
+        {/* Parking & Shuttle Map */}
+        <Card className="h-full border-none bg-black/70 text-white">
+          <CardHeader>
+            <CardTitle className="flex items-center text-2xl">
+              <Car className="mr-2 h-6 w-6 text-green-500" />
+              Parking & Shuttle Map
+            </CardTitle>
+            <CardDescription className="text-neutral-300">
+              Find parking areas and shuttle routes to the fairgrounds</CardDescription
+            >
+          </CardHeader>
+          <CardContent>
+            <div
+              class="relative aspect-square overflow-hidden rounded-lg border sm:aspect-video"
+            >
+              <iframe
+                src="https://www.google.com/maps/d/embed?mid=1e6Nvl9pSDrBdsh-9WWbGf3-QLdrcyGsm&ehbc=2E312F"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                title="Parking and Shuttle Map"></iframe>
+            </div>
+
+            {/* Parking Information */}
+            <div class="mt-6 grid space-y-4 sm:grid-cols-2">
+              <div class="flex items-start">
+                <div
+                  class="-mt-0.5 mr-2 flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-pink-700"
+                >
+                  <Star className="h-5 w-5 fill-white" />
+                </div>
+                <div>
+                  <h4 class="font-semibold">Fairgrounds</h4>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="-mt-0.5 mr-2 flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-cyan-700 text-cyan-700"
+                >
+                  <Ticket className="h-5 w-5 fill-white" />
+                </div>
+                <div>
+                  <h4 class="font-semibold">Tickets</h4>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <ParkingCircle
+                  className="mr-2 mt-0.5 h-8 w-8 fill-cyan-700 text-white"
+                />
+                <div>
+                  <h4 class="font-semibold">Parking</h4>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="-mt-0.5 mr-2 flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-green-700 text-white"
+                >
+                  <Bed className="h-5 w-5" />
+                </div>
+                <div>
+                  <h4 class="font-semibold">Lodging</h4>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="-mt-0.5 mr-2 flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-orange-600 text-white"
+                >
+                  <Bus className="h-5 w-5" />
+                </div>
+                <div>
+                  <h4 class="font-semibold">Baseball Parking Loop</h4>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="-mt-0.5 mr-2 flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-purple-800 text-white"
+                >
+                  <Bus className="h-5 w-5" />
+                </div>
+                <div>
+                  <h4 class="font-semibold">Golden Moon Parking Loop</h4>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Additional Information */}
+        <div class="mt-6 md:col-span-2">
+          <Card className="border-none bg-black/70 text-white">
+            <CardHeader>
+              <CardTitle className="flex items-center text-xl">
+                <Bus className="mr-2 h-5 w-5 text-yellow-400" />
+                Shuttle Bus Schedule
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div>
+                  <h4 class="mb-2 font-semibold">Baseball Parking Loop</h4>
+                  <ul class="space-y-1 text-sm text-neutral-300">
+                    <li>3:00 PM to 1:00 AM (Tuesday)</li>
+                    <li>7:00 AM to 1:00 AM (Wednesday & Thursday)</li>
+                    <li>7:00 AM to 2:00 AM (Friday & Saturday)</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="mb-2 font-semibold">Golden Moon Parking Loop</h4>
+                  <ul class="space-y-1 text-sm text-neutral-300">
+                    <li>3:00 PM to 1:00 AM (Tuesday)</li>
+                    <li>11:00 AM to 1:00 AM (Wednesday & Thursday)</li>
+                    <li>10:00 AM to 2:00 AM (Friday & Saturday)</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

@@ -468,7 +468,7 @@ export default function EventSchedulePage() {
             </div>
           ) : (
             <div className="py-8 text-center text-white">
-              Event schedule coming soon!
+              No events scheduled for this day.
             </div>
           )}
         </CardContent>

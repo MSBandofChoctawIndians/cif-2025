@@ -140,14 +140,11 @@ export function Navbar() {
                 );
               })}
               <NavigationMenuItem>
-                {/* <a href="/fair-map">
+                <a href="/map">
                   <Button variant="ghost">
                     <MapPinned className="h-12 w-12" />
                   </Button>
-                </a> */}
-                <Button variant="disabled">
-                  <MapPinned className="h-12 w-12" />
-                </Button>
+                </a>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>

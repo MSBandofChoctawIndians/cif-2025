@@ -13,8 +13,14 @@ import platSponsors from "@/data/sponsors/platSponsors";
 import goldSponsors from "@/data/sponsors/goldSponsors";
 import silverSponsors from "@/data/sponsors/silverSponsors";
 import bronzeSponsors from "@/data/sponsors/bronzeSponsors";
+import { useEffect, useState } from "react";
 
 export default function SponsorFooter() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <footer className="via-fair-red w-full bg-gradient-to-br from-red-700 to-red-800 py-12">
       <div className="mb-12 mt-[-48px] h-48 bg-[url(/bead-pattern.svg)] bg-center bg-repeat-x opacity-30" />
@@ -229,10 +235,12 @@ export default function SponsorFooter() {
               },
             )}
           </CarouselContent>
-          <div className="mt-8 flex justify-center">
-            <CarouselPrevious className="relative mr-2" />
-            <CarouselNext className="relative ml-2" />
-          </div>
+          {mounted && (
+            <div className="mt-8 flex justify-center">
+              <CarouselPrevious className="relative mr-2" />
+              <CarouselNext className="relative ml-2" />
+            </div>
+          )}
         </Carousel>
       </div>
     </footer>
