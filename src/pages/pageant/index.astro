@@ -12,6 +12,11 @@ interface EventProps {
   polaroid?: boolean;
 }
 
+interface ContestantProps {
+  image: string;
+  alt: string;
+}
+
 const featuredEvents = [
   {
     polaroid: true,
@@ -29,6 +34,45 @@ const featuredEvents = [
     image: "/princess02.webp",
     alt: "Choctaw Indian Princess Pageant",
     order: "order-3 lg:order-3 lg:rotate-6",
+  },
+];
+
+const contestants = [
+  {
+    image: "1 Annalise",
+    alt: "Annalise Nicole Bell",
+  },
+  {
+    image: "2 Teresa",
+    alt: "Teresa Willis",
+  },
+  {
+    image: "3 Jaliah",
+    alt: "Jaliah Rashad Mingo",
+  },
+  {
+    image: "4 Cambee",
+    alt: "Cambee Latrice Johnson",
+  },
+  {
+    image: "5 Dayanara",
+    alt: "Dayanara Lopez",
+  },
+  {
+    image: "6 Netiyah",
+    alt: "Netiyah Naeshon Thompson",
+  },
+  {
+    image: "7 Lexi",
+    alt: "Lexi Rodriguez",
+  },
+  {
+    image: "8 Miyah",
+    alt: "Miyah Henry",
+  },
+  {
+    image: "9 Taijah",
+    alt: "Taijah Kessinger",
   },
 ];
 ---
@@ -99,17 +143,22 @@ const featuredEvents = [
         >
           Pageant Contestants
         </h2>
-        {/* Placeholder text for Bracket Coming Soon */}
-        <p class="mt-4 text-lg text-white">Contestants Coming Soon</p>
-        <div
-          class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-        >
+        <div class="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3">
           {
-            Array.from({ length: 8 }).map((_, i) => (
-              <div class="space-y-2">
-                <Skeleton className="h-48 w-full rounded-lg" />
-                <Skeleton className="h-4 w-3/5 mx-auto rounded" />
-              </div>
+            contestants.map((contestant: ContestantProps) => (
+              <a
+                href={`/pageant/contestants/${contestant.image}.jpg`}
+                class="group"
+                target="_blank"
+              >
+                <img
+                  src={`/pageant/contestants/${contestant.image}.webp`}
+                  alt={contestant.alt}
+                  width={600}
+                  height={315}
+                  class="fade-up w-fulltransition-transform mx-auto block aspect-video duration-300 hover:scale-105"
+                />
+              </a>
             ))
           }
         </div>
