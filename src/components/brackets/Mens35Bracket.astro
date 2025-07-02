@@ -1,0 +1,87 @@
+---
+import UiCard from "../brackets/Card.astro";
+---
+
+<div
+  class="flex h-full overflow-x-scroll lg:justify-center lg:overflow-x-hidden"
+>
+  <div class="item">
+    <div class="item-parent">
+      <!-- Game 9 -->
+      <UiCard
+        gameNumber={5}
+        matchNumber={15}
+        gameDate="Fri 7/11"
+        gameTime="08:00 PM"
+        team1="Game 3 Winner"
+        team2="Game 4 Winner"
+      />
+    </div>
+    <div class="item-childrens">
+      <div class="item-child">
+        <div class="item">
+          <div class="item-parent">
+            <!-- Game 7 -->
+            <UiCard
+              gameNumber={3}
+              matchNumber={13}
+              gameDate="Mon 7/7"
+              gameTime="07:00 PM"
+              team1="Tvshkahomma"
+              team2="Game 1 Winner"
+            />
+          </div>
+          <div class="item-childrens">
+            <div class="item-child bye-week after:invisible">
+              <!-- Game 5 -->
+              <UiCard matchNumber={9} invisible />
+            </div>
+            <div class="item-child after:!h-[calc(50%+11px)]">
+              <!-- Game 3 -->
+              <UiCard
+                gameNumber={1}
+                matchNumber={10}
+                gameDate="Wed 7/2"
+                gameTime="07:00 PM"
+                team1="Oka Homma"
+                team2="Bók Čito"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item-child">
+        <div class="item">
+          <div class="item-parent">
+            <!-- Game 7 -->
+            <UiCard
+              gameNumber={4}
+              matchNumber={14}
+              gameDate="Mon 7/7"
+              gameTime="08:00 PM"
+              team1="Game 2 Winner"
+              team2="Koni Hata"
+            />
+          </div>
+          <div class="item-childrens">
+            <div class="item-child after:!h-[calc(50%+11px)]">
+              <!-- Game 3 -->
+              <UiCard
+                gameNumber={2}
+                matchNumber={11}
+                gameDate="Thu 7/3"
+                gameTime="07:00 PM"
+                team1="Pearl River"
+                team2="Beaver Dam"
+              />
+            </div>
+            <div class="item-child bye-week after:invisible">
+              <!-- Game 4 -->
+              <UiCard matchNumber={12} invisible />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
