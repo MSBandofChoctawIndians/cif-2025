@@ -1,0 +1,101 @@
+---
+import UiCard from "../brackets/Card.astro";
+---
+
+<div
+  class="mt-16 flex h-full overflow-x-scroll lg:justify-center lg:overflow-x-hidden"
+>
+  <div class="item">
+    <div class="item-parent">
+      <!-- Game 9 -->
+      <UiCard
+        gameNumber={7}
+        matchNumber={15}
+        gameDate="Fri 7/11"
+        gameTime="10:00 PM"
+        team1="Game 5 Winner"
+        team2="Game 6 Winner"
+      />
+    </div>
+    <div class="item-childrens">
+      <div class="item-child">
+        <div class="item">
+          <div class="item-parent">
+            <!-- Game 7 -->
+            <UiCard
+              gameNumber={5}
+              matchNumber={13}
+              gameDate="Wed 7/9"
+              gameTime="05:00 PM"
+              team1="Game 1 Winner"
+              team2="Game 2 Winner"
+            />
+          </div>
+          <div class="item-childrens">
+            <div class="item-child">
+              <!-- Game 5 -->
+              <UiCard
+                gameNumber={1}
+                matchNumber={9}
+                gameDate="Thu 7/3"
+                gameTime="06:00 PM"
+                team1="Tvshka Homma Himitta"
+                team2="Tiak Hikíya"
+              />
+            </div>
+            <div class="item-child">
+              <!-- Game 3 -->
+              <UiCard
+                gameNumber={2}
+                matchNumber={10}
+                gameDate="Sat 7/5"
+                gameTime="06:00 PM"
+                team1="Beaver Dam"
+                team2="Koni-Hata Himitta"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item-child">
+        <div class="item">
+          <div class="item-parent">
+            <!-- Game 7 -->
+            <UiCard
+              gameNumber={6}
+              matchNumber={14}
+              gameDate="Thu 7/10"
+              gameTime="06:00 PM"
+              team1="Game 3 Winner"
+              team2="Game 4 Winner"
+            />
+          </div>
+          <div class="item-childrens">
+            <div class="item-child">
+              <!-- Game 3 -->
+              <UiCard
+                gameNumber={3}
+                matchNumber={11}
+                gameDate="Mon 7/7"
+                gameTime="06:00 PM"
+                team1="IttibáTóli"
+                team2="Pearl River"
+              />
+            </div>
+            <div class="item-child">
+              <!-- Game 4 -->
+              <UiCard
+                gameNumber={4}
+                matchNumber={12}
+                gameDate="Tue 7/8"
+                gameTime="06:00 PM"
+                team1="Oka Homma"
+                team2="Bók Čito"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
