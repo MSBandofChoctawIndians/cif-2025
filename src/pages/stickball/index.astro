@@ -4,6 +4,7 @@ import MensBracket from "@/components/brackets/MensBracket.astro";
 import WomensBracket from "@/components/brackets/WomensBracket.astro";
 import Mens35Bracket from "@/components/brackets/Mens35Bracket.astro";
 import TulliBracket from "@/components/brackets/TulliBracket.astro";
+import PushBracket from "@/components/brackets/PushBracket.astro";
 
 interface EventProps {
   id?: string;
@@ -166,8 +167,7 @@ const featuredEvents = [
         >
           Pushmataha Division (10-13)
         </h2>
-        {/* Placeholder text for Bracket Coming Soon */}
-        <p class="mt-4 text-lg text-white">Bracket Coming Soon</p>
+        <PushBracket />
       </div>
     </section>
   </div></Layout
