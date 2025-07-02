@@ -128,4 +128,295 @@ export const day09 = [
     location: "CICC Outreach Dance Ground",
     category: "culture",
   },
+  {
+    name: "Tushka Village Opens",
+    time: "11:00 AM",
+    location: "Tushka Village",
+    category: "family fun",
+  },
+  {
+    name: "Oski Lhópa Game Opens",
+    time: "11:00 AM",
+    location: "Tushka Village",
+    category: "family fun",
+  },
+  {
+    name: "Achahpi Qualifier Opens",
+    time: "11:00 AM",
+    location: "Tushka Village",
+    category: "family fun",
+  },
+  {
+    name: "Chokfi Noshkobo Bokaffih Game Begins (Children 13 & Under)",
+    time: "12:00 PM",
+    location: "Tushka Village",
+    category: "family fun",
+  },
+  {
+    name: "Achahpi Qualifier Closes",
+    time: "2:00 PM",
+    location: "Tushka Village",
+    category: "family fun",
+  },
+  {
+    name: "Achahpi Game Tournament",
+    time: "2:30 PM",
+    location: "Tushka Village",
+    category: "family fun",
+  },
+  {
+    name: "Chokfi Noshkobo Bokaffih Game Closes",
+    time: "5:00 PM",
+    location: "Tushka Village",
+    category: "family fun",
+  },
+  {
+    name: "Tushka Village Closes",
+    time: "5:00 PM",
+    location: "Tushka Village",
+  },
+  {
+    name: "Chapel Hart in Concert",
+    time: "7:00 PM",
+    location: "Main Stage",
+  },
+  {
+    name: "Chris Young in Concert",
+    time: "8:00 PM",
+    location: "Main Stage",
+  },
+  {
+    name: "Carly Buckets Documentary/Q&A",
+    time: "11:00 AM",
+    location: "Áyipa Village",
+  },
+  {
+    name: "MBCI Collegiate Athlete Autograph Session",
+    time: "12:00 PM",
+    location: "Áyipa Village",
+  },
+  {
+    name: "Frybread Making Demonstration",
+    time: "1:00 PM",
+    location: "Áyipa Village",
+    category: "family fun",
+  },
+  {
+    name: "Doc’s Magic Variety Show",
+    time: "2:00 PM",
+    location: "Áyipa Village",
+  },
+  {
+    name: "Watermelon Eating Contest",
+    time: "3:00 PM",
+    location: "Áyipa Village",
+    category: "competition",
+  },
+  {
+    name: "Cultural Video",
+    time: "4:00 PM",
+    location: "Áyipa Village",
+  },
+  {
+    name: "Blue Nation in Concert",
+    time: "5:00 PM",
+    location: "Áyipa Village",
+  },
+  {
+    name: "DJ Dat Boi Yumi – Glow Party",
+    time: "6:00 PM",
+    location: "Áyipa Village",
+  },
+  {
+    name: "Stickball: Men’s 35 & Over Championship Watch Party on Jumbotron",
+    time: "8:00 PM",
+    location: "Áyipa Village",
+  },
+  {
+    name: "Stickball: Pushmataha Championship Watch Party on Jumbotron",
+    time: "9:00 PM",
+    location: "Áyipa Village",
+  },
+  {
+    name: "Stickball: Tulli Okchi Ishko Championship Watch Party on Jumbotron",
+    time: "10:00 PM",
+    location: "Áyipa Village",
+  },
+  {
+    name: "Reptile Walk-Thru Experience Opens",
+    time: "11:00 AM",
+    location: "Ossi Cove",
+    category: "family fun",
+  },
+  {
+    name: "Critter Keeper Show",
+    time: "11:30 AM",
+    location: "Ossi Cove",
+    category: "family fun",
+  },
+  {
+    name: "The Dinosaur Experience",
+    time: "12:30 PM",
+    location: "Ossi Cove",
+    category: "family fun",
+  },
+  {
+    name: "Scales, Tails, & Teeth",
+    time: "1:30 PM",
+    location: "Ossi Cove",
+    category: "family fun",
+  },
+  {
+    name: "Critter Keeper Show",
+    time: "2:45 PM",
+    location: "Ossi Cove",
+    category: "family fun",
+  },
+  {
+    name: "The Dinosaur Experience",
+    time: "3:00 PM",
+    location: "Ossi Cove",
+    category: "family fun",
+  },
+  {
+    name: "Scales, Tails, & Teeth",
+    time: "3:30 PM",
+    location: "Ossi Cove",
+    category: "family fun",
+  },
+  {
+    name: "Critter Keeper Show",
+    time: "4:45 PM",
+    location: "Ossi Cove",
+    category: "family fun",
+  },
+  {
+    name: "Reptile Walk-Thru Experience Closes",
+    time: "5:00 PM",
+    location: "Ossi Cove",
+    category: "family fun",
+  },
+  {
+    name: "The Dinosaur Experience Closes",
+    time: "5:30 PM",
+    location: "Ossi Cove",
+    category: "family fun",
+  },
+  {
+    name: "Scales, Tails, & Teeth Closes",
+    time: "6:00 PM",
+    location: "Ossi Cove",
+    category: "family fun",
+  },
+  {
+    name: "Shawi’s Discovery Zone Opens",
+    time: "10:00 AM",
+    location: "Shawi’s Discovery Zone",
+    category: "family fun",
+  },
+  {
+    name: "Fair Fun Zone Opens",
+    time: "10:00 AM",
+    location: "Shawi’s Discovery Zone",
+    category: "family fun",
+  },
+  {
+    name: "Oka Imma Ámiti Alhíha Kil Im Ayikhana Games Begin (Let’s Learn from Aquatic Creatures)",
+    time: "10:00 AM",
+    location: "Shawi’s Discovery Zone",
+    category: "family fun",
+  },
+  {
+    name: "MSU Bugs Walk-Thru Exhibit Opens",
+    time: "12:00 PM",
+    location: "Shawi’s Discovery Zone",
+    category: "family fun",
+  },
+  {
+    name: "Oka Imma Ámiti Alhíha Kil Im Ayikhana Closes",
+    time: "4:00 PM",
+    location: "Shawi’s Discovery Zone",
+    category: "family fun",
+  },
+  {
+    name: "Fair Fun Zone Closes",
+    time: "5:00 PM",
+    location: "Shawi’s Discovery Zone",
+    category: "family fun",
+  },
+  {
+    name: "MSU Bugs Walk-Thru Exhibit Closes",
+    time: "5:00 PM",
+    location: "Shawi’s Discovery Zone",
+    category: "family fun",
+  },
+  {
+    name: "Shawi’s Discovery Zone Closes",
+    time: "5:00 PM",
+    location: "Shawi’s Discovery Zone",
+    category: "family fun",
+  },
+  //   12:30 p.m. Scavenger Hunt
+  // Choctaw Language Story Telling
+  // 1:00 p.m. Book Signing – Choctaw Tales
+  // 2:00 p.m. Temporary Tattoo
+  // 3:00 p.m. Make a paper turtle
+  // 5:00 p.m. Social Dancing: Pushmataha Hilha Alhíha
+  // 6:00 p.m. Social Dancing: John Levi Bell Family Traditions
+  // 7:00 p.m. Social Dancing: Conehatta Social Dancers
+  // Drawing for Item of Day
+  // 8:00 p.m. CICC CLOSES
+  {
+    name: "Scavenger Hunt",
+    time: "12:30 PM",
+    location: "CICC Outreach Center",
+  },
+  {
+    name: "Choctaw Language Story Telling",
+    time: "12:30 PM",
+    location: "CICC Outreach Center",
+  },
+  {
+    name: "Book Signing – Choctaw Tales",
+    time: "1:00 PM",
+    location: "CICC Outreach Center",
+  },
+  {
+    name: "Temporary Tattoo",
+    time: "2:00 PM",
+    location: "CICC Outreach Center",
+  },
+  {
+    name: "Make a Paper Turtle",
+    time: "3:00 PM",
+    location: "CICC Outreach Center",
+  },
+  {
+    name: "Social Dancing: Pushmataha Hilha Alhíha",
+    time: "5:00 PM",
+    location: "CICC Outreach Center",
+    category: "culture",
+  },
+  {
+    name: "Social Dancing: John Levi Bell Family Traditions",
+    time: "6:00 PM",
+    location: "CICC Outreach Center",
+    category: "culture",
+  },
+  {
+    name: "Social Dancing: Conehatta Social Dancers",
+    time: "7:00 PM",
+    location: "CICC Outreach Center",
+    category: "culture",
+  },
+  {
+    name: "Drawing for Item of Day",
+    time: "7:00 PM",
+    location: "CICC Outreach Center",
+  },
+  {
+    name: "CICC Closes",
+    time: "8:00 PM",
+    location: "CICC Outreach Center",
+  },
 ];
