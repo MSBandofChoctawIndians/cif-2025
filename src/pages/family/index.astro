@@ -24,6 +24,34 @@ const featuredEvents = [
     image: "shawi",
   },
 ];
+
+const midwayHours = [
+  {
+    day: "Tuesday, July 8, 2025",
+    opening: "3:00 PM",
+    closing: "1:00 AM",
+  },
+  {
+    day: "Wednesday, July 9, 2025",
+    opening: "3:00 PM",
+    closing: "1:00 AM",
+  },
+  {
+    day: "Thursday, July 10, 2025",
+    opening: "3:00 PM",
+    closing: "1:00 AM",
+  },
+  {
+    day: "Friday, July 11, 2025",
+    opening: "3:00 PM",
+    closing: "1:00 AM",
+  },
+  {
+    day: "Saturday, July 12, 2025",
+    opening: "12:00 PM",
+    closing: "2:00 AM",
+  },
+];
 ---
 
 <Layout title="Family Fun">
@@ -208,36 +236,17 @@ const featuredEvents = [
           tasty treats, there's something for everyone to enjoy.
         </p>
         {/* Midway schedule */}
-        <!-- <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <Card
-            className="overflow-hidden border-2 border-white/50 bg-black/70 p-6 text-white"
-          >
-            <h3 class="text-xl font-semibold">Tuesday, July 8, 2025</h3>
-            <p class="mt-2">Opening: 3:00 PM</p>
-            <p>Closing: 1:00 AM</p>
-          </Card>
-          <Card
-            className="overflow-hidden border-2 border-white/50 bg-black/70 p-6 text-white"
-          >
-            <h3 class="text-xl font-semibold">Wednesday, July 9, 2025</h3>
-            <p class="mt-2">Opening: 3:00 PM</p>
-            <p>Closing: 1:00 AM</p>
-          </Card>
-          <Card
-            className="overflow-hidden border-2 border-white/50 bg-black/70 p-6 text-white"
-          >
-            <h3 class="text-xl font-semibold">Friday, July 10, 2025</h3>
-            <p class="mt-2">Opening: 3:00 PM</p>
-            <p>Closing: 1:00 AM</p>
-          </Card>
-          <Card
-            className="overflow-hidden border-2 border-white/50 bg-black/70 p-6 text-white"
-          >
-            <h3 class="text-xl font-semibold">Saturday, July 11, 2025</h3>
-            <p class="mt-2">Opening: 12:00 PM</p>
-            <p>Closing: 2:00 AM</p>
-          </Card>
-        </div> -->
+        <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {
+            midwayHours.map((hour) => (
+              <Card className="overflow-hidden border-2 border-white/50 bg-black/70 p-6 text-white">
+                <h3 class="text-xl font-semibold">{hour.day}</h3>
+                <p class="mt-2">Opening: {hour.opening}</p>
+                <p>Closing: {hour.closing}</p>
+              </Card>
+            ))
+          }
+        </div>
 
         <!-- <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <Card
