@@ -25,7 +25,7 @@ export const day05 = [
     category: "stickball",
   },
   {
-    name: "Men’s Division: Game 6: Tucker vs Winner Game 1",
+    name: "Men’s Division: Game 6: Tucker vs Unified",
     time: "9:00 PM",
     location: "Warrior Stadium",
     category: "stickball",

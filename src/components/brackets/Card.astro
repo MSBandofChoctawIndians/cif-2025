@@ -25,6 +25,24 @@ const {
   team2Score = "-",
   invisible = false,
 } = Astro.props as Props;
+
+// Compare scores for styling (convert to numbers for comparison)
+const score1 =
+  typeof team1Score === "number"
+    ? team1Score
+    : team1Score === "-"
+      ? 0
+      : parseInt(String(team1Score)) || 0;
+const score2 =
+  typeof team2Score === "number"
+    ? team2Score
+    : team2Score === "-"
+      ? 0
+      : parseInt(String(team2Score)) || 0;
+const team1IsLosing =
+  score1 < score2 && team1Score !== "-" && team2Score !== "-";
+const team2IsLosing =
+  score2 < score1 && team1Score !== "-" && team2Score !== "-";
 ---
 
 <UiCard
@@ -50,8 +68,12 @@ const {
     {/* Team 1 */}
     <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
       <div class="flex items-center justify-between">
-        <span class="font-bold">{team1}</span>
-        <span class="font-bold">{team1Score}</span>
+        <span class={`font-bold ${team1IsLosing ? "text-red-100" : ""}`}>
+          {team1}
+        </span>
+        <span class={`font-bold ${team1IsLosing ? "text-red-100" : ""}`}
+          >{team1Score}</span
+        >
       </div>
     </div>
 
@@ -60,8 +82,12 @@ const {
     {/* Team 2 */}
     <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
       <div class="flex items-center justify-between">
-        <span class="font-bold">{team2}</span>
-        <span class="font-bold">{team2Score}</span>
+        <span class={`font-bold ${team2IsLosing ? "text-red-100" : ""}`}>
+          {team2}
+        </span>
+        <span class={`font-bold ${team2IsLosing ? "text-red-100" : ""}`}
+          >{team2Score}</span
+        >
       </div>
     </div>
   </div>
