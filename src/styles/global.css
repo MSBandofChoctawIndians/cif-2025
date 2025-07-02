@@ -176,3 +176,91 @@ html {
 section[id] {
   scroll-margin-top: 4rem;
 }
+
+.card {
+  background-color: oklch(18% 0 0);
+  color: #fff;
+  border: 2px solid #aaa;
+}
+.card > div > div:first-child {
+  color: #bbb;
+}
+.card > div > div:nth-child(2) {
+  background-color: oklch(25% 0 0);
+}
+.card > div > div:nth-child(4) {
+  background-color: oklch(25% 0 0);
+}
+.item {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.item-parent {
+  position: relative;
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.item-parent:after {
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 2px;
+  left: 0;
+  top: 50%;
+  background-color: #ccc;
+  transform: translateX(-100%);
+}
+
+.item-childrens {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item-child {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.item-child:before {
+  content: "";
+  position: absolute;
+  background-color: #ccc;
+  right: 0;
+  top: 50%;
+  transform: translateX(100%);
+  width: 25px;
+  height: 2px;
+}
+
+.item-child:after {
+  content: "";
+  position: absolute;
+  background-color: #ccc;
+  right: -25px;
+  height: calc(50% + 22px);
+  width: 2px;
+  top: 50%;
+}
+
+.item-child:last-child:after {
+  transform: translateY(-100%);
+}
+
+.item-child:only-child:after {
+  display: none;
+}
+
+.bye-week:before {
+  @apply invisible;
+}
+.bye-week:after {
+  height: calc(50% + 11px) !important;
+}

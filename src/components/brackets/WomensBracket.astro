@@ -1,5 +1,6 @@
 ---
 import { Card } from "../ui/card";
+import UiCard from "../brackets/Card.astro";
 import { Calendar, Clock } from "lucide-react";
 ---
 
@@ -8,343 +9,84 @@ import { Calendar, Clock } from "lucide-react";
 >
   <div class="item">
     <div class="item-parent">
-      <Card className="card w-64 p-4" id="game-9 match-15">
-        <div class="flex flex-col gap-2">
-          {/* Game info */}
-          <div
-            class="text-muted-foreground mb-2 flex items-center justify-between gap-3 text-sm"
-          >
-            <span class="text-nowrap">Game 9</span>
-            <div class="flex items-center gap-1">
-              <Calendar className="h-3 w-3" />
-              <span class="text-nowrap">Sat 7/12</span>
-            </div>
-            <div class="flex items-center gap-1">
-              <Clock className="h-3 w-3" />
-              <span class="text-nowrap">08:30 PM</span>
-            </div>
-          </div>
-
-          {/* Team 1 */}
-          <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
-            <div class="flex items-center justify-between">
-              <span class="font-medium">Game 7 Winner</span>
-              <span class="font-bold">-</span>
-            </div>
-          </div>
-
-          <div class="my-1 h-px bg-slate-200 dark:bg-slate-700"></div>
-
-          {/* Team 2 */}
-          <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
-            <div class="flex items-center justify-between">
-              <span class="font-medium">Game 8 Winner</span>
-              <span class="font-bold">-</span>
-            </div>
-          </div>
-        </div>
-      </Card>
+      <!-- Game 9 -->
+      <UiCard
+        gameNumber={9}
+        matchNumber={15}
+        gameDate="Sat 7/12"
+        gameTime="08:30 PM"
+        team1="Game 7 Winner"
+        team2="Game 8 Winner"
+      />
     </div>
     <div class="item-childrens">
       <div class="item-child">
         <div class="item">
           <div class="item-parent">
-            <Card className="card w-64 p-4" id="game-7 match-13">
-              <div class="flex flex-col gap-2">
-                {/* Game info */}
-                <div
-                  class="text-muted-foreground mb-2 flex items-center justify-between gap-3 text-sm"
-                >
-                  <span class="text-nowrap">Game 7</span>
-                  <div class="flex items-center gap-1">
-                    <Calendar className="h-3 w-3" />
-                    <span class="text-nowrap">Wed 7/8</span>
-                  </div>
-                  <div class="flex items-center gap-1">
-                    <Clock className="h-3 w-3" />
-                    <span class="text-nowrap">7:00 PM</span>
-                  </div>
-                </div>
-
-                {/* Team 1 */}
-                <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
-                  <div class="flex items-center justify-between">
-                    <span class="font-medium">Game 5 Winner</span>
-                    <span class="font-bold">-</span>
-                  </div>
-                </div>
-
-                <div class="my-1 h-px bg-slate-200 dark:bg-slate-700"></div>
-
-                {/* Team 2 */}
-                <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
-                  <div class="flex items-center justify-between">
-                    <span class="font-medium">Game 3 Winner</span>
-                    <span class="font-bold">-</span>
-                  </div>
-                </div>
-              </div>
-            </Card>
+            <!-- Game 7 -->
+            <UiCard
+              gameNumber={7}
+              matchNumber={13}
+              gameDate="Wed 7/8"
+              gameTime="07:00 PM"
+              team1="Game 5 Winner"
+              team2="Game 3 Winner"
+            />
           </div>
           <div class="item-childrens">
             <div class="item-child">
               <div class="item">
                 <div class="item-parent">
-                  <Card className="card w-64 p-4" id="game-06 match-09">
-                    <div class="flex flex-col gap-2">
-                      {/* Game info */}
-                      <div
-                        class="text-muted-foreground mb-2 flex items-center justify-between gap-3 text-sm"
-                      >
-                        <span class="text-nowrap">Game 6</span>
-                        <div class="flex items-center gap-1">
-                          <Calendar className="h-3 w-3" />
-                          <span class="text-nowrap">Mon 7/7</span>
-                        </div>
-                        <div class="flex items-center gap-1">
-                          <Clock className="h-3 w-3" />
-                          <span class="text-nowrap">09:00 PM</span>
-                        </div>
-                      </div>
-
-                      {/* Team 1 */}
-                      <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
-                        <div class="flex items-center justify-between">
-                          <span class="font-bold">Tucker</span>
-                          <span class="font-bold">-</span>
-                        </div>
-                      </div>
-
-                      <div class="my-1 h-px bg-slate-200 dark:bg-slate-700">
-                      </div>
-
-                      {/* Team 2 */}
-                      <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
-                        <div class="flex items-center justify-between">
-                          <span class="font-medium">Game 1 Winner</span>
-                          <span class="font-bold">-</span>
-                        </div>
-                      </div>
-                    </div>
-                  </Card>
+                  <!-- Game 5 -->
+                  <UiCard
+                    gameNumber={5}
+                    matchNumber={9}
+                    gameDate="Sat 7/5"
+                    gameTime="07:00 PM"
+                    team1="Tucker Alhíha"
+                    team2="Game 1 Winner"
+                  />
                 </div>
                 <div class="item-childrens">
                   <div class="item-child bye-week after:invisible">
-                    <Card className="invisible w-full p-4" id="match-01">
-                      <div class="flex flex-col gap-2">
-                        {/* Game info */}
-                        <div
-                          class="text-muted-foreground mb-2 flex items-center justify-between gap-2 text-sm"
-                        >
-                          <span class="text-nowrap">Game 1</span>
-                          <div class="flex items-center gap-1">
-                            <Calendar className="h-3 w-3" />
-                            <span class="text-nowrap">Tue 7/1</span>
-                          </div>
-                          <div class="flex items-center gap-1">
-                            <Clock className="h-3 w-3" />
-                            <span class="text-nowrap">10:00 PM</span>
-                          </div>
-                        </div>
-
-                        {/* Team 1 */}
-                        <div
-                          class="rounded-md bg-slate-50 p-2 dark:bg-slate-800"
-                        >
-                          <div class="flex items-center justify-between">
-                            <span class="font-medium">Unified</span>
-                            <span class="font-bold">0</span>
-                          </div>
-                        </div>
-
-                        <div class="my-1 h-px bg-slate-200 dark:bg-slate-700">
-                        </div>
-
-                        {/* Team 2 */}
-                        <div
-                          class="rounded-md bg-slate-50 p-2 dark:bg-slate-800"
-                        >
-                          <div class="flex items-center justify-between">
-                            <span class="font-medium">Unified</span>
-                            <span class="font-bold">0</span>
-                          </div>
-                        </div>
-                      </div>
-                    </Card>
+                    <!-- invisible -->
+                    <UiCard matchNumber={1} invisible />
                   </div>
                   <div class="item-child after:!h-[calc(50%+11px)]">
-                    <Card className="card w-64 p-4" id="game-01 match-02">
-                      <div class="flex flex-col gap-2">
-                        {/* Game info */}
-                        <div
-                          class="text-muted-foreground mb-2 flex items-center justify-between gap-3 text-sm"
-                        >
-                          <span class="text-nowrap">Game 1</span>
-                          <div class="flex items-center gap-1">
-                            <Calendar className="h-3 w-3" />
-                            <span class="text-nowrap">Tue 7/1</span>
-                          </div>
-                          <div class="flex items-center gap-1">
-                            <Clock className="h-3 w-3" />
-                            <span class="text-nowrap">10:00 PM</span>
-                          </div>
-                        </div>
-
-                        {/* Team 1 */}
-                        <div
-                          class="rounded-md bg-slate-50 p-2 dark:bg-slate-800"
-                        >
-                          <div class="flex items-center justify-between">
-                            <span class="font-bold">Unified</span>
-                            <span class="font-bold">-</span>
-                          </div>
-                        </div>
-
-                        <div class="my-1 h-px bg-slate-200 dark:bg-slate-700">
-                        </div>
-
-                        {/* Team 2 */}
-                        <div
-                          class="rounded-md bg-slate-50 p-2 dark:bg-slate-800"
-                        >
-                          <div class="flex items-center justify-between">
-                            <span class="font-bold">Chikásha Tóli</span>
-                            <span class="font-bold">-</span>
-                          </div>
-                        </div>
-                      </div>
-                    </Card>
+                    <!-- Game 01 -->
+                    <UiCard
+                      gameNumber={1}
+                      matchNumber={2}
+                      gameDate="Wed 7/2"
+                      gameTime="08:00 PM"
+                      team1="Bók Čito Ohóyo"
+                      team2="Natives"
+                    />
                   </div>
                 </div>
               </div>
             </div>
             <div class="item-child">
               <div class="item">
-                <div class="item-parent">
-                  <Card className="card w-64 p-4" id="game-07 match-10">
-                    <div class="flex flex-col gap-2">
-                      {/* Game info */}
-                      <div
-                        class="text-muted-foreground mb-2 flex items-center justify-between gap-3 text-sm"
-                      >
-                        <span class="text-nowrap">Game 7</span>
-                        <div class="flex items-center gap-1">
-                          <Calendar className="h-3 w-3" />
-                          <span class="text-nowrap">Mon 7/7</span>
-                        </div>
-                        <div class="flex items-center gap-1">
-                          <Clock className="h-3 w-3" />
-                          <span class="text-nowrap">10:30 PM</span>
-                        </div>
-                      </div>
-
-                      {/* Team 1 */}
-                      <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
-                        <div class="flex items-center justify-between">
-                          <span class="font-medium">Game 2 Winner</span>
-                          <span class="font-bold">-</span>
-                        </div>
-                      </div>
-
-                      <div class="my-1 h-px bg-slate-200 dark:bg-slate-700">
-                      </div>
-
-                      {/* Team 2 */}
-                      <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
-                        <div class="flex items-center justify-between">
-                          <span class="font-medium">Game 3 Winner</span>
-                          <span class="font-bold">-</span>
-                        </div>
-                      </div>
-                    </div>
-                  </Card>
+                <div class="item-parent after:invisible">
+                  <!-- Game 3 -->
+                  <UiCard
+                    gameNumber={3}
+                    matchNumber={10}
+                    gameDate="Thu 7/3"
+                    gameTime="08:00 PM"
+                    team1="Tali Ohóyo"
+                    team2="Pearl River"
+                  />
                 </div>
                 <div class="item-childrens">
-                  <div class="item-child after:!h-[calc(50%+11px)]">
-                    <Card className="card w-64 p-4" id="game-02 match-03">
-                      <div class="flex flex-col gap-2">
-                        {/* Game info */}
-                        <div
-                          class="text-muted-foreground mb-2 flex items-center justify-between gap-3 text-sm"
-                        >
-                          <span class="text-nowrap">Game 2</span>
-                          <div class="flex items-center gap-1">
-                            <Calendar className="h-3 w-3" />
-                            <span class="text-nowrap">Wed 7/2</span>
-                          </div>
-                          <div class="flex items-center gap-1">
-                            <Clock className="h-3 w-3" />
-                            <span class="text-nowrap">10:00 PM</span>
-                          </div>
-                        </div>
-
-                        {/* Team 1 */}
-                        <div
-                          class="rounded-md bg-slate-50 p-2 dark:bg-slate-800"
-                        >
-                          <div class="flex items-center justify-between">
-                            <span class="font-bold">Pearl River</span>
-                            <span class="font-bold">-</span>
-                          </div>
-                        </div>
-
-                        <div class="my-1 h-px bg-slate-200 dark:bg-slate-700">
-                        </div>
-
-                        {/* Team 2 */}
-                        <div
-                          class="rounded-md bg-slate-50 p-2 dark:bg-slate-800"
-                        >
-                          <div class="flex items-center justify-between">
-                            <span class="font-bold">Nanih Waiya</span>
-                            <span class="font-bold">-</span>
-                          </div>
-                        </div>
-                      </div>
-                    </Card>
+                  <div class="item-child invisible">
+                    <!-- invisible -->
+                    <UiCard matchNumber={3} invisible />
                   </div>
-                  <div class="item-child">
-                    <Card className="card w-64 p-4" id="game-03 match-04">
-                      <div class="flex flex-col gap-2">
-                        {/* Game info */}
-                        <div
-                          class="text-muted-foreground mb-2 flex items-center justify-between gap-3 text-sm"
-                        >
-                          <span class="text-nowrap">Game 3</span>
-                          <div class="flex items-center gap-1">
-                            <Calendar className="h-3 w-3" />
-                            <span class="text-nowrap">Thur 7/3</span>
-                          </div>
-                          <div class="flex items-center gap-1">
-                            <Clock className="h-3 w-3" />
-                            <span class="text-nowrap">10:00 PM</span>
-                          </div>
-                        </div>
-
-                        {/* Team 1 */}
-                        <div
-                          class="rounded-md bg-slate-50 p-2 dark:bg-slate-800"
-                        >
-                          <div class="flex items-center justify-between">
-                            <span class="font-bold">Bók Čito</span>
-                            <span class="font-bold">-</span>
-                          </div>
-                        </div>
-
-                        <div class="my-1 h-px bg-slate-200 dark:bg-slate-700">
-                        </div>
-
-                        {/* Team 2 */}
-                        <div
-                          class="rounded-md bg-slate-50 p-2 dark:bg-slate-800"
-                        >
-                          <div class="flex items-center justify-between">
-                            <span class="font-bold">Tiak Hikíya</span>
-                            <span class="font-bold">-</span>
-                          </div>
-                        </div>
-                      </div>
-                    </Card>
+                  <div class="item-child invisible">
+                    <!-- invisible -->
+                    <UiCard matchNumber={4} invisible />
                   </div>
                 </div>
               </div>
@@ -355,302 +97,70 @@ import { Calendar, Clock } from "lucide-react";
       <div class="item-child">
         <div class="item">
           <div class="item-parent">
-            <Card className="card w-64 p-4" id="game 11 match-14">
-              <div class="flex flex-col gap-2">
-                {/* Game info */}
-                <div
-                  class="text-muted-foreground mb-2 flex items-center justify-between gap-3 text-sm"
-                >
-                  <span class="text-nowrap">Game 11</span>
-                  <div class="flex items-center gap-1">
-                    <Calendar className="h-3 w-3" />
-                    <span class="text-nowrap">Thu 7/10</span>
-                  </div>
-                  <div class="flex items-center gap-1">
-                    <Clock className="h-3 w-3" />
-                    <span class="text-nowrap">10:00 PM</span>
-                  </div>
-                </div>
-
-                {/* Team 1 */}
-                <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
-                  <div class="flex items-center justify-between">
-                    <span class="font-medium">Game 8 Winner</span>
-                    <span class="font-bold">-</span>
-                  </div>
-                </div>
-
-                <div class="my-1 h-px bg-slate-200 dark:bg-slate-700"></div>
-
-                {/* Team 2 */}
-                <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
-                  <div class="flex items-center justify-between">
-                    <span class="font-medium">Game 9 Winner</span>
-                    <span class="font-bold">-</span>
-                  </div>
-                </div>
-              </div>
-            </Card>
+            <!-- Game 8 -->
+            <UiCard
+              gameNumber={8}
+              matchNumber={14}
+              gameDate="Tue 7/8"
+              gameTime="08:00 PM"
+              team1="Game 6 Winner"
+              team2="Game 4 Winner"
+            />
           </div>
           <div class="item-childrens">
             <div class="item-child">
               <div class="item">
                 <div class="item-parent">
-                  <Card className="card w-64 p-4" id="game-08 match-10">
-                    <div class="flex flex-col gap-2">
-                      {/* Game info */}
-                      <div
-                        class="text-muted-foreground mb-2 flex items-center justify-between gap-3 text-sm"
-                      >
-                        <span class="text-nowrap">Game 8</span>
-                        <div class="flex items-center gap-1">
-                          <Calendar className="h-3 w-3" />
-                          <span class="text-nowrap">Tue 7/8</span>
-                        </div>
-                        <div class="flex items-center gap-1">
-                          <Clock className="h-3 w-3" />
-                          <span class="text-nowrap">09:00 PM</span>
-                        </div>
-                      </div>
-
-                      {/* Team 1 */}
-                      <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
-                        <div class="flex items-center justify-between">
-                          <span class="font-bold">War Party</span>
-                          <span class="font-bold">-</span>
-                        </div>
-                      </div>
-
-                      <div class="my-1 h-px bg-slate-200 dark:bg-slate-700">
-                      </div>
-
-                      {/* Team 2 */}
-                      <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
-                        <div class="flex items-center justify-between">
-                          <span class="font-medium">Game 4 Winner</span>
-                          <span class="font-bold">-</span>
-                        </div>
-                      </div>
-                    </div>
-                  </Card>
+                  <!-- Game 3 -->
+                  <UiCard
+                    gameNumber={6}
+                    matchNumber={11}
+                    gameDate="Sat 7/5"
+                    gameTime="08:00 PM"
+                    team1="Tvshkahomma Ohóyo"
+                    team2="Game 2 Winner"
+                  />
                 </div>
                 <div class="item-childrens">
                   <div class="item-child bye-week after:invisible">
-                    <Card className="invisible w-64 p-4" id="match-05">
-                      <div class="flex flex-col gap-2">
-                        {/* Game info */}
-                        <div
-                          class="text-muted-foreground mb-2 flex items-center justify-between gap-2 text-sm"
-                        >
-                          <span class="text-nowrap">Game 4</span>
-                          <div class="flex items-center gap-1">
-                            <Calendar className="h-3 w-3" />
-                            <span class="text-nowrap">Tue 7/1</span>
-                          </div>
-                          <div class="flex items-center gap-1">
-                            <Clock className="h-3 w-3" />
-                            <span class="text-nowrap">10:00 PM</span>
-                          </div>
-                        </div>
-
-                        {/* Team 1 */}
-                        <div
-                          class="rounded-md bg-slate-50 p-2 dark:bg-slate-800"
-                        >
-                          <div class="flex items-center justify-between">
-                            <span class="font-medium">Unified</span>
-                            <span class="font-bold">0</span>
-                          </div>
-                        </div>
-
-                        <div class="my-1 h-px bg-slate-200 dark:bg-slate-700">
-                        </div>
-
-                        {/* Team 2 */}
-                        <div
-                          class="rounded-md bg-slate-50 p-2 dark:bg-slate-800"
-                        >
-                          <div class="flex items-center justify-between">
-                            <span class="font-medium">Unified</span>
-                            <span class="font-bold">0</span>
-                          </div>
-                        </div>
-                      </div>
-                    </Card>
+                    <!-- invisible -->
+                    <UiCard matchNumber={5} invisible />
                   </div>
                   <div class="item-child after:!h-[calc(50%+11px)]">
-                    <Card className="card w-64 p-4" id="game-04 match-06">
-                      <div class="flex flex-col gap-2">
-                        {/* Game info */}
-                        <div
-                          class="text-muted-foreground mb-2 flex items-center justify-between gap-3 text-sm"
-                        >
-                          <span class="text-nowrap">Game 4</span>
-                          <div class="flex items-center gap-1">
-                            <Calendar className="h-3 w-3" />
-                            <span class="text-nowrap">Sat 7/5</span>
-                          </div>
-                          <div class="flex items-center gap-1">
-                            <Clock className="h-3 w-3" />
-                            <span class="text-nowrap">09:00 PM</span>
-                          </div>
-                        </div>
-
-                        {/* Team 1 */}
-                        <div
-                          class="rounded-md bg-slate-50 p-2 dark:bg-slate-800"
-                        >
-                          <div class="flex items-center justify-between">
-                            <span class="font-bold">Warriors</span>
-                            <span class="font-bold">-</span>
-                          </div>
-                        </div>
-
-                        <div class="my-1 h-px bg-slate-200 dark:bg-slate-700">
-                        </div>
-
-                        {/* Team 2 */}
-                        <div
-                          class="rounded-md bg-slate-50 p-2 dark:bg-slate-800"
-                        >
-                          <div class="flex items-center justify-between">
-                            <span class="font-bold">Oka Homma</span>
-                            <span class="font-bold">-</span>
-                          </div>
-                        </div>
-                      </div>
-                    </Card>
+                    <!-- Game 2 -->
+                    <UiCard
+                      gameNumber={2}
+                      matchNumber={6}
+                      gameDate="Wed 7/2"
+                      gameTime="09:00 PM"
+                      team1="Lady Warriors"
+                      team2="Koni Hata Ohóyo"
+                    />
                   </div>
                 </div>
               </div>
             </div>
             <div class="item-child">
               <div class="item">
-                <div class="item-parent">
-                  <Card className="card w-64 p-4" id="game-09 match-12">
-                    <div class="flex flex-col gap-2">
-                      {/* Game info */}
-                      <div
-                        class="text-muted-foreground mb-2 flex items-center justify-between gap-3 text-sm"
-                      >
-                        <span class="text-nowrap">Game 9</span>
-                        <div class="flex items-center gap-1">
-                          <Calendar className="h-3 w-3" />
-                          <span class="text-nowrap">Tue 7/8</span>
-                        </div>
-                        <div class="flex items-center gap-1">
-                          <Clock className="h-3 w-3" />
-                          <span class="text-nowrap">10:30 PM</span>
-                        </div>
-                      </div>
-
-                      {/* Team 1 */}
-                      <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
-                        <div class="flex items-center justify-between">
-                          <span class="font-bold">Beaver Dam</span>
-                          <span class="font-bold">-</span>
-                        </div>
-                      </div>
-
-                      <div class="my-1 h-px bg-slate-200 dark:bg-slate-700">
-                      </div>
-
-                      {/* Team 2 */}
-                      <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
-                        <div class="flex items-center justify-between">
-                          <span class="font-medium">Game 5 Winner</span>
-                          <span class="font-bold">-</span>
-                        </div>
-                      </div>
-                    </div>
-                  </Card>
+                <div class="item-parent after:invisible">
+                  <!-- Game 4 -->
+                  <UiCard
+                    gameNumber={4}
+                    matchNumber={12}
+                    gameDate="Thu 7/3"
+                    gameTime="09:00 PM"
+                    team1="Beaver Dam"
+                    team2="Tiak Hikíya Ohóyo"
+                  />
                 </div>
                 <div class="item-childrens">
                   <div class="item-child bye-week after:invisible">
-                    <Card className="invisible w-full p-4" id="match-07">
-                      <div class="flex flex-col gap-2">
-                        {/* Game info */}
-                        <div
-                          class="text-muted-foreground mb-2 flex items-center justify-between gap-2 text-sm"
-                        >
-                          <span class="text-nowrap">Game 1</span>
-                          <div class="flex items-center gap-1">
-                            <Calendar className="h-3 w-3" />
-                            <span class="text-nowrap">Tue 7/1</span>
-                          </div>
-                          <div class="flex items-center gap-1">
-                            <Clock className="h-3 w-3" />
-                            <span class="text-nowrap">10:00 PM</span>
-                          </div>
-                        </div>
-
-                        {/* Team 1 */}
-                        <div
-                          class="rounded-md bg-slate-50 p-2 dark:bg-slate-800"
-                        >
-                          <div class="flex items-center justify-between">
-                            <span class="font-medium">Unified</span>
-                            <span class="font-bold">0</span>
-                          </div>
-                        </div>
-
-                        <div class="my-1 h-px bg-slate-200 dark:bg-slate-700">
-                        </div>
-
-                        {/* Team 2 */}
-                        <div
-                          class="rounded-md bg-slate-50 p-2 dark:bg-slate-800"
-                        >
-                          <div class="flex items-center justify-between">
-                            <span class="font-medium">Unified</span>
-                            <span class="font-bold">0</span>
-                          </div>
-                        </div>
-                      </div>
-                    </Card>
+                    <!-- invisible -->
+                    <UiCard matchNumber={7} invisible />
                   </div>
-                  <div class="item-child after:!h-[calc(50%+11px)]">
-                    <Card className="card w-64 p-4" id="game-05 match-08">
-                      <div class="flex flex-col gap-2">
-                        {/* Game info */}
-                        <div
-                          class="text-muted-foreground mb-2 flex items-center justify-between gap-3 text-sm"
-                        >
-                          <span class="text-nowrap">Game 5</span>
-                          <div class="flex items-center gap-1">
-                            <Calendar className="h-3 w-3" />
-                            <span class="text-nowrap">Sat 7/5</span>
-                          </div>
-                          <div class="flex items-center gap-1">
-                            <Clock className="h-3 w-3" />
-                            <span class="text-nowrap">10:30 PM</span>
-                          </div>
-                        </div>
-
-                        {/* Team 1 */}
-                        <div
-                          class="rounded-md bg-slate-50 p-2 dark:bg-slate-800"
-                        >
-                          <div class="flex items-center justify-between">
-                            <span class="font-bold">Tvshkahomma</span>
-                            <span class="font-bold">-</span>
-                          </div>
-                        </div>
-
-                        <div class="my-1 h-px bg-slate-200 dark:bg-slate-700">
-                        </div>
-
-                        {/* Team 2 */}
-                        <div
-                          class="rounded-md bg-slate-50 p-2 dark:bg-slate-800"
-                        >
-                          <div class="flex items-center justify-between">
-                            <span class="font-bold">Koni Hata</span>
-                            <span class="font-bold">-</span>
-                          </div>
-                        </div>
-                      </div>
-                    </Card>
+                  <div class="item-child invisible">
+                    <!-- invisible -->
+                    <UiCard matchNumber={8} invisible />
                   </div>
                 </div>
               </div>
@@ -661,93 +171,3 @@ import { Calendar, Clock } from "lucide-react";
     </div>
   </div>
 </div>
-
-<style>
-  .card {
-    background-color: oklch(18% 0 0);
-    color: #fff;
-    border: 2px solid #aaa;
-  }
-  .card > div > div:first-child {
-    color: #bbb;
-  }
-  .card > div > div:nth-child(2) {
-    background-color: oklch(25% 0 0);
-  }
-  .card > div > div:nth-child(4) {
-    background-color: oklch(25% 0 0);
-  }
-  .item {
-    display: flex;
-    flex-direction: row-reverse;
-  }
-
-  .item-parent {
-    position: relative;
-    margin-left: 50px;
-    display: flex;
-    align-items: center;
-  }
-
-  .item-parent:after {
-    position: absolute;
-    content: "";
-    width: 25px;
-    height: 2px;
-    left: 0;
-    top: 50%;
-    background-color: #ccc;
-    transform: translateX(-100%);
-  }
-
-  .item-childrens {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .item-child {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    position: relative;
-  }
-
-  .item-child:before {
-    content: "";
-    position: absolute;
-    background-color: #ccc;
-    right: 0;
-    top: 50%;
-    transform: translateX(100%);
-    width: 25px;
-    height: 2px;
-  }
-
-  .item-child:after {
-    content: "";
-    position: absolute;
-    background-color: #ccc;
-    right: -25px;
-    height: calc(50% + 22px);
-    width: 2px;
-    top: 50%;
-  }
-
-  .item-child:last-child:after {
-    transform: translateY(-100%);
-  }
-
-  .item-child:only-child:after {
-    display: none;
-  }
-
-  .bye-week:before {
-    @apply invisible;
-  }
-  .bye-week:after {
-    height: calc(50% + 11px) !important;
-  }
-</style>

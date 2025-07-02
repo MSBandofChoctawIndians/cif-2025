@@ -1,0 +1,68 @@
+---
+import { Card as UiCard } from "../ui/card";
+import { Calendar, Clock } from "lucide-react";
+
+export interface Props {
+  gameNumber?: number;
+  matchNumber: number;
+  gameDate?: string;
+  gameTime?: string;
+  team1?: string;
+  team1Score?: string | number;
+  team2?: string;
+  team2Score?: string | number;
+  invisible?: boolean;
+}
+
+const {
+  gameNumber = "00",
+  matchNumber,
+  gameDate = "Day 0/0",
+  gameTime = "00:00 HR",
+  team1 = "Team 1",
+  team1Score = "-",
+  team2 = "Team 2",
+  team2Score = "-",
+  invisible = false,
+} = Astro.props as Props;
+---
+
+<UiCard
+  className={`card w-64 p-4 ${invisible ? "invisible" : ""}`}
+  id={`game-${gameNumber} match-${matchNumber}`}
+>
+  <div class="flex flex-col gap-2">
+    {/* Game info */}
+    <div
+      class="text-muted-foreground mb-2 flex items-center justify-between gap-3 text-sm"
+    >
+      <span class="text-nowrap">Game {gameNumber}</span>
+      <div class="flex items-center gap-1">
+        <Calendar className="h-3 w-3" />
+        <span class="text-nowrap">{gameDate}</span>
+      </div>
+      <div class="flex items-center gap-1">
+        <Clock className="h-3 w-3" />
+        <span class="text-nowrap">{gameTime}</span>
+      </div>
+    </div>
+
+    {/* Team 1 */}
+    <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
+      <div class="flex items-center justify-between">
+        <span class="font-bold">{team1}</span>
+        <span class="font-bold">{team1Score}</span>
+      </div>
+    </div>
+
+    <div class="my-1 h-px bg-slate-200 dark:bg-slate-700"></div>
+
+    {/* Team 2 */}
+    <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
+      <div class="flex items-center justify-between">
+        <span class="font-bold">{team2}</span>
+        <span class="font-bold">{team2Score}</span>
+      </div>
+    </div>
+  </div>
+</UiCard>
