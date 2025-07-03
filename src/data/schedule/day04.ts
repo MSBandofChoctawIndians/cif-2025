@@ -13,13 +13,13 @@ export const day04 = [
     category: "stickball",
   },
   {
-    name: "Women’s Division: Game 5: Tucker Alhíha vs Winner Game 1",
+    name: "Women’s Division: Game 5: Tucker Alhíha vs Bók Čito Ohóyo",
     time: "7:00 PM",
     location: "Warrior Stadium",
     category: "stickball",
   },
   {
-    name: "Women’s Division: Game 6: Tvshkahomma Ohóyo vs Winner Game 2",
+    name: "Women’s Division: Game 6: Tvshkahomma Ohóyo vs Koni Hata Ohóyo",
     time: "8:00 PM",
     location: "Warrior Stadium",
     category: "stickball",

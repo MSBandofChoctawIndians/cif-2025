@@ -13,7 +13,7 @@ export const day05 = [
     category: "stickball",
   },
   {
-    name: "Men’s 35 & Over Division: Game 3: Tvshkahomma vs Winner Game 1",
+    name: "Men’s 35 & Over Division: Game 3: Tvshkahomma vs Bók Čito",
     time: "7:00 PM",
     location: "Warrior Stadium",
     category: "stickball",
@@ -31,7 +31,7 @@ export const day05 = [
     category: "stickball",
   },
   {
-    name: "Men’s Division: Game 7: Winner Game 2 vs Winner Game 3",
+    name: "Men’s Division: Game 7: Pearl River vs Winner Game 3",
     time: "10:30 PM",
     location: "Warrior Stadium",
     category: "stickball",
