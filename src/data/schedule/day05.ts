@@ -31,7 +31,7 @@ export const day05 = [
     category: "stickball",
   },
   {
-    name: "Men’s Division: Game 7: Pearl River vs Winner Game 3",
+    name: "Men’s Division: Game 7: Pearl River vs Bók Čito",
     time: "10:30 PM",
     location: "Warrior Stadium",
     category: "stickball",
