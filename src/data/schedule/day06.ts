@@ -23,13 +23,13 @@ export const day06 = [
     category: "stickball",
   },
   {
-    name: "Women’s Division: Game 7: Winner Game 5 vs Winner Game 3",
+    name: "Women’s Division: Game 7: Winner Game 5 vs Pearl River",
     time: "7:00 PM",
     location: "Warrior Stadium",
     category: "stickball",
   },
   {
-    name: "Women’s Division: Game 8: Winner Game 6 vs Winner Game 4",
+    name: "Women’s Division: Game 8: Winner Game 6 vs Beaver Dam",
     time: "8:00 PM",
     location: "Warrior Stadium",
     category: "stickball",
