@@ -19,7 +19,7 @@ export const day05 = [
     category: "stickball",
   },
   {
-    name: "Men’s 35 & Over Division: Game 4: Winner Game 2 vs Koni Hata",
+    name: "Men’s 35 & Over Division: Game 4: Beaver Dam vs Koni Hata",
     time: "8:00 PM",
     location: "Warrior Stadium",
     category: "stickball",
