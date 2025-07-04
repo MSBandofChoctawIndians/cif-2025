@@ -17,7 +17,7 @@ export const day07 = [
     category: "stickball",
   },
   {
-    name: "Tulli Okchi Ishko Division: Game 5: Winner Game 1 vs Winner Game 2",
+    name: "Tulli Okchi Ishko Division: Game 5: Tvshka Homma Himitta vs Winner Game 2",
     time: "5:00 PM",
     location: "Warrior Stadium",
     category: "stickball",
