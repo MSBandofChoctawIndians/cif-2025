@@ -95,15 +95,25 @@ export function Navbar() {
                   );
                 })}
                 <div className="mt-4 flex flex-col gap-2">
-                  {/* <Button variant="disabled" onClick={() => setOpen(false)}>
-                    Fair Map
-                  </Button> */}
+                  <a href="/map">
+                    <Button
+                      variant="secondary"
+                      onClick={() => setOpen(false)}
+                      className="w-full"
+                    >
+                      Fair Map
+                    </Button>
+                  </a>
                   <a
                     href="https://www.etix.com/ticket/p/65113985/75th-choctaw-indian-fair-pearl-river-choctaw-indian-fair"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Button variant="secondary" onClick={() => setOpen(false)}>
+                    <Button
+                      variant="secondary"
+                      onClick={() => setOpen(false)}
+                      className="w-full"
+                    >
                       Buy Tickets
                     </Button>
                   </a>
