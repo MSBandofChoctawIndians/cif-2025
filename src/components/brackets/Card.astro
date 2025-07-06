@@ -12,6 +12,8 @@ export interface Props {
   team2?: string;
   team2Score?: string | number;
   invisible?: boolean;
+  team1Forfeit?: boolean;
+  team2Forfeit?: boolean;
 }
 
 const {
@@ -24,6 +26,8 @@ const {
   team2 = "Team 2",
   team2Score = "-",
   invisible = false,
+  team1Forfeit = false,
+  team2Forfeit = false,
 } = Astro.props as Props;
 
 // Compare scores for styling (convert to numbers for comparison)
@@ -68,12 +72,16 @@ const team2IsLosing =
     {/* Team 1 */}
     <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
       <div class="flex items-center justify-between">
-        <span class={`font-bold ${team1IsLosing ? "text-red-100" : ""}`}>
+        <span
+          class={`font-bold ${team1IsLosing || team1Forfeit ? "text-red-100" : ""}`}
+        >
           {team1}
         </span>
-        <span class={`font-bold ${team1IsLosing ? "text-red-100" : ""}`}
-          >{team1Score}</span
+        <span
+          class={`font-bold ${team1IsLosing || team1Forfeit ? "text-red-100" : ""}`}
         >
+          {team1Forfeit ? "F" : team1Score}
+        </span>
       </div>
     </div>
 
@@ -82,12 +90,16 @@ const team2IsLosing =
     {/* Team 2 */}
     <div class="rounded-md bg-slate-50 p-2 dark:bg-slate-800">
       <div class="flex items-center justify-between">
-        <span class={`font-bold ${team2IsLosing ? "text-red-100" : ""}`}>
+        <span
+          class={`font-bold ${team2IsLosing || team2Forfeit ? "text-red-100" : ""}`}
+        >
           {team2}
         </span>
-        <span class={`font-bold ${team2IsLosing ? "text-red-100" : ""}`}
-          >{team2Score}</span
+        <span
+          class={`font-bold ${team2IsLosing || team2Forfeit ? "text-red-100" : ""}`}
         >
+          {team2Forfeit ? "F" : team2Score}
+        </span>
       </div>
     </div>
   </div>
