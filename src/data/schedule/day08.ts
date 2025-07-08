@@ -17,7 +17,7 @@ export const day08 = [
     category: "stickball",
   },
   {
-    name: "Tulli Okchi Ishko Division: Game 6: Winner Game 3 vs Winner Game 4",
+    name: "Tulli Okchi Ishko Division: Game 6: Pearl River vs Winner Game 4",
     time: "6:00 PM",
     location: "Warrior Stadium",
     category: "stickball",

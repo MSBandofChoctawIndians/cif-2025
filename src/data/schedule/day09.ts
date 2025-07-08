@@ -356,16 +356,6 @@ export const day09 = [
     location: "Shawi’s Discovery Zone",
     category: "family fun",
   },
-  //   12:30 p.m. Scavenger Hunt
-  // Choctaw Language Story Telling
-  // 1:00 p.m. Book Signing – Choctaw Tales
-  // 2:00 p.m. Temporary Tattoo
-  // 3:00 p.m. Make a paper turtle
-  // 5:00 p.m. Social Dancing: Pushmataha Hilha Alhíha
-  // 6:00 p.m. Social Dancing: John Levi Bell Family Traditions
-  // 7:00 p.m. Social Dancing: Conehatta Social Dancers
-  // Drawing for Item of Day
-  // 8:00 p.m. CICC CLOSES
   {
     name: "Scavenger Hunt",
     time: "12:30 PM",

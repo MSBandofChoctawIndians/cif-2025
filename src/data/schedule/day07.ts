@@ -11,7 +11,7 @@ export const day07 = [
     location: "Fairgrounds",
   },
   {
-    name: "Pushmataha Division: Game 3: Ittibá Tóli vs Winner Game 1",
+    name: "Pushmataha Division: Game 3: Ittibá Tóli vs Bók Čito",
     time: "4:00 PM",
     location: "Warrior Stadium",
     category: "stickball",
@@ -23,7 +23,7 @@ export const day07 = [
     category: "stickball",
   },
   {
-    name: "Men’s Division: Game 10: Winner Game 6 vs Winner Game 7",
+    name: "Men’s Division: Game 10: Unified vs Bók Čito",
     time: "10:00 PM",
     location: "Warrior Stadium",
     category: "stickball",
