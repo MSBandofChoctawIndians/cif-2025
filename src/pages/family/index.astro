@@ -1,6 +1,13 @@
 ---
 import Layout from "@/layouts/main.astro";
-import { Card } from "@/components/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardDescription,
+} from "@/components/ui/card";
+import { Calendar, Clock, DollarSign, Ticket } from "lucide-react";
 
 const featuredEvents = [
   {
@@ -50,6 +57,106 @@ const midwayHours = [
     day: "Saturday, July 12, 2025",
     opening: "12:00 PM",
     closing: "2:00 AM",
+  },
+];
+
+const rideBandSchedule = [
+  {
+    date: "Wednesday, July 2",
+    midwayHours: "5:00 PM - 12:00 AM",
+    wristbandCost: "$15",
+    payOnePriceHours: "5:00 PM - 11:00 PM",
+  },
+  {
+    date: "Thursday, July 3",
+    midwayHours: "5:00 PM - 12:00 AM",
+    wristbandCost: "$15",
+    payOnePriceHours: "5:00 PM - 11:00 PM",
+  },
+  {
+    date: "Saturday, July 5",
+    midwayHours: "5:00 PM - 12:00 AM",
+    wristbandCost: "$15",
+    payOnePriceHours: "5:00 PM - 11:00 PM",
+  },
+  {
+    date: "Monday, July 7",
+    midwayHours: "5:00 PM - 12:00 AM",
+    wristbandCost: "$15",
+    payOnePriceHours: "5:00 PM - 11:00 PM",
+  },
+  {
+    date: "Tuesday, July 8",
+    midwayHours: "3:00 PM - 1:00 AM",
+    wristbandCost: "$25",
+    payOnePriceHours: "3:00 PM - 12:00 AM",
+  },
+  {
+    date: "Wednesday, July 9",
+    midwayHours: "3:00 PM - 1:00 AM",
+    wristbandCost: "$25",
+    payOnePriceHours: "3:00 PM - 12:00 AM",
+  },
+  {
+    date: "Thursday, July 10",
+    midwayHours: "3:00 PM - 1:00 AM",
+    wristbandCost: "$25",
+    payOnePriceHours: "3:00 PM - 12:00 AM",
+  },
+  {
+    date: "Friday, July 11",
+    midwayHours: "3:00 PM - 1:00 AM",
+    wristbandCost: "$25",
+    payOnePriceHours: "3:00 PM - 12:00 AM",
+  },
+  {
+    date: "Saturday, July 12",
+    midwayHours: "12:00 PM - 2:00 AM",
+    wristbandCost: "$25",
+    payOnePriceHours: "12:00 PM - 1:00 AM",
+  },
+];
+
+const ossiCove = [
+  {
+    id: "scales-tails-teeth",
+    title: "Scales, Tails & Teeth",
+    image: "scales-tails-teeth",
+    description:
+      "Get ready for a wild encounter with Scales, Tails & Teeth! This show features a variety of reptiles and exotic animals, showcasing their unique adaptations and behaviors. Perfect for animal lovers and curious minds!",
+  },
+  {
+    id: "critter-keeper",
+    title: "Critter Keeper Show",
+    image: "critter-keeper",
+    description:
+      "Join us for an interactive show featuring exotic animals and reptiles. Learn about their habitats, behaviors, and conservation efforts while getting up close with these fascinating creatures.",
+  },
+  {
+    id: "dinosaur-experience",
+    title: "The Dinosaur Experience",
+    image: "dinosaur",
+    description:
+      "Step back in time with our Dinosaur Experience! Explore life-sized dinosaur replicas and learn about their history. A thrilling adventure for all ages!",
+  },
+  {
+    id: "reptile-walkthrough",
+    title: "Reptile Walk-Thru Experience",
+    image: "reptile",
+    description:
+      "Walk through a fascinating exhibit of reptiles from around the world. Get an up-close look at snakes, lizards, and more in a safe and educational environment. Perfect for families and nature enthusiasts!",
+  },
+];
+
+const shawiZone = [
+  {
+    id: "oka-imma",
+    title:
+      "Oka Imma Ámiti Alhíha Kil Im Ayikhana (Let's Learn from Aquatic Creatures)",
+  },
+  {
+    id: "msu-bugs",
+    title: "MSU Bugs Walk-Thru Exhibit",
   },
 ];
 ---
@@ -235,80 +342,61 @@ const midwayHours = [
           a variety of food vendors. From thrilling rides to nostalgic games and
           tasty treats, there's something for everyone to enjoy.
         </p>
+        <div class="mt-8 text-center">
+          <div
+            class="inline-flex items-center gap-2 rounded-lg bg-blue-50 px-4 py-2"
+          >
+            <Ticket className="h-4 w-4 text-blue-600" />
+            <span class="text-sm text-blue-800">
+              Pay One Price wristbands include unlimited rides during
+              specified hours
+            </span>
+          </div>
+        </div>
         {/* Midway schedule */}
-        <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {
-            midwayHours.map((hour) => (
-              <Card className="overflow-hidden border-2 border-white/50 bg-black/70 p-6 text-white">
-                <h3 class="text-xl font-semibold">{hour.day}</h3>
-                <p class="mt-2">Opening: {hour.opening}</p>
-                <p>Closing: {hour.closing}</p>
+            rideBandSchedule.map((day, index) => (
+              <Card className="hover:shadow-lg transition-shadow duration-300 bg-black/80">
+                <CardHeader className="pb-4">
+                  <CardTitle className="flex items-center gap-2 text-lg text-white">
+                    <Calendar className="h-5 w-5 text-blue-500" />
+                    {day.date}
+                  </CardTitle>
+                </CardHeader>
+
+                <CardContent className="space-y-6 pb-6">
+                  <div class="flex items-start gap-4">
+                    <Clock className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p class="font-medium text-neutral-300">Midway Hours</p>
+                      <p class="text-neutral-100">{day.midwayHours}</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-4">
+                    <DollarSign className="h-5 w-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p class="font-medium text-white">Wristband Cost</p>
+                      <p class="text-2xl font-bold text-emerald-500">
+                        {day.wristbandCost}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-4">
+                    <Ticket className="h-5 w-5 text-purple-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p class="font-medium text-white">Pay One Price Hours</p>
+                      <p class="text-neutral-300">{day.payOnePriceHours}</p>
+                    </div>
+                  </div>
+                </CardContent>
               </Card>
             ))
           }
         </div>
-
-        <!-- <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <Card
-            className="overflow-hidden border-none bg-black/70 p-0 text-white"
-          >
-            <img
-              src="/culture/war.webp"
-              alt="War Dance"
-              class="aspect-square w-full object-cover"
-            />
-            <div class="p-6 text-center">
-              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
-                War Dances
-              </h3>
-              <p class="text-muted">
-                War dances were used by early Choctaws to prepare for battle.
-                Choctaw war dances are unusual in that the women join the men in
-                dancing. In most other tribes, only men take part in the war
-                dance.
-              </p>
-            </div>
-          </Card>
-          <Card
-            className="overflow-hidden border-none bg-black/70 p-0 text-white"
-          >
-            <img
-              src="/culture/social.webp"
-              alt="Beadwork"
-              class="aspect-square w-full object-cover"
-            />
-            <div class="p-6 text-center">
-              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
-                Social Dances
-              </h3>
-              <p class="text-muted">
-                Social dances mark important aspects of life such as friendship,
-                courtship and marriage. They include stealing partners, the
-                friendship dance, and the wedding dance, among others.
-              </p>
-            </div>
-          </Card>
-          <Card
-            className="overflow-hidden border-none bg-black/70 p-0 text-white"
-          >
-            <img
-              src="/culture/animal.webp"
-              alt="Clothing"
-              class="aspect-square w-full object-cover"
-            />
-            <div class="p-6 text-center">
-              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
-                Animal Dances
-              </h3>
-              <p class="text-muted">
-                Animal dances often mimic the behavior of their namesakes, with
-                dancers darting in and out of the dance circle like playful
-                raccoons in the raccoon dance or forming a line that coils and
-                uncoils in the snake dance.
-              </p>
-            </div>
-          </Card>
-        </div> -->
+        
       </div>
     </section>
 
@@ -328,76 +416,25 @@ const midwayHours = [
           Experience, and Scales, Tails & Teeth. It’s a place for wild fun and
           learning.
         </p>
-        <Card
-          className="mt-12 overflow-hidden border-none bg-black/70 p-4 text-white"
-        >
-          <h2
-            class="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl"
-          >
-            Schedule Coming Soon!
-          </h2>
-        </Card>
-        <!-- <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <Card
-            className="overflow-hidden border-none bg-black/70 p-0 text-white"
-          >
-            <img
-              src="/culture/war.webp"
-              alt="War Dance"
-              class="aspect-square w-full object-cover"
-            />
-            <div class="p-6 text-center">
-              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
-                War Dances
-              </h3>
-              <p class="text-muted">
-                War dances were used by early Choctaws to prepare for battle.
-                Choctaw war dances are unusual in that the women join the men in
-                dancing. In most other tribes, only men take part in the war
-                dance.
-              </p>
-            </div>
-          </Card>
-          <Card
-            className="overflow-hidden border-none bg-black/70 p-0 text-white"
-          >
-            <img
-              src="/culture/social.webp"
-              alt="Beadwork"
-              class="aspect-square w-full object-cover"
-            />
-            <div class="p-6 text-center">
-              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
-                Social Dances
-              </h3>
-              <p class="text-muted">
-                Social dances mark important aspects of life such as friendship,
-                courtship and marriage. They include stealing partners, the
-                friendship dance, and the wedding dance, among others.
-              </p>
-            </div>
-          </Card>
-          <Card
-            className="overflow-hidden border-none bg-black/70 p-0 text-white"
-          >
-            <img
-              src="/culture/animal.webp"
-              alt="Clothing"
-              class="aspect-square w-full object-cover"
-            />
-            <div class="p-6 text-center">
-              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
-                Animal Dances
-              </h3>
-              <p class="text-muted">
-                Animal dances often mimic the behavior of their namesakes, with
-                dancers darting in and out of the dance circle like playful
-                raccoons in the raccoon dance or forming a line that coils and
-                uncoils in the snake dance.
-              </p>
-            </div>
-          </Card>
-        </div> -->
+        <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {
+            ossiCove.map((event) => (
+              <Card className="mt-12 overflow-hidden border-none bg-black/70 p-0 text-white">
+                <img
+                  src={`/family/${event.image}.jpg`}
+                  alt={event.title}
+                  class="aspect-square w-full object-cover"
+                />
+                <div class="p-6 text-center">
+                  <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
+                    {event.title}
+                  </h3>
+                  <p class="text-muted">{event.description}</p>
+                </div>
+              </Card>
+            ))
+          }
+        </div>
       </div>
     </section>
 
