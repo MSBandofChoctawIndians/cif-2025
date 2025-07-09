@@ -25,6 +25,7 @@ interface Competition {
     compForm?: string;
     socialForm?: string;
     formButton?: boolean; // Optional, used for disabling the button
+    webButton?: boolean; // Optional, used for disabling the button
     registerOnSite?: boolean; // Indicates if registration is on-site
   };
 }
@@ -53,6 +54,7 @@ const competitions: Competition[] = [
     links: {
       flyer: "/competitions/ironwarrior/iron_warrior_flyer.jpg",
       form: "/competitions/ironwarrior/iron_warrior_form.jpg",
+      formButton: false, // Disable the form button
     },
   },
   {
@@ -67,9 +69,14 @@ const competitions: Competition[] = [
     id: "volleyball",
     title: "Volleyball Tournament",
     description:
-      "Details coming soon! This tournament is open to all participants.",
-    date: "TBA",
+      "The 4th Annual Volleyball Tournament is a competitive event that features two divisions: Co-ed and Women's. The tournament is open to all participants, and teams will compete for the championship title.",
+    date: "July 4-5, 2025",
     logo: "/competitions/volleyball/volleyball.webp",
+    links: {
+      flyer: "/competitions/volleyball/volleyball_flyer.jpg",
+      form: "/competitions/volleyball/volleyball_form.pdf",
+      formButton: false, // Disable the form button
+    },
   },
   {
     id: "tribalcornhole",
@@ -98,6 +105,7 @@ const competitions: Competition[] = [
       flyer: "/competitions/gospelnight/gospel_night_flyer.jpg",
       webForm:
         "https://docs.google.com/forms/d/e/1FAIpQLSfZC_8mSIpLELmVJkz4V4oFeM0I43qZZ68nrbUzwJY1oAFHkA/viewform?pli=1",
+      webButton: false,
     },
   },
   {
@@ -122,6 +130,7 @@ const competitions: Competition[] = [
     links: {
       flyer: "/competitions/bracketology/bracketology_flyer.pdf",
       form: "/competitions/bracketology/bracketology_form.pdf",
+      formButton: false,
     },
   },
   {
@@ -259,18 +268,24 @@ const competitions: Competition[] = [
                       </Button>
                     </a>
                   )}
-                  {competition.links?.webForm && (
-                    <a
-                      href={competition.links.webForm}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Button variant="outline">
-                        <Globe />
-                        Register
+                  {competition.links?.webForm &&
+                    (competition.links.webButton == false ? (
+                      <Button variant="outline" disabled>
+                        <FileText />
+                        Registration Closed
                       </Button>
-                    </a>
-                  )}
+                    ) : (
+                      <a
+                        href={competition.links.webForm}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button variant="outline">
+                          <Globe />
+                          Register
+                        </Button>
+                      </a>
+                    ))}
                   {competition.links?.social && (
                     <a
                       href={competition.links.social}
