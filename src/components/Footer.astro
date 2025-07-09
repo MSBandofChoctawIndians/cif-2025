@@ -1,6 +1,8 @@
 ---
 import Sponsors from "./Sponsors";
 import FooterButton from "./FooterButton.astro";
+import { AudioLines, Facebook, Instagram, Youtube } from "lucide-react";
+import { Button } from "@/components/ui/button";
 ---
 
 <>
@@ -9,31 +11,106 @@ import FooterButton from "./FooterButton.astro";
     class="w-full border-t border-black bg-gradient-to-r from-stone-900 via-stone-700 to-stone-950 py-6 text-white"
   >
     <div
-      class="container mx-auto grid grid-cols-1 items-center gap-4 px-4 md:grid-cols-3 md:px-6"
+      class="container mx-auto grid grid-cols-1 items-center gap-4 px-4 md:px-6 lg:grid-cols-3"
     >
-      <p
-        class="order-2 text-center text-sm leading-loose text-gray-300 md:order-none md:col-start-1 md:text-left"
+      <div
+        class="order-2 text-center lg:order-none lg:col-start-1 lg:text-left"
       >
-        © {new Date().getFullYear()} Choctaw Indian Fair. All rights reserved.
-      </p>
+        <p class="text-sm leading-loose text-gray-300">
+          © {new Date().getFullYear()} Choctaw Indian Fair. All rights reserved.
+        </p>
+        {/* Social icons on a new row */}
+        <div class="mt-2 space-x-4">
+          <a
+            href="https://www.facebook.com/ChoctawIndianFair"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div
+              class="inline-block rounded-full border-2 border-white bg-blue-600 p-2 px-3 transition-colors duration-300 hover:bg-blue-700"
+            >
+              <span class="sr-only">Facebook</span>
+              <Facebook className="mb-1 inline-block h-5 w-5" />
+            </div>
+          </a>
+          <a
+            href="https://www.instagram.com/choctawindianfair/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div
+              class="inline-block rounded-full border-2 border-white bg-pink-600 p-2 px-3 transition-colors duration-300 hover:bg-pink-700"
+            >
+              <span class="sr-only">Instagram</span>
+              <Instagram className="mb-1 inline-block h-5 w-5" />
+            </div>
+          </a>
+          <a
+            href="https://www.youtube.com/@ChoctawIndianFair"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div
+              class="inline-block rounded-full border-2 border-white bg-red-600 p-2 px-3 transition-colors duration-300 hover:bg-red-700"
+            >
+              <span class="sr-only">YouTube</span>
+              <Youtube className="mb-1 inline-block h-5 w-5" />
+            </div>
+          </a>
+          {/* Spotify */}
+          <a
+            href="https://open.spotify.com/playlist/7fG95SQpyTf729cMKOvW7x?si=8c5bd6ccb3b54d4f"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div
+              class="inline-block rounded-full border-2 border-white bg-green-600 p-2 px-3 transition-colors duration-300 hover:bg-green-700"
+            >
+              <span class="sr-only">Spotify</span>
+              <AudioLines className="mb-1 inline-block h-5 w-5" />
+            </div>
+          </a>
+        </div>
+      </div>
       <img
         src="/navlogo.webp"
         alt="Logo"
-        class="mx-auto h-24 w-24 md:col-start-2"
+        class="mx-auto h-24 w-24 lg:col-start-2"
       />
-      <p
-        class="text-center text-sm leading-loose text-gray-300 md:col-start-3 md:text-right"
+      <div
+        class="order-1 text-center lg:order-none lg:col-start-3 lg:text-right"
       >
-        This event is hosted by the {" "}
+        <p class="text-sm leading-loose text-gray-300">
+          This event is hosted by the {" "}
+          <a
+            href="#"
+            class="text-nowrap text-amber-300 underline-offset-4 hover:underline"
+          >
+            Mississippi Band of Choctaw Indians
+          </a>
+        </p>
+
         <a
-          href="#"
-          class="text-nowrap text-amber-300 underline-offset-4 hover:underline"
+          href="https://nativeconsult.io"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Mississippi Band of Choctaw Indians
+          <Button
+            variant="outline"
+            size="lg"
+            className="mt-2 cursor-pointer border-2 border-gray-300 px-2 hover:opacity-80"
+          >
+            <img
+              src="/NCS_logo.jpg"
+              alt="Native Consulting Services Logo"
+              class="mr-1 inline-block h-8 w-8 align-middle"
+            />
+            <span class="align-middle font-semibold text-gray-800">
+              Designed by Native Consulting Services
+            </span>
+          </Button>
         </a>
-        <br />
-        <!-- <FooterButton /> -->
-      </p>
+      </div>
     </div>
   </footer>
 </>
