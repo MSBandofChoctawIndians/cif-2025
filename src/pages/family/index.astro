@@ -153,10 +153,23 @@ const shawiZone = [
     id: "oka-imma",
     title:
       "Oka Imma Ámiti Alhíha Kil Im Ayikhana (Let's Learn from Aquatic Creatures)",
+    description:
+      "Join the Choctaw Language Program in learning about OKA IMMA ÁMITA ALHÍHA - AQUATIC CREATURES. This interactive session will teach children about the importance of water creatures in Choctaw culture through language and storytelling.",
+    image: "oka-imma.jpg",
   },
   {
     id: "msu-bugs",
     title: "MSU Bugs Walk-Thru Exhibit",
+    description:
+      "Explore the fascinating world of insects with the MSU Bugs Walk-Thru Exhibit. This interactive experience allows children to learn about various bugs, their habitats, and their roles in the ecosystem.",
+    image: "bugs.jpg",
+  },
+  {
+    id: "fair-fun",
+    title: "Fair Fun Zone",
+    description:
+      "The Fair Fun Zone is a lively area filled with games, activities, and entertainment for the whole family.",
+    image: "fair-fun.jpg",
   },
 ];
 ---
@@ -348,8 +361,8 @@ const shawiZone = [
           >
             <Ticket className="h-4 w-4 text-blue-600" />
             <span class="text-sm text-blue-800">
-              Pay One Price wristbands include unlimited rides during
-              specified hours
+              Pay One Price wristbands include unlimited rides during specified
+              hours
             </span>
           </div>
         </div>
@@ -396,7 +409,6 @@ const shawiZone = [
             ))
           }
         </div>
-        
       </div>
     </section>
 
@@ -454,16 +466,25 @@ const shawiZone = [
           and games. A fun and interactive space to connect with Choctaw
           heritage.
         </p>
-        <Card
-          className="mt-12 overflow-hidden border-none bg-black/70 p-4 text-white"
-        >
-          <h2
-            class="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl"
-          >
-            Schedule Coming Soon!
-          </h2>
-        </Card>
-        <!-- <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {
+            shawiZone.map((event) => (
+              <Card className="mt-12 overflow-hidden border-none bg-black/70 p-0 text-white">
+                <img
+                  src={`/family/${event.image}`}
+                  alt={event.title}
+                  class="aspect-square w-full object-cover"
+                />
+                <div class="p-6 text-center">
+                  <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
+                    {event.title}
+                  </h3>
+                  <p class="text-muted">{event.description}</p>
+                </div>
+              </Card>
+            ))
+          }
+          <!-- <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <Card
             className="overflow-hidden border-none bg-black/70 p-0 text-white"
           >
@@ -524,6 +545,7 @@ const shawiZone = [
             </div>
           </Card>
         </div> -->
+        </div>
       </div>
     </section>
   </div>
