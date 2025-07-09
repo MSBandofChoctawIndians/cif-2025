@@ -11,19 +11,19 @@ export const day08 = [
     location: "Fairgrounds",
   },
   {
-    name: "Pushmataha Division: Game 4: Winner Game 2 vs Beaver Dam",
+    name: "Pushmataha Division: Game 4: Pearl River vs Beaver Dam",
     time: "5:00 PM",
     location: "Warrior Stadium",
     category: "stickball",
   },
   {
-    name: "Tulli Okchi Ishko Division: Game 6: Pearl River vs Winner Game 4",
+    name: "Tulli Okchi Ishko Division: Game 6: Pearl River vs Koni-Hata Osi",
     time: "6:00 PM",
     location: "Warrior Stadium",
     category: "stickball",
   },
   {
-    name: "Men’s Division: Game 11: Winner Game 8 vs Winner Game 9",
+    name: "Men’s Division: Game 11: Oka Homma vs Koni Hata",
     time: "10:00 PM",
     location: "Warrior Stadium",
     category: "stickball",
