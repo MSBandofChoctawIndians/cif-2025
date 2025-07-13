@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { format, parse, isAfter } from "date-fns";
 import { CalendarDays, Clock } from "lucide-react";
 
@@ -79,17 +79,24 @@ export default function EventSchedulePage() {
   const [selectedDay, setSelectedDay] = useState<string>("");
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Add this useEffect to close the filter dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent): void => {
-      if (isFilterOpen) {
+      if (
+        isFilterOpen &&
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsFilterOpen(false);
       }
     };
 
-    // Add event listener for clicks outside the dropdown
-    document.addEventListener("mousedown", handleClickOutside);
+    // Only add the listener when dropdown is open
+    if (isFilterOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
 
     // Cleanup
     return () => {
@@ -282,7 +289,7 @@ export default function EventSchedulePage() {
 
         {isMobile ? (
           // Mobile view - multi-select dropdown
-          <div className="relative">
+          <div className="relative" ref={dropdownRef}>
             <button
               type="button"
               onClick={() => setIsFilterOpen(!isFilterOpen)}
@@ -320,7 +327,18 @@ export default function EventSchedulePage() {
                       <Checkbox
                         id={`mobile-category-${category}`}
                         checked={selectedCategories.includes(category)}
-                        onCheckedChange={() => handleCategoryChange(category)}
+                        onCheckedChange={(checked) => {
+                          if (checked) {
+                            setSelectedCategories([
+                              ...selectedCategories,
+                              category,
+                            ]);
+                          } else {
+                            setSelectedCategories(
+                              selectedCategories.filter((c) => c !== category),
+                            );
+                          }
+                        }}
                         className={cn(
                           "border-opacity-60",
                           category === "culture" &&
@@ -338,7 +356,7 @@ export default function EventSchedulePage() {
                       <Label
                         htmlFor={`mobile-category-${category}`}
                         className={cn(
-                          "ml-2 text-sm capitalize",
+                          "ml-2 cursor-pointer text-sm capitalize",
                           category === "culture" && "text-blue-300",
                           category === "family fun" && "text-green-300",
                           category === "pageant" && "text-purple-300",
