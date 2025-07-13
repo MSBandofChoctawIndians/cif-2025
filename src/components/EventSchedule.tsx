@@ -109,21 +109,22 @@ export default function EventSchedulePage() {
     const today = new Date();
     const formattedToday = format(today, "yyyy-MM-dd");
 
-    // Check if fair has concluded
-    if (isAfter(today, parse(fairEndDate, "yyyy-MM-dd", new Date()))) {
-      return "day01"; // Default to Day 1 after fair concludes
-    }
-
-    // Find today or next available date
+    // Find today's event first
     const todayEvent = eventDates.find(
       (event) => event.date === formattedToday,
     );
 
+    // If today is a fair day, show today
     if (todayEvent) {
       return todayEvent.id;
     }
 
-    // If today is not available, find the next available date
+    // Check if fair has concluded (today is after the last fair day)
+    if (isAfter(today, parse(fairEndDate, "yyyy-MM-dd", new Date()))) {
+      return "day01"; // Default to Day 1 after fair concludes
+    }
+
+    // If today is not a fair day but fair hasn't concluded, find the next available date
     const futureEvents = eventDates
       .filter((event) =>
         isAfter(parse(event.date, "yyyy-MM-dd", new Date()), today),
