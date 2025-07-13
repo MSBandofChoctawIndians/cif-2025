@@ -109,7 +109,7 @@ export const day10 = [
   },
   {
     name: "Choctaw Tribal Social Dancers",
-    time: "7.00 PM",
+    time: "7:00 PM",
     location: "CICC Outreach Dance Ground",
     category: "culture",
   },
@@ -278,7 +278,7 @@ export const day10 = [
   },
   {
     name: "Reptile Walk-Thru Experience Closes",
-    time: "5.00 PM",
+    time: "5:00 PM",
     location: "Ossi Cove",
     category: "family fun",
   },

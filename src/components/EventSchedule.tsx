@@ -198,9 +198,37 @@ export default function EventSchedulePage() {
           const rankA = rank(a);
           const rankB = rank(b);
           if (rankA !== rankB) return rankA - rankB;
-          // same rank → sort by parsed time
-          const timeA = parse(a.time, "hh:mm a", new Date()).getTime();
-          const timeB = parse(b.time, "hh:mm a", new Date()).getTime();
+
+          // same rank → sort by parsed time with multiple format support
+          const parseTime = (timeStr: string) => {
+            try {
+              // Try different time formats
+              const formats = ["h:mm A", "hh:mm A", "h:mm a", "hh:mm a"];
+              for (const formatStr of formats) {
+                try {
+                  const parsed = parse(timeStr, formatStr, new Date());
+                  if (!isNaN(parsed.getTime())) {
+                    return parsed.getTime();
+                  }
+                } catch {
+                  continue;
+                }
+              }
+              // If all parsing fails, convert to 24-hour for comparison
+              const [time, period] = timeStr.split(" ");
+              const [hours, minutes] = time.split(":").map(Number);
+              let hour24 = hours;
+              if (period?.toUpperCase() === "PM" && hours !== 12) hour24 += 12;
+              if (period?.toUpperCase() === "AM" && hours === 12) hour24 = 0;
+              return hour24 * 60 + minutes; // Convert to minutes for comparison
+            } catch (error) {
+              console.error("Error parsing time:", timeStr, error);
+              return 0;
+            }
+          };
+
+          const timeA = parseTime(a.time);
+          const timeB = parseTime(b.time);
           return timeA - timeB;
         })
     : [];
