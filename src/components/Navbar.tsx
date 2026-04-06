@@ -43,7 +43,10 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-black bg-gradient-to-r from-stone-900 via-stone-700 to-stone-950 text-white">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-2">
-          <a href="/" className="flex items-center gap-4 text-xl font-bold">
+          <a
+            href="/cif-2025"
+            className="flex items-center gap-4 text-xl font-bold"
+          >
             <img src="/navlogo.webp" alt="Logo" className="h-12 w-12" />
             <span className="hidden lg:flex">Choctaw Indian Fair</span>
           </a>
@@ -95,7 +98,7 @@ export function Navbar() {
                   );
                 })}
                 <div className="mt-4 flex flex-col gap-2">
-                  <a href="/map">
+                  <a href="/cif-2025/map">
                     <Button
                       variant="secondary"
                       onClick={() => setOpen(false)}
@@ -150,7 +153,7 @@ export function Navbar() {
                 );
               })}
               <NavigationMenuItem>
-                <a href="/map">
+                <a href="/cif-2025/map">
                   <Button variant="ghost">
                     <MapPinned className="h-12 w-12" />
                   </Button>
