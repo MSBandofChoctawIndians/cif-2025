@@ -182,7 +182,7 @@ const shawiZone = [
     <section class="relative flex w-full items-center justify-center">
       <div class="absolute inset-0 z-0">
         <img
-          src="/backdrops/family-backdrop.svg"
+          src={`${import.meta.env.BASE_URL}backdrops/family-backdrop.svg`}
           alt="Family Fun background"
           class="absolute inset-0 h-full w-full object-cover brightness-50"
         />
@@ -201,7 +201,7 @@ const shawiZone = [
                 <div class="flex flex-col items-center space-y-4 rounded-lg border-2 border-amber-200 bg-black/50 p-4">
                   <div class="relative h-48 w-48 overflow-hidden rounded-full">
                     <img
-                      src={`/family/${event.image}.webp`}
+                      src={`${import.meta.env.BASE_URL}/family/${event.image}.webp`}
                       width={800}
                       height={800}
                       alt={event.title}
@@ -242,7 +242,7 @@ const shawiZone = [
             className="overflow-hidden border-none bg-black/70 p-0 text-white"
           >
             <img
-              src="/competitions/gospelnight/gospelNight.webp"
+              src={`${import.meta.env.BASE_URL}competitions/gospelnight/gospelNight.webp`}
               alt="Gospel Night"
               class="aspect-square w-full object-cover"
             />
@@ -262,7 +262,7 @@ const shawiZone = [
             className="overflow-hidden border-none bg-black/70 p-0 text-white"
           >
             <img
-              src="/competitions/littlecif/lil-pageant.webp"
+              src={`${import.meta.env.BASE_URL}competitions/littlecif/lil-pageant.webp`}
               alt="Little Mr. & Miss Choctaw Indian Fair Pageant"
               class="aspect-square w-full object-cover"
             />
@@ -282,7 +282,7 @@ const shawiZone = [
             className="overflow-hidden border-none bg-black/70 p-0 text-white"
           >
             <img
-              src="/family/frybread-making.webp"
+              src={`${import.meta.env.BASE_URL}family/frybread-making.webp`}
               alt="Frybread Making Demonstration"
               class="aspect-square w-full object-cover"
             />
@@ -301,7 +301,7 @@ const shawiZone = [
             className="overflow-hidden border-none bg-black/70 p-0 text-white"
           >
             <img
-              src="/family/cultural-video.webp"
+              src={`${import.meta.env.BASE_URL}family/cultural-video.webp`}
               alt="Cultural Video Features"
               class="aspect-square w-full object-cover"
             />
@@ -321,7 +321,7 @@ const shawiZone = [
             className="overflow-hidden border-none bg-black/70 p-0 text-white"
           >
             <img
-              src="/competitions/watermelon/watermelon.webp"
+              src={`${import.meta.env.BASE_URL}competitions/watermelon/watermelon.webp`}
               alt="Watermelon Eating Contest"
               class="aspect-square w-full object-cover"
             />
@@ -433,7 +433,7 @@ const shawiZone = [
             ossiCove.map((event) => (
               <Card className="mt-12 overflow-hidden border-none bg-black/70 p-0 text-white">
                 <img
-                  src={`/family/${event.image}.jpg`}
+                  src={`${import.meta.env.BASE_URL}/family/${event.image}.jpg`}
                   alt={event.title}
                   class="aspect-square w-full object-cover"
                 />
@@ -471,7 +471,7 @@ const shawiZone = [
             shawiZone.map((event) => (
               <Card className="mt-12 overflow-hidden border-none bg-black/70 p-0 text-white">
                 <img
-                  src={`/family/${event.image}`}
+                  src={`${import.meta.env.BASE_URL}/family/${event.image}`}
                   alt={event.title}
                   class="aspect-square w-full object-cover"
                 />
@@ -484,67 +484,6 @@ const shawiZone = [
               </Card>
             ))
           }
-          <!-- <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <Card
-            className="overflow-hidden border-none bg-black/70 p-0 text-white"
-          >
-            <img
-              src="/culture/war.webp"
-              alt="War Dance"
-              class="aspect-square w-full object-cover"
-            />
-            <div class="p-6 text-center">
-              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
-                War Dances
-              </h3>
-              <p class="text-muted">
-                War dances were used by early Choctaws to prepare for battle.
-                Choctaw war dances are unusual in that the women join the men in
-                dancing. In most other tribes, only men take part in the war
-                dance.
-              </p>
-            </div>
-          </Card>
-          <Card
-            className="overflow-hidden border-none bg-black/70 p-0 text-white"
-          >
-            <img
-              src="/culture/social.webp"
-              alt="Beadwork"
-              class="aspect-square w-full object-cover"
-            />
-            <div class="p-6 text-center">
-              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
-                Social Dances
-              </h3>
-              <p class="text-muted">
-                Social dances mark important aspects of life such as friendship,
-                courtship and marriage. They include stealing partners, the
-                friendship dance, and the wedding dance, among others.
-              </p>
-            </div>
-          </Card>
-          <Card
-            className="overflow-hidden border-none bg-black/70 p-0 text-white"
-          >
-            <img
-              src="/culture/animal.webp"
-              alt="Clothing"
-              class="aspect-square w-full object-cover"
-            />
-            <div class="p-6 text-center">
-              <h3 class="mb-2 mt-[-20px] text-xl font-semibold md:text-2xl">
-                Animal Dances
-              </h3>
-              <p class="text-muted">
-                Animal dances often mimic the behavior of their namesakes, with
-                dancers darting in and out of the dance circle like playful
-                raccoons in the raccoon dance or forming a line that coils and
-                uncoils in the snake dance.
-              </p>
-            </div>
-          </Card>
-        </div> -->
         </div>
       </div>
     </section>

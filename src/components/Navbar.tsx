@@ -23,13 +23,15 @@ interface NavItem {
   disabled?: boolean;
 }
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
 const navItems = [
-  { title: "Events", href: "/events" },
-  { title: "Culture", href: "/culture" },
-  { title: "Family Fun", href: "/family" },
-  { title: "Stickball", href: "/stickball" },
-  { title: "Pageant", href: "/pageant" },
-  { title: "Competitions", href: "/competitions" },
+  { title: "Events", href: `${base}/events` },
+  { title: "Culture", href: `${base}/culture` },
+  { title: "Family Fun", href: `${base}/family` },
+  { title: "Stickball", href: `${base}/stickball` },
+  { title: "Pageant", href: `${base}/pageant` },
+  { title: "Competitions", href: `${base}/competitions` },
 ];
 
 export function Navbar() {
@@ -43,11 +45,12 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-black bg-gradient-to-r from-stone-900 via-stone-700 to-stone-950 text-white">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-2">
-          <a
-            href="/cif-2025"
-            className="flex items-center gap-4 text-xl font-bold"
-          >
-            <img src="/navlogo.webp" alt="Logo" className="h-12 w-12" />
+          <a href={base} className="flex items-center gap-4 text-xl font-bold">
+            <img
+              src={`${base}/navlogo.webp`}
+              alt="Logo"
+              className="h-12 w-12"
+            />
             <span className="hidden lg:flex">Choctaw Indian Fair</span>
           </a>
         </div>
@@ -65,7 +68,7 @@ export function Navbar() {
               <SheetHeader>
                 <SheetTitle>
                   <img
-                    src="/navlogo.webp"
+                    src={`${base}/navlogo.webp`}
                     alt="Logo"
                     className="mb-2 h-12 w-12"
                   />
@@ -98,7 +101,7 @@ export function Navbar() {
                   );
                 })}
                 <div className="mt-4 flex flex-col gap-2">
-                  <a href="/cif-2025/map">
+                  <a href={`${base}/map`}>
                     <Button
                       variant="secondary"
                       onClick={() => setOpen(false)}
@@ -153,7 +156,7 @@ export function Navbar() {
                 );
               })}
               <NavigationMenuItem>
-                <a href="/cif-2025/map">
+                <a href={`${base}/map`}>
                   <Button variant="ghost">
                     <MapPinned className="h-12 w-12" />
                   </Button>

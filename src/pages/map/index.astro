@@ -59,7 +59,7 @@ import {
           <CardContent>
             <div class="relative h-auto w-full overflow-hidden rounded-lg">
               <img
-                src="/fair_map.webp"
+                src={`${import.meta.env.BASE_URL}fair_map.webp`}
                 alt="Fairgrounds Map"
                 class="bg-gray-50 object-contain"
               />
@@ -68,7 +68,7 @@ import {
           <CardFooter>
             <Button variant="secondary" className="w-full">
               <a
-                href="/cif-2025/2025 Fairgrounds Map.pdf"
+                href={`${import.meta.env.BASE_URL}/2025 Fairgrounds Map.pdf`}
                 target="_blank"
                 class="flex items-center"
               >

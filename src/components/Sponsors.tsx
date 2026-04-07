@@ -15,6 +15,8 @@ import silverSponsors from "@/data/sponsors/silverSponsors";
 import bronzeSponsors from "@/data/sponsors/bronzeSponsors";
 import { useEffect, useState } from "react";
 
+const base = import.meta.env.BASE_URL;
+
 export default function SponsorFooter() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
@@ -23,7 +25,12 @@ export default function SponsorFooter() {
 
   return (
     <footer className="via-fair-red w-full bg-gradient-to-br from-red-700 to-red-800 py-12">
-      <div className="mb-12 mt-[-48px] h-48 bg-[url(/bead-pattern.svg)] bg-center bg-repeat-x opacity-30" />
+      <div
+        className="mb-12 mt-[-48px] h-48 bg-center bg-repeat-x opacity-30"
+        style={{
+          backgroundImage: `url(${import.meta.env.BASE_URL}/bead-pattern.svg)`,
+        }}
+      />
       <div className="container mx-auto px-4 md:px-6">
         <div className="mb-8 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-white">
@@ -54,10 +61,7 @@ export default function SponsorFooter() {
                     <Card className="border-2 border-neutral-400 bg-gradient-to-br from-neutral-400 via-white to-neutral-500 shadow-sm">
                       <CardContent className="flex h-[280px] items-center justify-center p-6">
                         <img
-                          src={
-                            `/sponsors/platinum/${sponsor.logo}.png` ||
-                            "/placeholder.svg"
-                          }
+                          src={`${import.meta.env.BASE_URL}/sponsors/platinum/${sponsor.logo}.png`}
                           alt={`${sponsor.name} logo`}
                           width={280}
                           height={280}
@@ -88,10 +92,7 @@ export default function SponsorFooter() {
                     <Card className="border-2 border-neutral-400 bg-gradient-to-br from-yellow-500 via-yellow-200 to-yellow-600 shadow-sm">
                       <CardContent className="flex h-[280px] items-center justify-center p-6">
                         <img
-                          src={
-                            `/sponsors/gold/${sponsor.logo}.png` ||
-                            "/placeholder.svg"
-                          }
+                          src={`${import.meta.env.BASE_URL}/sponsors/gold/${sponsor.logo}.png`}
                           alt={`${sponsor.name} logo`}
                           width={280}
                           height={280}
@@ -123,10 +124,7 @@ export default function SponsorFooter() {
                       <Card className="border-2 border-neutral-400 bg-gradient-to-br from-slate-400 via-slate-100 to-slate-500 shadow-sm">
                         <CardContent className="flex h-[280px] items-center justify-center p-6">
                           <img
-                            src={
-                              `/sponsors/silver/${sponsor.logo}.png` ||
-                              "/placeholder.svg"
-                            }
+                            src={`${import.meta.env.BASE_URL}/sponsors/silver/${sponsor.logo}.png`}
                             alt={`${sponsor.name} logo`}
                             width={280}
                             height={280}
@@ -144,10 +142,7 @@ export default function SponsorFooter() {
                     <Card className="border-2 border-neutral-400 bg-gradient-to-br from-slate-400 via-slate-100 to-slate-500 shadow-sm">
                       <CardContent className="flex h-[280px] items-center justify-center p-6">
                         <img
-                          src={
-                            `/sponsors/silver/${sponsor.logo}.png` ||
-                            "/placeholder.svg"
-                          }
+                          src={`${base}/sponsors/silver/${sponsor.logo}.png`}
                           alt={`${sponsor.name} logo`}
                           width={280}
                           height={280}

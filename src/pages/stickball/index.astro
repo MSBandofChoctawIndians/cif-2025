@@ -63,7 +63,7 @@ const featuredEvents = [
     <section class="relative flex w-full items-center justify-center">
       <div class="absolute inset-0 z-0">
         <img
-          src="/backdrops/stickball-backdrop.svg"
+          src={`${import.meta.env.BASE_URL}backdrops/stickball-backdrop.svg`}
           alt="Stickball background"
           class="absolute inset-0 h-full w-full object-cover brightness-50"
         />
@@ -82,7 +82,7 @@ const featuredEvents = [
                   <div class="flex h-full flex-col items-center space-y-4 rounded-lg border-2 border-white/50 bg-black/50 p-4">
                     <div class="relative h-48 w-48 overflow-hidden rounded-full">
                       <img
-                        src={`/stickball/${event.image}.webp`}
+                        src={`${import.meta.env.BASE_URL}/stickball/${event.image}.webp`}
                         width={800}
                         height={800}
                         alt={event.id}
@@ -104,7 +104,7 @@ const featuredEvents = [
                   height={800}
                   class={`fade-up block hover:opacity-70 ${event.order ?? ""} h-full w-full`}
                 />
-              )
+              ),
             )
           }
         </div>

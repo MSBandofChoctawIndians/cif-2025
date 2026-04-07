@@ -39,8 +39,8 @@ import { Button } from "./ui/button";
       </div>
       <div class="mx-auto aspect-video w-full overflow-hidden rounded-xl">
         <video
-          src="/fair_vid.mp4"
-          poster="/fair_vid.webp"
+          src={`${import.meta.env.BASE_URL}/fair_vid.mp4`}
+          poster={`${import.meta.env.BASE_URL}/fair_vid.webp`}
           class="h-full w-full object-cover"
           controls></video>
       </div>
